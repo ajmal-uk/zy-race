@@ -4,64 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>ZyRace – Physics Puzzle Racer by Ajmal U K</title>
-  <meta name="description" content="ZyRace is a mind-bending physics-based puzzle racing game created by Ajmal U K. Build, race, and solve!" />
+  <title>ZyRace – Physics Puzzle Racer | by Ajmal U K</title>
+  <meta name="description" content="Build wild vehicles, solve physics puzzles, and race through chaos. No sign-up. Instant play." />
 
   <!-- Favicon & Icons -->
-  <link rel="icon" type="image/png" href="https://zymail.pythonanywhere.com/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="https://zymail.pythonanywhere.com/favicon.svg" />
-  <link rel="shortcut icon" href="https://zymail.pythonanywhere.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://zymail.pythonanywhere.com/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="ZyRace" />
-  <meta name="theme-color" content="#4F46E5" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="ZyRace – Physics Puzzle Racer" />
-  <meta property="og:description" content="A creative physics-based racing game by Ajmal U K." />
-  <meta property="og:image" content="https://zymail.pythonanywhere.com/og-image.jpg" />
-  <meta property="og:url" content="https://zyrace.pythonanywhere.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="ZyRace" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@ajmal_uk_" />
-  <meta name="twitter:creator" content="@ajmal_uk_" />
-  <meta name="author" content="Ajmal U K - UTHAKKAN" />
+  <link rel="icon" type="image/png" href="https://zyrace.pythonanywhere.com/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="https://zyrace.pythonanywhere.com/apple-touch-icon.png" />
 
   <!-- Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "VideoGame",
     "name": "ZyRace",
-    "description": "A physics-based puzzle racing game where you build vehicles and solve challenges.",
+    "description": "A physics-based puzzle racing game where creativity meets chaos.",
     "url": "https://zyrace.pythonanywhere.com/",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Web",
-    "creator": {
+    "gamePlatform": ["Web"],
+    "author": {
       "@type": "Person",
-      "name": "Ajmal U K",
-      "url": "https://zymail.pythonanywhere.com/"
+      "name": "Ajmal U K"
     },
+    "genre": ["Puzzle", "Racing", "Physics"],
+    "isFamilyFriendly": true,
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Physics-based vehicle building",
-      "Puzzle-solving gameplay",
-      "Creative level design",
-      "No registration required"
-    ]
+    }
   }
   </script>
 
@@ -73,165 +50,575 @@
     }
 
     :root {
-      --primary: #4F46E5;
-      --primary-dark: #4338CA;
-      --white: #ffffff;
-      --gray-100: #f9fafb;
-      --gray-900: #111827;
-      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --neon: #00f3ff;
+      --glow: 0 0 12px rgba(0, 243, 255, 0.6);
+      --text-glow: 0 0 8px rgba(255, 255, 255, 0.3);
+      --glass: rgba(15, 23, 42, 0.7);
+      --dark: #0f172a;
+      --canvas-bg: #000;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: var(--white);
+      font-family: 'Exo 2', sans-serif;
+      background: radial-gradient(circle at 30% 30%, #0b0225, #000);
+      color: white;
       min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 20px;
-      overflow-x: hidden;
+    }
+
+    /* Animated stars / particles */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     .container {
-      max-width: 800px;
-      padding: 40px 30px;
-      background: rgba(17, 24, 39, 0.8);
-      backdrop-filter: blur(12px);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
+      max-width: 1200px;
+      width: 95vw;
+      padding: 40px 20px;
+      position: relative;
       z-index: 10;
-      margin: 20px auto;
     }
 
-    h1 {
-      font-size: 3.2rem;
+    /* Glowing Neon Header */
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 800;
       margin-bottom: 12px;
-      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      letter-spacing: -2px;
+      background: linear-gradient(90deg, #ffffff, var(--neon), #a18cff);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+      animation: pulseGlow 2.5s infinite alternate;
     }
 
-    .subtitle {
-      font-size: 1.2rem;
+    @keyframes pulseGlow {
+      0% { text-shadow: 0 0 10px rgba(0, 243, 255, 0.3); }
+      100% { text-shadow: 0 0 30px rgba(0, 243, 255, 0.8), 0 0 40px rgba(161, 140, 255, 0.5); }
+    }
+
+    .tagline {
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+      margin-bottom: 30px;
       color: #cbd5e1;
-      margin-bottom: 24px;
-      font-weight: 400;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
     }
 
     .creator {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #94a3b8;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      align-items: center;
     }
 
-    .play-button {
-      background: var(--primary);
+    /* HUD-style CTA */
+    .cta-group {
+      position: relative;
+      margin: 50px 0 70px;
+    }
+
+    .play-btn {
+      position: relative;
+      background: linear-gradient(135deg, var(--primary), #818cf8);
       color: white;
       border: none;
-      padding: 14px 32px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      border-radius: 12px;
+      padding: 20px 60px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      border-radius: 16px;
       cursor: pointer;
+      overflow: hidden;
+      z-index: 2;
       transition: all 0.3s ease;
-      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+      box-shadow: var(--glow), 0 10px 30px rgba(99, 102, 241, 0.4);
+      letter-spacing: 1px;
     }
 
-    .play-button:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(79, 70, 229, 0.6);
-    }
-
-    .play-button:active {
-      transform: translateY(0);
-    }
-
-    .canvas-container {
-      margin-top: 30px;
+    .play-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
       width: 100%;
-      display: none;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.6s;
+    }
+
+    .play-btn:hover::before {
+      left: 100%;
+    }
+
+    .play-btn:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.8), 0 12px 35px rgba(99, 102, 241, 0.6);
+    }
+
+    .play-btn:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .play-btn i {
+      margin-right: 10px;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* Features – Game HUD Style */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin: 60px 0;
+    }
+
+    .feat-card {
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 28px 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--neon));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .feat-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), var(--glow);
+    }
+
+    .feat-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feat-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--neon));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .feat-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .feat-desc {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Vehicle Preview (3D placeholder) */
+    #vehicle-preview {
+      width: 300px;
+      height: 300px;
+      margin: 40px auto;
+      position: relative;
+      perspective: 1000px;
+    }
+
+    #vehicle-model {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, #1e293b, #0f172a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
       justify-content: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #vehicle-model::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        transparent,
+        rgba(99, 102, 241, 0.2),
+        transparent 30%,
+        rgba(0, 243, 255, 0.2)
+      );
+      animation: rotate 8s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .vehicle-placeholder {
+      font-size: 5rem;
+      color: white;
+      text-shadow: 0 0 20px rgba(0, 243, 255, 0.7);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Loading UI – Fuel Gauge Style */
+    .loading-ui {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .fuel-gauge {
+      width: 300px;
+      height: 24px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid var(--neon);
+      box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+    }
+
+    .fuel-level {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #10b981, #00f3ff);
+      border-radius: 10px;
+      transition: width 0.8s ease;
+      position: relative;
+    }
+
+    .fuel-level::after {
+      content: '⛽';
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+    }
+
+    .loading-text {
+      font-size: 1.1rem;
+      color: var(--neon);
+      font-weight: 600;
+      text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
+    }
+
+    /* Canvas Stage */
+    .canvas-stage {
+      display: none;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), var(--glow);
+      background: var(--canvas-bg);
+      position: relative;
     }
 
     canvas {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      background: #000;
+      display: block;
+      width: 100%;
+      max-height: 80vh;
     }
 
-    .loading {
-      display: none;
-      margin-top: 20px;
-      color: #cbd5e1;
-    }
-
+    /* Footer – Minimal HUD */
     footer {
-      margin-top: 40px;
+      margin-top: 60px;
       color: #64748b;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      padding: 20px;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.4rem;
-      }
-      .subtitle {
-        font-size: 1rem;
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 12px;
+    }
+
+    .social-link {
+      width: 42px;
+      height: 42px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-4px) scale(1.1);
+      box-shadow: var(--glow);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .logo { font-size: 4rem; }
+      .play-btn { padding: 16px 40px; font-size: 1.2rem; }
+      #vehicle-preview { width: 220px; height: 220px; }
+      .fuel-gauge { width: 240px; }
+    }
+
+    @media (max-width: 480px) {
+      .logo { font-size: 3rem; }
+      .tagline { font-size: 1.1rem; }
+      .play-btn { padding: 14px 32px; font-size: 1.1rem; }
+      .features { grid-template-columns: 1fr; }
+    }
+
+    /* Ripple Effect (JS-powered) */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0);
+      animation: rippleEffect 0.6s linear;
+      pointer-events: none;
+    }
+
+    @keyframes rippleEffect {
+      to {
+        transform: scale(4);
+        opacity: 0;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Animated Particles Background -->
+  <div id="particles-js"></div>
+
   <div class="container">
-    <h1>ZyRace</h1>
-    <p class="subtitle">A physics-based puzzle racer where creativity meets chaos</p>
-    <p class="creator">Created by <strong>Ajmal U K</strong></p>
+    <h1 class="logo">Zy<span style="color:var(--neon);">Race</span></h1>
+    <p class="tagline">Physics-powered puzzle racing where **you design the vehicle, solve the challenge, and race against chaos.**</p>
+    <p class="creator">
+      <i class="fas fa-rocket"></i>
+      Crafted with ❤️ by <strong>Ajmal U K</strong>
+    </p>
 
-    <button id="play-btn" class="play-button">
-      <i class="fas fa-play"></i> Play Now
-    </button>
+    <!-- 3D Vehicle Preview (Placeholder for GLB / Three.js) -->
+    <div id="vehicle-preview">
+      <div id="vehicle-model">
+        <div class="vehicle-placeholder">🏎️</div>
+      </div>
+    </div>
 
-    <div class="loading" id="loading">Loading game assets...</div>
+    <div class="cta-group">
+      <button id="play-btn" class="play-btn">
+        <i class="fas fa-play"></i> LAUNCH GAME
+      </button>
+    </div>
 
-    <div class="canvas-container" id="canvas-container">
-      <canvas id="canvas" class="emscripten" tabindex="-1"></canvas>
+    <div class="features">
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-bolt"></i></div>
+        <h3 class="feat-title">Instant Play</h3>
+        <p class="feat-desc">No install. No login. Click → Build → Race.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-puzzle-piece"></i></div>
+        <h3 class="feat-title">Physics Puzzles</h3>
+        <p class="feat-desc">Wheels, rockets, magnets — your design decides!</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-infinity"></i></div>
+        <h3 class="feat-title">Infinite Creativity</h3>
+        <p class="feat-desc">Every solution is unique. Yours.</p>
+      </div>
+    </div>
+
+    <!-- Loading UI -->
+    <div class="loading-ui" id="loading-ui">
+      <p class="loading-text">Initializing ZyRace Engine…</p>
+      <div class="fuel-gauge">
+        <div class="fuel-level" id="fuel-level"></div>
+      </div>
+      <p class="loading-text" style="font-size:0.85rem;color:#94a3b8;">Loading physics, sounds, and vehicle parts…</p>
+    </div>
+
+    <!-- Canvas Stage -->
+    <div class="canvas-stage" id="canvas-stage">
+      <canvas id="canvas" tabindex="0" aria-label="ZyRace Game Canvas"></canvas>
     </div>
   </div>
 
   <footer>
-    © 2025 ZyRace · Made with ❤️ by Ajmal U K
+    <p>© 2025 ZyRace · Made in Kerala 🇮🇳</p>
+    <div class="socials">
+      <a href="https://twitter.com/ajmal_uk_" target="_blank" class="social-link" title="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://github.com/ajmaluk" target="_blank" class="social-link" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:ajmal.uk.dev@gmail.com" class="social-link" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
   </footer>
 
-  <!-- Game Scripts (from your original file) -->
-  <script src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js"></script>
-  <script src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js"></script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#00f3ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.2, random: true },
+        size: { value: 2, random: true },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#2563eb",
+          opacity: 0.15,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 80, duration: 0.4 },
+          push: { particles_nb: 2 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <!-- Game Scripts (deferred) -->
+  <script defer src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js"></script>
+  <script defer src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js"></script>
 
   <script>
-    document.getElementById('play-btn').addEventListener('click', function() {
-      // Hide play button & show loader
-      this.style.display = 'none';
-      document.getElementById('loading').style.display = 'block';
+    document.addEventListener('DOMContentLoaded', () => {
+      const playBtn = document.getElementById('play-btn');
+      const loadingUI = document.getElementById('loading-ui');
+      const fuelLevel = document.getElementById('fuel-level');
+      const canvasStage = document.getElementById('canvas-stage');
+      const canvas = document.getElementById('canvas');
 
-      // Show canvas after a short delay (simulate asset load)
-      setTimeout(() => {
-        document.getElementById('canvas-container').style.display = 'flex';
-        document.getElementById('loading').style.display = 'none';
+      // Ripple effect on button click
+      playBtn.addEventListener('click', function(e) {
+        // Create ripple
+        const ripple = document.createElement('span');
+        const rect = playBtn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
 
-        // Initialize game canvas
-        const canvas = document.getElementById('canvas');
-        canvas.width = Math.min(window.innerWidth * 0.95, 1024);
-        canvas.height = Math.min(window.innerHeight * 0.7, 768);
+        ripple.classList.add('ripple');
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        this.appendChild(ripple);
 
-        // Optional: focus canvas
-        canvas.focus();
-      }, 800);
+        setTimeout(() => ripple.remove(), 600);
+
+        // Start flow
+        playBtn.disabled = true;
+        playBtn.style.opacity = '0.7';
+        loadingUI.style.display = 'flex';
+
+        // Simulate fuel fill + asset load
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress += Math.random() * 8 + 2;
+          if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            setTimeout(() => {
+              loadingUI.style.display = 'none';
+              canvasStage.style.display = 'block';
+              resizeCanvas();
+              canvas.focus();
+
+              // Optional game init hook
+              if (typeof Module !== 'undefined' && Module.setStatus) {
+                Module.setStatus("🎮 ZyRace Ready!");
+              }
+            }, 400);
+          }
+          fuelLevel.style.width = `${Math.min(progress, 100)}%`;
+        }, 80);
+      });
+
+      function resizeCanvas() {
+        const maxWidth = Math.min(window.innerWidth * 0.95, 1200);
+        const maxHeight = Math.min(window.innerHeight * 0.7, 800);
+        canvas.width = maxWidth * window.devicePixelRatio;
+        canvas.height = maxHeight * window.devicePixelRatio;
+        canvas.style.width = `${maxWidth}px`;
+        canvas.style.height = `${maxHeight}px`;
+      }
+
+      window.addEventListener('resize', resizeCanvas);
     });
   </script>
 </body>
