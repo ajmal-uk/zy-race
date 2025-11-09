@@ -7,12 +7,10 @@ app = Flask(__name__, static_folder='static')
 def home():
     return render_template('index.html')
 
-@app.route('/<path:filename>')
+@app.route('/start-game')
 def static_files(filename):
-    return send_from_directory(app.static_folder, filename)
+    return render_template('game.html')
+
 
 if __name__ == '__main__':
-    os.makedirs('templates', exist_ok=True)
-    os.makedirs('static', exist_ok=True)
-    
     app.run(debug=True, host='0.0.0.0', port=5000)
