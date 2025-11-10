@@ -10,33 +10,33 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Ajmal U K" />
   <link rel="canonical" href="https://zyrace.pythonanywhere.com/" />
-  
+ 
   <!-- Open Graph Tags -->
   <meta property="og:title" content="ZyRace: Monster Truck Physics Adventure - Free Online Game" />
   <meta property="og:description" content="Build monster trucks, solve physics challenges on wild tracks, and race through epic adventures in ZyRace. Instant play!" />
   <meta property="og:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
   <meta property="og:url" content="https://zyrace.pythonanywhere.com/" />
   <meta property="og:type" content="website" />
-  
+ 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@ajmal_uk_" />
   <meta name="twitter:title" content="ZyRace: Monster Truck Racing Game" />
   <meta name="twitter:description" content="Epic monster truck builds, physics puzzles, and high-speed races. Play free now!" />
   <meta name="twitter:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
-  
+ 
   <!-- Favicon & Icons -->
   <link rel="icon" type="image/png" sizes="96x96" href="https://zyrace.pythonanywhere.com/favicon-96x96.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://zyrace.pythonanywhere.com/apple-touch-icon.png" />
-  
+ 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
+ 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  
+ 
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -70,7 +70,7 @@
     }
   }
   </script>
-  
+ 
   <style>
     /* ========= BASE STYLES & VARIABLES ========= */
     * {
@@ -78,7 +78,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+   
     :root {
       --primary: #FF8C00; /* Orange for buttons and accents */
       --primary-dark: #E67E22;
@@ -94,7 +94,7 @@
       --mountain-blue: #4682B4;
       --mountain-dark: #4169E1;
     }
-    
+   
     /* ========= LAYOUT & TYPOGRAPHY ========= */
     body {
       font-family: 'Exo 2', sans-serif;
@@ -108,8 +108,13 @@
       align-items: center;
       line-height: 1.6;
     }
-    
-    /* Enhanced Cloud Animation with Multiple Layers */
+   
+    /* Enhanced 3D Perspective for Body */
+    body {
+      perspective: 1000px;
+    }
+   
+    /* Enhanced Cloud Animation with Multiple Layers and 3D Depth */
     .clouds-layer-1, .clouds-layer-2 {
       position: fixed;
       top: 0;
@@ -118,29 +123,32 @@
       height: 100%;
       z-index: -1;
       pointer-events: none;
+      transform-style: preserve-3d;
     }
-    
+   
     .clouds-layer-1 {
       animation: floatCloudsSlow 60s linear infinite;
+      transform: translateZ(-50px) rotateX(5deg);
     }
-    
+   
     .clouds-layer-2 {
       animation: floatCloudsFast 40s linear infinite reverse;
       opacity: 0.7;
+      transform: translateZ(-100px) rotateX(-3deg);
     }
-    
+   
     @keyframes floatCloudsSlow {
-      0% { transform: translateX(0) translateY(0); }
-      50% { transform: translateX(-25%) translateY(-2%); }
-      100% { transform: translateX(-50%) translateY(0); }
+      0% { transform: translateX(0) translateY(0) translateZ(-50px) rotateX(5deg); }
+      50% { transform: translateX(-25%) translateY(-2%) translateZ(-60px) rotateX(7deg); }
+      100% { transform: translateX(-50%) translateY(0) translateZ(-50px) rotateX(5deg); }
     }
-    
+   
     @keyframes floatCloudsFast {
-      0% { transform: translateX(0) translateY(1%); }
-      50% { transform: translateX(-75%) translateY(3%); }
-      100% { transform: translateX(-100%) translateY(1%); }
+      0% { transform: translateX(0) translateY(1%) translateZ(-100px) rotateX(-3deg); }
+      50% { transform: translateX(-75%) translateY(3%) translateZ(-110px) rotateX(-5deg); }
+      100% { transform: translateX(-100%) translateY(1%) translateZ(-100px) rotateX(-3deg); }
     }
-    
+   
     .container {
       width: 90%;
       max-width: 1200px;
@@ -148,37 +156,39 @@
       padding: 20px;
       position: relative;
       z-index: 10;
+      transform-style: preserve-3d;
     }
-    
+   
     section {
       margin-bottom: 60px;
       opacity: 0;
-      transform: translateY(50px);
-      animation: fadeInUp 0.8s ease forwards;
+      transform: translateY(50px) rotateX(10deg);
+      animation: fadeInUp3D 0.8s ease forwards;
+      transform-style: preserve-3d;
     }
-    
+   
     section:nth-child(1) { animation-delay: 0.2s; }
     section:nth-child(2) { animation-delay: 0.4s; }
     section:nth-child(3) { animation-delay: 0.6s; }
     section:nth-child(4) { animation-delay: 0.8s; }
-    
-    @keyframes fadeInUp {
+   
+    @keyframes fadeInUp3D {
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) rotateX(0deg);
       }
     }
-    
+   
     h1, h2, h3 {
       font-family: 'Orbitron', sans-serif;
     }
-    
+   
     h1 {
       font-weight: 800;
       letter-spacing: 2px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
-    
+   
     h2 {
       font-size: 2.5rem;
       font-weight: 700;
@@ -187,20 +197,20 @@
       color: var(--primary);
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
-    
+   
     h3 {
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--dark-text);
       margin-bottom: 15px;
     }
-    
+   
     p {
       margin: 10px 0;
       color: var(--dark-text);
       font-size: 1.1rem;
     }
-    
+   
     /* ========= HEADER & HERO SECTION ========= */
     .hero {
       min-height: 85vh;
@@ -212,13 +222,14 @@
       padding: 40px 20px;
       position: relative;
       overflow: hidden;
-      background-image: 
+      background-image:
         radial-gradient(ellipse at bottom, var(--green) 0%, transparent 70%),
         linear-gradient(to bottom, transparent 40%, var(--sky-blue) 100%);
       background-size: cover;
+      transform-style: preserve-3d;
     }
-    
-    /* Enhanced Mountain Background */
+   
+    /* Enhanced 3D Mountain Background */
     .hero::before {
       content: '';
       position: absolute;
@@ -226,25 +237,28 @@
       left: 0;
       width: 100%;
       height: 60%;
-      background-image: 
+      background-image:
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234682B4;stop-opacity:1" /><stop offset="100%" style="stop-color:%234169E1;stop-opacity:1" /></linearGradient></defs><path d="M0,400 L200,250 L400,350 L600,200 L800,300 L1000,150 L1200,400 L1200,400 L0,400 Z" fill="url(%23grad)" /><path d="M0,400 L150,300 L350,380 L550,250 L750,320 L950,220 L1200,400 L1200,400 L0,400 Z" fill="%234682B4" opacity="0.8" /><path d="M0,400 L100,350 L300,400 L500,300 L700,370 L900,280 L1200,400 L1200,400 L0,400 Z" fill="%234169E1" opacity="0.6" /></svg>');
       background-size: cover;
       background-position: bottom;
-      animation: mountainWave 10s ease-in-out infinite alternate;
+      animation: mountainWave3D 10s ease-in-out infinite alternate;
       z-index: -1;
+      transform: translateZ(-200px) rotateX(15deg);
     }
-    
-    @keyframes mountainWave {
-      0% { transform: scaleX(1) skewX(0deg); }
-      100% { transform: scaleX(1.05) skewX(2deg); }
+   
+    @keyframes mountainWave3D {
+      0% { transform: translateZ(-200px) rotateX(15deg) scaleX(1) skewX(0deg); }
+      100% { transform: translateZ(-220px) rotateX(20deg) scaleX(1.05) skewX(2deg); }
     }
-    
+   
     .logo-container {
       margin-bottom: 24px;
       position: relative;
       display: inline-block;
+      transform-style: preserve-3d;
+      perspective: 800px;
     }
-    
+   
     .logo {
       font-size: clamp(3rem, 8vw, 6rem);
       background: linear-gradient(90deg, var(--yellow), var(--primary));
@@ -252,10 +266,11 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
-      animation: bounce 2s infinite;
+      animation: bounce3D 2s infinite;
       position: relative;
+      transform-style: preserve-3d;
     }
-    
+   
     .logo::after {
       content: '';
       position: absolute;
@@ -268,7 +283,12 @@
       border-radius: 2px;
       animation: shine 2s infinite;
     }
-    
+   
+    @keyframes bounce3D {
+      0%, 100% { transform: translateY(0) rotateY(0deg) rotateX(0deg); }
+      50% { transform: translateY(-10px) rotateY(5deg) rotateX(2deg); }
+    }
+   
     .tagline {
       font-size: clamp(1.2rem, 3.5vw, 1.6rem);
       margin: 20px 0 30px;
@@ -278,30 +298,14 @@
       position: relative;
       z-index: 2;
       font-weight: 600;
+      transform-style: preserve-3d;
     }
-    
+   
     .tagline span {
       color: var(--primary);
       font-weight: 700;
     }
-    
-    .creator {
-      font-size: 1rem;
-      color: #7F8C8D;
-      margin: 30px 0 40px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .creator strong {
-      color: var(--primary);
-      font-weight: 700;
-    }
-    
+   
     /* ========= GAMEPLAY PREVIEW SECTION ========= */
     .gameplay-section {
       background: rgba(255, 255, 255, 0.9);
@@ -312,8 +316,10 @@
       box-shadow: var(--block-shadow);
       position: relative;
       overflow: hidden;
+      transform-style: preserve-3d;
+      perspective: 1000px;
     }
-    
+   
     .section-title {
       font-size: 2.2rem;
       text-align: center;
@@ -321,8 +327,9 @@
       color: var(--primary);
       position: relative;
       display: inline-block;
+      transform-style: preserve-3d;
     }
-    
+   
     .section-title::after {
       content: '';
       position: absolute;
@@ -334,14 +341,14 @@
       border-radius: 3px;
       animation: shine 2s infinite;
     }
-    
+   
     .gameplay-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       margin-top: 30px;
     }
-    
+   
     .gameplay-card {
       background: rgba(135, 206, 235, 0.7);
       border-radius: 15px;
@@ -352,8 +359,10 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      transform-style: preserve-3d;
+      perspective: 800px;
     }
-    
+   
     .gameplay-card::before {
       content: '';
       position: absolute;
@@ -366,20 +375,20 @@
       transition: var(--transition);
       z-index: 0;
     }
-    
+   
     .gameplay-card:hover {
-      transform: translateY(-10px) rotate(1deg);
+      transform: translateY(-10px) rotateY(10deg) rotateX(5deg);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-    
+   
     .gameplay-card:hover::before {
       opacity: 1;
     }
-    
+   
     .gameplay-card:active {
-      transform: scale(0.98);
+      transform: scale(0.98) rotateY(0deg);
     }
-    
+   
     .card-icon {
       font-size: 3rem;
       margin-bottom: 20px;
@@ -387,12 +396,13 @@
       position: relative;
       z-index: 1;
       transition: var(--transition);
+      transform-style: preserve-3d;
     }
-    
+   
     .gameplay-card:hover .card-icon {
-      transform: scale(1.1) rotate(360deg);
+      transform: scale(1.1) rotateY(360deg) rotateX(180deg);
     }
-    
+   
     .card-title {
       font-size: 1.5rem;
       margin-bottom: 15px;
@@ -400,13 +410,13 @@
       position: relative;
       z-index: 1;
     }
-    
+   
     .card-desc {
       color: var(--dark-text);
       position: relative;
       z-index: 1;
     }
-    
+   
     /* ========= CTA BUTTONS ========= */
     .cta-container {
       display: flex;
@@ -415,14 +425,14 @@
       gap: 25px;
       margin: 50px 0;
     }
-    
+   
     .main-cta {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
       justify-content: center;
     }
-    
+   
     .play-btn {
       position: relative;
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -444,13 +454,15 @@
       gap: 12px;
       min-width: 280px;
       text-decoration: none;
+      transform-style: preserve-3d;
+      perspective: 600px;
     }
-    
+   
     .play-btn i {
       font-size: 1.4em;
       animation: bounce 1.5s infinite;
     }
-    
+   
     .play-btn::before {
       content: '';
       position: absolute;
@@ -462,20 +474,20 @@
       transition: 0.8s;
       z-index: 1;
     }
-    
+   
     .play-btn:hover::before {
       left: 100%;
     }
-    
+   
     .play-btn:hover {
-      transform: translateY(-5px) scale(1.05);
+      transform: translateY(-5px) scale(1.05) rotateY(8deg) rotateX(3deg);
       box-shadow: 0 10px 20px rgba(255, 140, 0, 0.4);
     }
-    
+   
     .play-btn:active {
-      transform: translateY(0) scale(0.98);
+      transform: translateY(0) scale(0.98) rotateY(0deg);
     }
-    
+   
     .secondary-btn {
       background: var(--white);
       color: var(--primary);
@@ -491,27 +503,28 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      transform-style: preserve-3d;
     }
-    
+   
     .secondary-btn:hover {
       background: var(--primary);
       color: var(--white);
-      transform: scale(1.05) rotate(5deg);
+      transform: scale(1.05) rotate(5deg) rotateY(5deg);
       box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
     }
-    
+   
     .how-to-play {
       text-align: center;
       color: #7F8C8D;
       font-size: 1.1rem;
       max-width: 600px;
     }
-    
+   
     .how-to-play span {
       color: var(--primary);
       font-weight: 600;
     }
-    
+   
     /* ========= FEATURES SECTION ========= */
     .features-grid {
       display: grid;
@@ -519,7 +532,7 @@
       gap: 25px;
       margin-top: 30px;
     }
-    
+   
     .feature-card {
       background: rgba(255, 255, 255, 0.9);
       border-radius: 15px;
@@ -530,8 +543,10 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      transform-style: preserve-3d;
+      perspective: 800px;
     }
-    
+   
     .feature-card::before {
       content: '';
       position: absolute;
@@ -544,20 +559,20 @@
       transform-origin: left;
       transition: transform 0.5s ease;
     }
-    
+   
     .feature-card:hover {
-      transform: translateY(-8px) rotate(-2deg);
+      transform: translateY(-8px) rotateY(-8deg) rotateX(-5deg);
       box-shadow: var(--block-shadow);
     }
-    
+   
     .feature-card:hover::before {
       transform: scaleX(1);
     }
-    
+   
     .feature-card:active {
-      transform: scale(0.98);
+      transform: scale(0.98) rotateY(0deg);
     }
-    
+   
     .feature-icon {
       font-size: 2.5rem;
       margin-bottom: 18px;
@@ -565,24 +580,25 @@
       position: relative;
       z-index: 1;
       transition: var(--transition);
+      transform-style: preserve-3d;
     }
-    
+   
     .feature-card:hover .feature-icon {
-      transform: scale(1.2) rotate(180deg);
+      transform: scale(1.2) rotateY(180deg) rotateX(360deg);
     }
-    
+   
     .feature-title {
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 12px;
       color: var(--dark-text);
     }
-    
+   
     .feature-desc {
       color: #7F8C8D;
       font-size: 1rem;
     }
-    
+   
     /* ========= FAQ SECTION ========= */
     .faq-section {
       background: rgba(255, 255, 255, 0.9);
@@ -591,20 +607,21 @@
       margin: 50px 0;
       border: 3px solid var(--primary);
       box-shadow: var(--block-shadow);
+      transform-style: preserve-3d;
     }
-    
+   
     .faq-item {
       margin-bottom: 25px;
       border-bottom: 1px solid #E0E0E0;
       padding-bottom: 20px;
     }
-    
+   
     .faq-item:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
-    
+   
     .faq-question {
       font-size: 1.2rem;
       font-weight: 600;
@@ -617,14 +634,15 @@
       padding: 10px;
       border-radius: 8px;
       background: rgba(255, 140, 0, 0.1);
+      transform-style: preserve-3d;
     }
-    
+   
     .faq-question:hover {
       color: var(--primary);
       background: rgba(255, 140, 0, 0.2);
-      transform: scale(1.02);
+      transform: scale(1.02) rotateY(5deg);
     }
-    
+   
     .faq-answer {
       color: #7F8C8D;
       margin-top: 15px;
@@ -633,17 +651,18 @@
       padding: 10px;
       background: rgba(135, 206, 235, 0.3);
       border-radius: 8px;
+      transform: translateZ(20px);
     }
-    
+   
     .faq-answer.show {
       display: block;
     }
-    
+   
     @keyframes fadeIn {
-      from { opacity: 0; max-height: 0; }
-      to { opacity: 1; max-height: 200px; }
+      from { opacity: 0; max-height: 0; transform: translateZ(0px) rotateX(90deg); }
+      to { opacity: 1; max-height: 200px; transform: translateZ(20px) rotateX(0deg); }
     }
-    
+   
     /* ========= LOADING UI ========= */
     .loading-ui {
       display: none;
@@ -652,8 +671,9 @@
       gap: 30px;
       margin: 40px 0;
       width: 100%;
+      transform-style: preserve-3d;
     }
-    
+   
     .loading-container {
       background: rgba(255, 255, 255, 0.9);
       border-radius: 20px;
@@ -663,21 +683,23 @@
       max-width: 600px;
       box-shadow: var(--block-shadow);
       border: 3px solid var(--primary);
-      animation: pulse 2s infinite;
+      animation: pulse3D 2s infinite;
+      transform-style: preserve-3d;
     }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.02); }
+   
+    @keyframes pulse3D {
+      0%, 100% { transform: scale(1) rotateY(0deg); }
+      50% { transform: scale(1.02) rotateY(2deg); }
     }
-    
+   
     .fuel-gauge-container {
       width: 100%;
       max-width: 400px;
       margin: 20px auto;
       position: relative;
+      transform-style: preserve-3d;
     }
-    
+   
     .fuel-gauge {
       width: 100%;
       height: 30px;
@@ -688,7 +710,7 @@
       border: 2px solid var(--primary);
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    
+   
     .fuel-level {
       height: 100%;
       width: 0%;
@@ -697,8 +719,9 @@
       transition: width 0.5s ease;
       position: relative;
       overflow: hidden;
+      transform-style: preserve-3d;
     }
-    
+   
     .fuel-level::after {
       content: '';
       position: absolute;
@@ -709,46 +732,52 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
       animation: shine 2s infinite;
     }
-    
+   
     .loading-text {
       font-size: 1.3rem;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 10px;
     }
-    
+   
     .loading-subtext {
       color: #7F8C8D;
       font-size: 1rem;
     }
-    
+   
     .loading-steps {
       display: flex;
       justify-content: space-around;
       margin-top: 20px;
       font-size: 0.95rem;
     }
-    
+   
     .loading-step {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      animation: bounce 1s infinite alternate;
+      animation: bounce3D 1s infinite alternate;
+      transform-style: preserve-3d;
     }
-    
+   
     .loading-step:nth-child(2) { animation-delay: 0.2s; }
     .loading-step:nth-child(3) { animation-delay: 0.4s; }
-    
+   
+    @keyframes bounce3D {
+      0%, 100% { transform: translateY(0) rotateX(0deg); }
+      50% { transform: translateY(-5px) rotateX(10deg); }
+    }
+   
     .step-icon {
       font-size: 1.5rem;
       color: var(--primary);
     }
-    
+   
     .step-text {
       color: #7F8C8D;
     }
-    
+   
     /* ========= CANVAS STAGE ========= */
     .canvas-stage {
       display: none;
@@ -761,16 +790,18 @@
       background: #FFFFFF;
       position: relative;
       border: 3px solid var(--primary);
-      animation: fadeInUp 1s ease;
+      animation: fadeInUp3D 1s ease;
+      transform-style: preserve-3d;
     }
-    
+   
     canvas {
       display: block;
       width: 100%;
       height: auto;
       max-height: 80vh;
+      transform-style: preserve-3d;
     }
-    
+   
     /* ========= FOOTER ========= */
     footer {
       width: 100%;
@@ -779,13 +810,14 @@
       margin-top: auto;
       border-top: 3px solid var(--primary);
       text-align: center;
+      transform-style: preserve-3d;
     }
-    
+   
     .footer-content {
       max-width: 800px;
       margin: 0 auto;
     }
-    
+   
     .footer-logo {
       font-family: 'Fredoka One', cursive;
       font-size: 2rem;
@@ -794,16 +826,16 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: bounce 3s infinite;
+      animation: bounce3D 3s infinite;
     }
-    
+   
     .socials {
       display: flex;
       justify-content: center;
       gap: 25px;
       margin: 30px 0;
     }
-    
+   
     .social-link {
       width: 60px;
       height: 60px;
@@ -818,139 +850,135 @@
       transition: var(--transition);
       border: 2px solid var(--primary);
       box-shadow: var(--light-shadow);
+      transform-style: preserve-3d;
     }
-    
+   
     .social-link:hover {
       background: var(--primary);
       color: var(--white);
-      transform: translateY(-5px) scale(1.1) rotate(360deg);
+      transform: translateY(-5px) scale(1.1) rotateY(180deg) rotateX(360deg);
       box-shadow: 0 8px 16px rgba(255, 140, 0, 0.3);
     }
-    
+   
     .copyright {
       color: #7F8C8D;
       font-size: 0.95rem;
       margin-top: 20px;
     }
-    
+   
     .copyright a {
       color: var(--primary);
       text-decoration: none;
       transition: var(--transition);
     }
-    
+   
     .copyright a:hover {
       text-decoration: underline;
     }
-    
+   
     /* ========= ANIMATIONS ========= */
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    
     @keyframes shine {
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
     }
-    
+   
     /* ========= RESPONSIVE DESIGN ========= */
     @media (max-width: 900px) {
       .main-cta {
         flex-direction: column;
         align-items: center;
       }
-      
+     
       .play-btn {
         width: 100%;
         max-width: 350px;
       }
     }
-    
+   
     @media (max-width: 768px) {
       .logo {
         font-size: 4.5rem;
       }
-      
+     
       .hero {
         min-height: auto;
         padding: 30px 15px;
       }
-      
+     
       .gameplay-card {
         min-height: 280px;
       }
-      
+     
       .section-title {
         font-size: 1.8rem;
       }
-      
+     
       h2 {
         font-size: 2rem;
       }
-      
+     
       .loading-steps {
         flex-direction: column;
         gap: 15px;
       }
     }
-    
+   
     @media (max-width: 600px) {
       .logo {
         font-size: 3.8rem;
       }
-      
+     
       .tagline {
         font-size: 1.3rem;
       }
-      
+     
       .play-btn {
         padding: 16px 30px;
         font-size: 1.2rem;
       }
-      
+     
       .feature-icon {
         font-size: 2rem;
       }
-      
+     
       .social-link {
         width: 50px;
         height: 50px;
         font-size: 1.5rem;
       }
-      
+     
       section {
         margin-bottom: 40px;
       }
-      
+     
       .faq-section {
         padding: 30px 20px;
       }
     }
-    
+   
     @media (max-width: 480px) {
       .logo {
         font-size: 3.2rem;
       }
-      
+     
       .tagline {
         font-size: 1.15rem;
       }
-      
+     
       .container {
         width: 95%;
         padding: 10px;
       }
-      
+     
       .gameplay-card, .feature-card {
         padding: 20px 15px;
       }
-      
+     
       .play-btn {
         padding: 14px 25px;
         font-size: 1.1rem;
       }
-      
+     
       .section-title {
         font-size: 1.5rem;
       }
@@ -958,10 +986,10 @@
   </style>
 </head>
 <body>
-  <!-- Enhanced Clouds Layers -->
+  <!-- Enhanced Clouds Layers with 3D Depth -->
   <div class="clouds-layer-1" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;50&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;70&quot; cy=&quot;35&quot; r=&quot;20&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;90&quot; cy=&quot;45&quot; r=&quot;18&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;150&quot; cy=&quot;30&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.8&quot;/><circle cx=&quot;170&quot; cy=&quot;25&quot; r=&quot;16&quot; fill=&quot;white&quot; opacity=&quot;0.8&quot;/></svg>'); background-repeat: repeat-x; background-size: 300px 100px;"></div>
   <div class="clouds-layer-2" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;30&quot; cy=&quot;50&quot; r=&quot;10&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;14&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;70&quot; cy=&quot;55&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;130&quot; cy=&quot;40&quot; r=&quot;8&quot; fill=&quot;white&quot; opacity=&quot;0.6&quot;/><circle cx=&quot;150&quot; cy=&quot;35&quot; r=&quot;11&quot; fill=&quot;white&quot; opacity=&quot;0.6&quot;/></svg>'); background-repeat: repeat-x; background-size: 400px 80px; top: 20%;"></div>
-  
+ 
   <!-- Main Content -->
   <div class="container">
     <!-- Hero Section -->
@@ -970,13 +998,10 @@
         <h1 class="logo">Zy<span style="color:var(--yellow);">Race</span></h1>
       </div>
       <p class="tagline">Buckle up for <span>ZyRace</span>, the ultimate free online monster truck adventure! Build rugged vehicles, smash physics puzzles on wild bridges and tracks, and race through mountains, rivers, and chaos. Adventure awaits!</p>
-      <p class="creator">
-        <i class="fas fa-truck-monster" style="color: var(--primary);"></i>
-        Built with <span style="color: #E74C3C; margin: 0 4px;">🚀</span> by <strong>Ajmal U K</strong>
-      </p>
-      
+     
       <!-- CTA Buttons -->
       <div class="cta-container">
+        <p class="how-to-play">No downloads or sign-ups – just grab your truck and <span>conquer the tracks!</span></p>
         <div class="main-cta">
           <a href="#canvas-stage" id="play-btn" class="play-btn">
             <i class="fas fa-play"></i> START ADVENTURE
@@ -985,10 +1010,10 @@
             <i class="fas fa-question"></i> HOW TO PLAY
           </button>
         </div>
-        <p class="how-to-play">No downloads or sign-ups – just grab your truck and <span>conquer the tracks!</span></p>
+        
       </div>
     </section>
-    
+   
     <!-- Gameplay Preview Section -->
     <section class="gameplay-section">
       <h2 class="section-title">Your Epic ZyRace Journey: Build, Smash, Race!</h2>
@@ -1016,7 +1041,7 @@
         </div>
       </div>
     </section>
-    
+   
     <!-- Features Section -->
     <section>
       <h2 class="section-title">Why ZyRace is the Best Free Monster Truck Game</h2>
@@ -1051,7 +1076,6 @@
         </div>
       </div>
     </section>
-
     <!-- FAQ Section -->
     <section class="faq-section">
       <h2 class="section-title">ZyRace FAQ: Get Rolling!</h2>
@@ -1101,7 +1125,7 @@
         </div>
       </div>
     </section>
-    
+   
     <!-- Loading UI -->
     <div class="loading-ui" id="loading-ui">
       <div class="loading-container">
@@ -1128,13 +1152,13 @@
         </div>
       </div>
     </div>
-    
-    <!-- Canvas Stage -->
+   
+    <!-- Canvas Stage (No embedded 3D car preview; game loads dynamically) -->
     <div class="canvas-stage" id="canvas-stage">
       <canvas id="canvas" tabindex="0" aria-label="ZyRace Game Canvas - Build monster trucks and race on epic tracks"></canvas>
     </div>
   </div>
-  
+ 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
@@ -1159,29 +1183,29 @@
       <p class="copyright">© 2025 ZyRace · Made in Kerala 🇮🇳 · All Rights Reserved · <a href="#privacy" style="color: var(--primary);">Privacy</a></p>
     </div>
   </footer>
-
   <script>
     // Global FAQ Toggle Function
     function toggleFAQ(element) {
       const answer = element.nextElementSibling;
       const icon = element.querySelector('i');
       answer.classList.toggle('show');
-      icon.style.transform = answer.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+      icon.style.transform = answer.classList.contains('show') ? 'rotate(180deg) rotateX(180deg)' : 'rotate(0deg)';
     }
-    
+   
     document.addEventListener('DOMContentLoaded', () => {
       // Set up event listeners
       setupEventListeners();
-      
-      // Enhanced Parallax effect on scroll
+     
+      // Enhanced 3D Parallax effect on mouse move and scroll
+      document.addEventListener('mousemove', mouseParallax);
       window.addEventListener('scroll', parallaxEffect);
-      
+     
       // Intersection Observer for section animations
       const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
       };
-      
+     
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -1189,12 +1213,12 @@
           }
         });
       }, observerOptions);
-      
+     
       document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
       });
     });
-    
+   
     function setupEventListeners() {
       const playBtn = document.getElementById('play-btn');
       const howToBtn = document.getElementById('how-to-btn');
@@ -1202,16 +1226,16 @@
       const fuelLevel = document.getElementById('fuel-level');
       const canvasStage = document.getElementById('canvas-stage');
       const canvas = document.getElementById('canvas');
-      
+     
       // Play button click handler
       playBtn.addEventListener('click', function(e) {
         e.preventDefault();
         createRippleEffect(e, this);
-        
+       
         // Start flow
         playBtn.style.opacity = '0.7';
         loadingUI.style.display = 'flex';
-        
+       
         // Simulate loading progress
         let progress = 0;
         const loadingInterval = setInterval(() => {
@@ -1219,13 +1243,13 @@
           if (progress >= 100) {
             progress = 100;
             clearInterval(loadingInterval);
-            
+           
             setTimeout(() => {
               loadingUI.style.display = 'none';
               canvasStage.style.display = 'block';
               resizeCanvas();
               canvas.focus();
-              
+             
               // Simulate game initialization
               setTimeout(() => {
                 if (typeof Module !== 'undefined' && Module.setStatus) {
@@ -1238,101 +1262,107 @@
           fuelLevel.style.width = `${Math.min(progress, 100)}%`;
         }, 70);
       });
-      
+     
       // How to play button
       howToBtn.addEventListener('click', function(e) {
         createRippleEffect(e, this);
-        
+       
         const instructions = `
           🛻 ZYRACE HOW-TO: MONSTER TRUCK ADVENTURE GUIDE 🛻
-
           1. BUILD: Drag wheels, cabins, and boosters to craft your truck in the garage.
-
           2. TEST: Launch a quick sim to check physics – jumps, crashes, and splashes!
-
           3. TWEAK: Adjust for balance and power to handle bridges and hills.
-
           4. RACE: Hit the track, avoid pitfalls, and roar to the finish!
-
           💥 TIP: Big tires for rough terrain, rockets for speed boosts. Experiment and conquer!
-
           Rev your engines – adventure starts now!
         `;
         alert(instructions);
       });
     }
-    
+   
+    // Enhanced Mouse Parallax for 3D Tilt
+    function mouseParallax(e) {
+      const { clientX, clientY } = e;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const rotateX = (clientY - centerY) / 20;
+      const rotateY = (clientX - centerX) / 20;
+      
+      document.querySelector('.hero').style.transform = `translateZ(0px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      document.querySelector('.logo-container').style.transform = `rotateX(${-rotateX / 2}deg) rotateY(${-rotateY / 2}deg)`;
+    }
+   
     function createRippleEffect(e, element) {
       const rect = element.getBoundingClientRect();
       const size = Math.max(rect.width, rect.height);
       const x = e.clientX - rect.left - size / 2;
       const y = e.clientY - rect.top - size / 2;
-      
+     
       const ripple = document.createElement('span');
       ripple.style.cssText = `
         position: absolute;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: rippleAnim 0.6s linear;
+        transform: scale(0) translateZ(10px);
+        animation: rippleAnim3D 0.6s linear;
         width: ${size}px;
         height: ${size}px;
         left: ${x}px;
         top: ${y}px;
         pointer-events: none;
       `;
-      
+     
       element.style.position = 'relative';
       element.appendChild(ripple);
-      
+     
       setTimeout(() => {
         ripple.remove();
       }, 600);
     }
-    
-    // Add ripple animation
+   
+    // Add ripple animation with 3D
     const style = document.createElement('style');
     style.textContent = `
-      @keyframes rippleAnim {
+      @keyframes rippleAnim3D {
         to {
-          transform: scale(4);
+          transform: scale(4) translateZ(20px) rotateY(180deg);
           opacity: 0;
         }
       }
     `;
     document.head.appendChild(style);
-    
+   
     function resizeCanvas() {
       const canvas = document.getElementById('canvas');
       if (!canvas) return;
-      
+     
       const maxWidth = Math.min(window.innerWidth * 0.95, 1200);
       const maxHeight = Math.min(window.innerHeight * 0.7, 800);
-      
+     
       canvas.width = maxWidth * window.devicePixelRatio;
       canvas.height = maxHeight * window.devicePixelRatio;
-      
+     
       canvas.style.width = `${maxWidth}px`;
       canvas.style.height = `${maxHeight}px`;
     }
-    
+   
     function parallaxEffect() {
       const scrollPosition = window.pageYOffset;
-      
-      // Enhanced Parallax for hero and clouds
+     
+      // Enhanced 3D Parallax for hero and clouds
       const hero = document.querySelector('.hero');
       if (hero) {
-        hero.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+        hero.style.transform = `translateY(${scrollPosition * 0.5}px) rotateX(${scrollPosition * 0.01}deg)`;
       }
-      
-      // Adjust cloud speed based on scroll
-      document.querySelector('.clouds-layer-1').style.transform = `translateX(${scrollPosition * -0.1}px)`;
-      document.querySelector('.clouds-layer-2').style.transform = `translateX(${scrollPosition * 0.05}px)`;
+     
+      // Adjust cloud speed based on scroll with 3D
+      document.querySelector('.clouds-layer-1').style.transform = `translateX(${scrollPosition * -0.1}px) translateZ(-50px)`;
+      document.querySelector('.clouds-layer-2').style.transform = `translateX(${scrollPosition * 0.05}px) translateZ(-100px)`;
     }
-    
+   
     // Resize canvas on window resize
     window.addEventListener('resize', resizeCanvas);
-    
+   
     // Preload critical images
     function preloadImages() {
       const images = [
@@ -1340,19 +1370,19 @@
         'https://zyrace.pythonanywhere.com/apple-touch-icon.png',
         'https://zyrace.pythonanywhere.com/og-image.jpg'
       ];
-      
+     
       images.forEach(src => {
         const img = new Image();
         img.src = src;
       });
     }
-    
+   
     // Initialize
     window.addEventListener('load', () => {
       preloadImages();
     });
   </script>
-  
+ 
   <!-- Game Scripts (deferred for performance) -->
   <script defer src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js"></script>
   <script defer src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js"></script>
