@@ -11,33 +11,27 @@
   <meta name="author" content="Ajmal U K" />
   <link rel="canonical" href="https://zyrace.pythonanywhere.com/" />
  
-  <!-- Open Graph Tags -->
   <meta property="og:title" content="ZyRace: Monster Truck Physics Adventure - Free Online Game" />
   <meta property="og:description" content="Build monster trucks, solve physics challenges on wild tracks, and race through epic adventures in ZyRace. Instant play!" />
   <meta property="og:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
   <meta property="og:url" content="https://zyrace.pythonanywhere.com/" />
   <meta property="og:type" content="website" />
  
-  <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@ajmal_uk_" />
   <meta name="twitter:title" content="ZyRace: Monster Truck Racing Game" />
   <meta name="twitter:description" content="Epic monster truck builds, physics puzzles, and high-speed races. Play free now!" />
   <meta name="twitter:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
  
-  <!-- Favicon & Icons -->
   <link rel="icon" type="image/png" sizes="96x96" href="https://zyrace.pythonanywhere.com/favicon-96x96.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://zyrace.pythonanywhere.com/apple-touch-icon.png" />
  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
  
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
  
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -93,6 +87,11 @@
       --block-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       --mountain-blue: #4682B4;
       --mountain-dark: #4169E1;
+      --header-height: 70px; /* New variable for navbar height */
+    }
+   
+    html {
+      scroll-behavior: smooth;
     }
    
     /* ========= LAYOUT & TYPOGRAPHY ========= */
@@ -103,10 +102,8 @@
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       line-height: 1.6;
+      /* Removed flex properties from body */
     }
    
     /* Enhanced 3D Perspective for Body */
@@ -153,10 +150,15 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 20px; /* Changed padding to horizontal only */
       position: relative;
       z-index: 10;
       transform-style: preserve-3d;
+    }
+   
+    /* Main container for content below hero */
+    main.container {
+      padding: 20px; /* Restore vertical padding for main content area */
     }
    
     section {
@@ -166,11 +168,16 @@
       animation: fadeInUp3D 0.8s ease forwards;
       transform-style: preserve-3d;
     }
+    
+    /* NEW: Apply scroll padding ONLY to sections with an ID for anchors */
+    section[id] {
+      padding-top: var(--header-height);
+    }
    
-    section:nth-child(1) { animation-delay: 0.2s; }
-    section:nth-child(2) { animation-delay: 0.4s; }
-    section:nth-child(3) { animation-delay: 0.6s; }
-    section:nth-child(4) { animation-delay: 0.8s; }
+    section:nth-child(1) { animation-delay: 0.2s; } /* Hero */
+    section:nth-child(2) { animation-delay: 0.4s; } /* Gameplay */
+    section:nth-child(3) { animation-delay: 0.6s; } /* Features */
+    section:nth-child(4) { animation-delay: 0.8s; } /* FAQ */
    
     @keyframes fadeInUp3D {
       to {
@@ -210,16 +217,126 @@
       color: var(--dark-text);
       font-size: 1.1rem;
     }
+
+    /* ========= HEADER & NAVBAR STYLES ========= */
+    .main-header {
+      width: 100%;
+      height: var(--header-height);
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      /* Container class handles padding */
+    }
+
+    .nav-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(90deg, var(--yellow), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
+      transition: var(--transition);
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-links li {
+      padding: 5px 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark-text);
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .nav-play-btn {
+      background: var(--primary);
+      color: var(--white) !important;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-family: 'Fredoka One', cursive;
+      box-shadow: 0 4px 8px rgba(255, 140, 0, 0.3);
+    }
+    
+    .nav-play-btn:hover {
+      background: var(--primary-dark);
+      color: var(--white) !important;
+      transform: translateY(-2px);
+    }
+    .nav-play-btn::after {
+      display: none; /* No underline for button */
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--dark-text);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
    
-    /* ========= HEADER & HERO SECTION ========= */
+    /* ========= HERO SECTION (Full-width) ========= */
     .hero {
-      min-height: 85vh;
+      min-height: calc(100vh - var(--header-height)); /* Full height minus nav */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px 0; /* Vertical padding, horizontal handled by inner container */
       position: relative;
       overflow: hidden;
       background-image:
@@ -227,6 +344,8 @@
         linear-gradient(to bottom, transparent 40%, var(--sky-blue) 100%);
       background-size: cover;
       transform-style: preserve-3d;
+      margin-bottom: 60px; /* Keep original margin */
+      padding-top: 0; /* OVERRIDE: Hero handles its own height */
     }
    
     /* Enhanced 3D Mountain Background */
@@ -257,6 +376,7 @@
       display: inline-block;
       transform-style: preserve-3d;
       perspective: 800px;
+      transition: transform 0.1s ease-out; /* For mouse parallax */
     }
    
     .logo {
@@ -377,7 +497,7 @@
     }
    
     .gameplay-card:hover {
-      transform: translateY(-10px) rotateY(10deg) rotateX(5deg);
+      transform: translateY(-10px) rotateY(8deg) rotateX(4deg); /* Subtle 3D tilt */
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
    
@@ -400,7 +520,7 @@
     }
    
     .gameplay-card:hover .card-icon {
-      transform: scale(1.1) rotateY(360deg) rotateX(180deg);
+      transform: scale(1.1) rotateY(360deg); /* Simplified rotation */
     }
    
     .card-title {
@@ -424,6 +544,7 @@
       align-items: center;
       gap: 25px;
       margin: 50px 0;
+      transition: transform 0.1s ease-out; /* For mouse parallax */
     }
    
     .main-cta {
@@ -480,7 +601,7 @@
     }
    
     .play-btn:hover {
-      transform: translateY(-5px) scale(1.05) rotateY(8deg) rotateX(3deg);
+      transform: translateY(-5px) scale(1.05) rotateY(5deg) rotateX(2deg); /* Subtle 3D tilt */
       box-shadow: 0 10px 20px rgba(255, 140, 0, 0.4);
     }
    
@@ -509,7 +630,7 @@
     .secondary-btn:hover {
       background: var(--primary);
       color: var(--white);
-      transform: scale(1.05) rotate(5deg) rotateY(5deg);
+      transform: scale(1.05) rotate(3deg) rotateY(3deg); /* Subtle 3D tilt */
       box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
     }
    
@@ -561,7 +682,7 @@
     }
    
     .feature-card:hover {
-      transform: translateY(-8px) rotateY(-8deg) rotateX(-5deg);
+      transform: translateY(-8px) rotateY(-5deg) rotateX(-3deg); /* Subtle 3D tilt */
       box-shadow: var(--block-shadow);
     }
    
@@ -584,7 +705,7 @@
     }
    
     .feature-card:hover .feature-icon {
-      transform: scale(1.2) rotateY(180deg) rotateX(360deg);
+      transform: scale(1.2) rotateY(360deg); /* Simplified rotation */
     }
    
     .feature-title {
@@ -640,7 +761,12 @@
     .faq-question:hover {
       color: var(--primary);
       background: rgba(255, 140, 0, 0.2);
-      transform: scale(1.02) rotateY(5deg);
+      transform: scale(1.02) rotateY(3deg); /* Subtle 3D tilt */
+    }
+
+    .faq-question .faq-icon {
+      transition: var(--transition);
+      transform-style: preserve-3d;
     }
    
     .faq-answer {
@@ -856,7 +982,7 @@
     .social-link:hover {
       background: var(--primary);
       color: var(--white);
-      transform: translateY(-5px) scale(1.1) rotateY(180deg) rotateX(360deg);
+      transform: translateY(-5px) scale(1.1) rotateY(360deg); /* Simplified 3D rotation */
       box-shadow: 0 8px 16px rgba(255, 140, 0, 0.3);
     }
    
@@ -874,6 +1000,103 @@
    
     .copyright a:hover {
       text-decoration: underline;
+    }
+
+    /* ========= MODAL STYLES ========= */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none; /* Hidden by default */
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: var(--white);
+      padding: 30px 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      border: 3px solid var(--primary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      transform: scale(0.9) rotateX(10deg);
+      opacity: 0;
+      animation: modalOpen 0.4s ease forwards;
+    }
+    .modal-overlay.show .modal-content {
+      opacity: 1;
+    }
+
+    @keyframes modalOpen {
+      to {
+        opacity: 1;
+        transform: scale(1) rotateX(0deg);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      color: #aaa;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .modal-close:hover {
+      color: var(--primary);
+      transform: rotate(90deg);
+    }
+
+    .modal-title {
+      font-family: 'Fredoka One', cursive;
+      color: var(--primary);
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .modal-steps {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+    .modal-steps li {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .modal-steps li span {
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-right: 8px;
+    }
+    .modal-tip {
+      font-size: 1.1rem;
+      text-align: center;
+      background: rgba(255, 140, 0, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .modal-tip span {
+      font-weight: 700;
+      color: var(--primary);
     }
    
     /* ========= ANIMATIONS ========= */
@@ -893,6 +1116,36 @@
         width: 100%;
         max-width: 350px;
       }
+
+      /* Navbar Mobile */
+      .nav-links {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        transform: translateY(-110%);
+        transition: transform 0.4s ease-in-out;
+      }
+      .nav-links.active {
+        transform: translateY(0);
+      }
+      .nav-links a {
+        font-size: 1.5rem;
+      }
+      .nav-play-btn {
+        padding: 12px 30px;
+        font-size: 1.5rem;
+      }
+      .menu-toggle {
+        display: block;
+      }
     }
    
     @media (max-width: 768px) {
@@ -902,11 +1155,11 @@
      
       .hero {
         min-height: auto;
-        padding: 30px 15px;
+        padding-bottom: 40px; /* Ensure space on mobile */
       }
      
       .gameplay-card {
-        min-height: 280px;
+        min-height: auto;
       }
      
       .section-title {
@@ -954,6 +1207,13 @@
       .faq-section {
         padding: 30px 20px;
       }
+
+      .modal-content {
+        padding: 25px 20px;
+      }
+      .modal-title {
+        font-size: 1.5rem;
+      }
     }
    
     @media (max-width: 480px) {
@@ -966,8 +1226,14 @@
       }
      
       .container {
-        width: 95%;
+        width: 100%;
+        padding: 0 10px; /* Edge-to-edge feel */
+      }
+      main.container {
         padding: 10px;
+      }
+      .navbar {
+        padding: 0 15px;
       }
      
       .gameplay-card, .feature-card {
@@ -986,20 +1252,29 @@
   </style>
 </head>
 <body>
-  <!-- Enhanced Clouds Layers with 3D Depth -->
   <div class="clouds-layer-1" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;50&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;70&quot; cy=&quot;35&quot; r=&quot;20&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;90&quot; cy=&quot;45&quot; r=&quot;18&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;150&quot; cy=&quot;30&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.8&quot;/><circle cx=&quot;170&quot; cy=&quot;25&quot; r=&quot;16&quot; fill=&quot;white&quot; opacity=&quot;0.8&quot;/></svg>'); background-repeat: repeat-x; background-size: 300px 100px;"></div>
   <div class="clouds-layer-2" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;30&quot; cy=&quot;50&quot; r=&quot;10&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;14&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;70&quot; cy=&quot;55&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;130&quot; cy=&quot;40&quot; r=&quot;8&quot; fill=&quot;white&quot; opacity=&quot;0.6&quot;/><circle cx=&quot;150&quot; cy=&quot;35&quot; r=&quot;11&quot; fill=&quot;white&quot; opacity=&quot;0.6&quot;/></svg>'); background-repeat: repeat-x; background-size: 400px 80px; top: 20%;"></div>
  
-  <!-- Main Content -->
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="logo-container">
+  <header class="main-header">
+    <nav class="navbar container">
+      <a href="#" class="nav-logo">Zy<span style="color:var(--yellow);">Race</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features" class="nav-link-item">Features</a></li>
+        <li><a href="#faq" class="nav-link-item">FAQ</a></li>
+        <li><a href="#play-btn" class="nav-play-btn nav-link-item">Play Now</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="container"> <div class="logo-container">
         <h1 class="logo">Zy<span style="color:var(--yellow);">Race</span></h1>
       </div>
       <p class="tagline">Buckle up for <span>ZyRace</span>, the ultimate free online monster truck adventure! Build rugged vehicles, smash physics puzzles on wild bridges and tracks, and race through mountains, rivers, and chaos. Adventure awaits!</p>
      
-      <!-- CTA Buttons -->
       <div class="cta-container">
         <p class="how-to-play">No downloads or sign-ups – just grab your truck and <span>conquer the tracks!</span></p>
         <div class="main-cta">
@@ -1010,12 +1285,13 @@
             <i class="fas fa-question"></i> HOW TO PLAY
           </button>
         </div>
-        
       </div>
-    </section>
+    </div>
+  </section>
+ 
+  <main class="container">
    
-    <!-- Gameplay Preview Section -->
-    <section class="gameplay-section">
+    <section class="gameplay-section" id="gameplay">
       <h2 class="section-title">Your Epic ZyRace Journey: Build, Smash, Race!</h2>
       <div class="gameplay-grid">
         <div class="gameplay-card">
@@ -1042,8 +1318,7 @@
       </div>
     </section>
    
-    <!-- Features Section -->
-    <section>
+    <section id="features">
       <h2 class="section-title">Why ZyRace is the Best Free Monster Truck Game</h2>
       <div class="features-grid">
         <div class="feature-card">
@@ -1076,13 +1351,13 @@
         </div>
       </div>
     </section>
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    
+    <section class="faq-section" id="faq">
       <h2 class="section-title">ZyRace FAQ: Get Rolling!</h2>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFAQ(this)">
           <span>What makes ZyRace special?</span>
-          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-down faq-icon"></i>
         </div>
         <div class="faq-answer">
           <p>ZyRace combines monster truck building, physics puzzles, and racing adventures in a colorful world of bridges, mountains, and water hazards. It's free, fun, and full of surprises!</p>
@@ -1091,7 +1366,7 @@
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFAQ(this)">
           <span>Is ZyRace completely free?</span>
-          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-down faq-icon"></i>
         </div>
         <div class="faq-answer">
           <p>Yes! Enjoy all levels, trucks, and features without ads or payments. Pure adventure at zero cost.</p>
@@ -1100,7 +1375,7 @@
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFAQ(this)">
           <span>How do I build my first truck?</span>
-          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-down faq-icon"></i>
         </div>
         <div class="faq-answer">
           <p>Start the game, select parts from the garage, and snap them together. Test on the track and tweak for the perfect ride!</p>
@@ -1109,7 +1384,7 @@
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFAQ(this)">
           <span>Does it work on mobile?</span>
-          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-down faq-icon"></i>
         </div>
         <div class="faq-answer">
           <p>Totally! Optimized touch controls let you build and race anywhere, anytime.</p>
@@ -1118,7 +1393,7 @@
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFAQ(this)">
           <span>Who built ZyRace?</span>
-          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-down faq-icon"></i>
         </div>
         <div class="faq-answer">
           <p>Indie dev Ajmal U K from Kerala, India. Check Twitter @ajmal_uk_ for tips and updates!</p>
@@ -1126,7 +1401,6 @@
       </div>
     </section>
    
-    <!-- Loading UI -->
     <div class="loading-ui" id="loading-ui">
       <div class="loading-container">
         <p class="loading-text">Revving Up ZyRace...</p>
@@ -1153,14 +1427,10 @@
       </div>
     </div>
    
-    <!-- Canvas Stage (No embedded 3D car preview; game loads dynamically) -->
     <div class="canvas-stage" id="canvas-stage">
       <canvas id="canvas" tabindex="0" aria-label="ZyRace Game Canvas - Build monster trucks and race on epic tracks"></canvas>
     </div>
-  </div>
- 
-  <!-- Footer -->
-  <footer>
+  </main> <footer>
     <div class="footer-content">
       <div class="footer-logo">ZyRace</div>
       <p style="color: #7F8C8D; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -1183,20 +1453,35 @@
       <p class="copyright">© 2025 ZyRace · Made in Kerala 🇮🇳 · All Rights Reserved · <a href="#privacy" style="color: var(--primary);">Privacy</a></p>
     </div>
   </footer>
+
+  <div class="modal-overlay" id="how-to-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <h2 class="modal-title">🛻 How to Play ZyRace 🛻</h2>
+      <ol class="modal-steps">
+        <li><span>BUILD:</span> Drag wheels, cabins, and boosters to craft your truck in the garage.</li>
+        <li><span>TEST:</span> Launch a quick sim to check physics – jumps, crashes, and splashes!</li>
+        <li><span>TWEAK:</span> Adjust for balance and power to handle bridges and hills.</li>
+        <li><span>RACE:</span> Hit the track, avoid pitfalls, and roar to the finish!</li>
+      </ol>
+      <p class="modal-tip"><span>💥 TIP:</span> Big tires for rough terrain, rockets for speed boosts. Experiment and conquer!</p>
+    </div>
+  </div>
+
   <script>
     // Global FAQ Toggle Function
     function toggleFAQ(element) {
       const answer = element.nextElementSibling;
-      const icon = element.querySelector('i');
-      answer.classList.toggle('show');
-      icon.style.transform = answer.classList.contains('show') ? 'rotate(180deg) rotateX(180deg)' : 'rotate(0deg)';
+      const icon = element.querySelector('.faq-icon');
+      const isShowing = answer.classList.toggle('show');
+      icon.style.transform = isShowing ? 'rotate(180deg) rotateX(180deg)' : 'rotate(0deg)';
     }
    
     document.addEventListener('DOMContentLoaded', () => {
       // Set up event listeners
       setupEventListeners();
      
-      // Enhanced 3D Parallax effect on mouse move and scroll
+      // Enhanced 3D Parallax effect on mouse move
       document.addEventListener('mousemove', mouseParallax);
       window.addEventListener('scroll', parallaxEffect);
      
@@ -1221,15 +1506,24 @@
    
     function setupEventListeners() {
       const playBtn = document.getElementById('play-btn');
-      const howToBtn = document.getElementById('how-to-btn');
       const loadingUI = document.getElementById('loading-ui');
       const fuelLevel = document.getElementById('fuel-level');
       const canvasStage = document.getElementById('canvas-stage');
       const canvas = document.getElementById('canvas');
+
+      // Modal Listeners
+      const howToBtn = document.getElementById('how-to-btn');
+      const howToModal = document.getElementById('how-to-modal');
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+
+      // Navbar Listeners
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      const navLinkItems = document.querySelectorAll('.nav-link-item');
      
       // Play button click handler
       playBtn.addEventListener('click', function(e) {
-        e.preventDefault();
+        // e.preventDefault(); // Keep default scroll behavior
         createRippleEffect(e, this);
        
         // Start flow
@@ -1263,33 +1557,62 @@
         }, 70);
       });
      
-      // How to play button
+      // How to play button (MODAL)
       howToBtn.addEventListener('click', function(e) {
         createRippleEffect(e, this);
-       
-        const instructions = `
-          🛻 ZYRACE HOW-TO: MONSTER TRUCK ADVENTURE GUIDE 🛻
-          1. BUILD: Drag wheels, cabins, and boosters to craft your truck in the garage.
-          2. TEST: Launch a quick sim to check physics – jumps, crashes, and splashes!
-          3. TWEAK: Adjust for balance and power to handle bridges and hills.
-          4. RACE: Hit the track, avoid pitfalls, and roar to the finish!
-          💥 TIP: Big tires for rough terrain, rockets for speed boosts. Experiment and conquer!
-          Rev your engines – adventure starts now!
-        `;
-        alert(instructions);
+        howToModal.classList.add('show');
+      });
+
+      // Close Modal Listeners
+      modalCloseBtn.addEventListener('click', () => {
+        howToModal.classList.remove('show');
+      });
+
+      howToModal.addEventListener('click', (e) => {
+        if (e.target === howToModal) {
+          howToModal.classList.remove('show');
+        }
+      });
+      
+      // Mobile Menu Toggle
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.querySelector('i').classList.toggle('fa-bars');
+        menuToggle.querySelector('i').classList.toggle('fa-times');
+      });
+
+      // Close mobile menu when a link is clicked
+      navLinkItems.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+          }
+        });
       });
     }
    
-    // Enhanced Mouse Parallax for 3D Tilt
+    // REFINED: Mouse Parallax for 3D Tilt
     function mouseParallax(e) {
       const { clientX, clientY } = e;
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
-      const rotateX = (clientY - centerY) / 20;
-      const rotateY = (clientX - centerX) / 20;
       
-      document.querySelector('.hero').style.transform = `translateZ(0px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      document.querySelector('.logo-container').style.transform = `rotateX(${-rotateX / 2}deg) rotateY(${-rotateY / 2}deg)`;
+      // Reduced rotation for a subtler effect
+      const rotateX = (clientY - centerY) / 80; 
+      const rotateY = (clientX - centerX) / 80;
+      
+      // Target hero content elements for less disorientation
+      const heroContent = document.querySelector('.hero .cta-container'); 
+      const logo = document.querySelector('.logo-container');
+
+      if (heroContent) {
+        heroContent.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
+      if (logo) {
+        logo.style.transform = `rotateX(${-rotateX / 2}deg) rotateY(${-rotateY / 2}deg)`;
+      }
     }
    
     function createRippleEffect(e, element) {
@@ -1349,13 +1672,7 @@
     function parallaxEffect() {
       const scrollPosition = window.pageYOffset;
      
-      // Enhanced 3D Parallax for hero and clouds
-      const hero = document.querySelector('.hero');
-      if (hero) {
-        hero.style.transform = `translateY(${scrollPosition * 0.5}px) rotateX(${scrollPosition * 0.01}deg)`;
-      }
-     
-      // Adjust cloud speed based on scroll with 3D
+      // Keep cloud parallax
       document.querySelector('.clouds-layer-1').style.transform = `translateX(${scrollPosition * -0.1}px) translateZ(-50px)`;
       document.querySelector('.clouds-layer-2').style.transform = `translateX(${scrollPosition * 0.05}px) translateZ(-100px)`;
     }
@@ -1383,7 +1700,6 @@
     });
   </script>
  
-  <!-- Game Scripts (deferred for performance) -->
   <script defer src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js"></script>
   <script defer src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js"></script>
 </body>
