@@ -1469,7 +1469,6 @@
   </div>
 
   <script>
-    // Global FAQ Toggle Function
     function toggleFAQ(element) {
       const answer = element.nextElementSibling;
       const icon = element.querySelector('.faq-icon');
@@ -1478,14 +1477,12 @@
     }
    
     document.addEventListener('DOMContentLoaded', () => {
-      // Set up event listeners
+
       setupEventListeners();
      
-      // Enhanced 3D Parallax effect on mouse move
       document.addEventListener('mousemove', mouseParallax);
       window.addEventListener('scroll', parallaxEffect);
      
-      // Intersection Observer for section animations
       const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -1511,26 +1508,20 @@
       const canvasStage = document.getElementById('canvas-stage');
       const canvas = document.getElementById('canvas');
 
-      // Modal Listeners
       const howToBtn = document.getElementById('how-to-btn');
       const howToModal = document.getElementById('how-to-modal');
       const modalCloseBtn = document.getElementById('modal-close-btn');
 
-      // Navbar Listeners
       const menuToggle = document.getElementById('menu-toggle');
       const navLinks = document.getElementById('nav-links');
       const navLinkItems = document.querySelectorAll('.nav-link-item');
      
-      // Play button click handler
       playBtn.addEventListener('click', function(e) {
-        // e.preventDefault(); // Keep default scroll behavior
+
         createRippleEffect(e, this);
-       
-        // Start flow
         playBtn.style.opacity = '0.7';
         loadingUI.style.display = 'flex';
        
-        // Simulate loading progress
         let progress = 0;
         const loadingInterval = setInterval(() => {
           progress += Math.random() * 6 + 2;
@@ -1544,7 +1535,6 @@
               resizeCanvas();
               canvas.focus();
              
-              // Simulate game initialization
               setTimeout(() => {
                 if (typeof Module !== 'undefined' && Module.setStatus) {
                   Module.setStatus("🚚 ZyRace Loaded – Start Racing!");
@@ -1557,13 +1547,11 @@
         }, 70);
       });
      
-      // How to play button (MODAL)
       howToBtn.addEventListener('click', function(e) {
         createRippleEffect(e, this);
         howToModal.classList.add('show');
       });
 
-      // Close Modal Listeners
       modalCloseBtn.addEventListener('click', () => {
         howToModal.classList.remove('show');
       });
@@ -1574,14 +1562,12 @@
         }
       });
       
-      // Mobile Menu Toggle
       menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         menuToggle.querySelector('i').classList.toggle('fa-bars');
         menuToggle.querySelector('i').classList.toggle('fa-times');
       });
 
-      // Close mobile menu when a link is clicked
       navLinkItems.forEach(link => {
         link.addEventListener('click', () => {
           if (navLinks.classList.contains('active')) {
@@ -1593,17 +1579,14 @@
       });
     }
    
-    // REFINED: Mouse Parallax for 3D Tilt
     function mouseParallax(e) {
       const { clientX, clientY } = e;
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
       
-      // Reduced rotation for a subtler effect
       const rotateX = (clientY - centerY) / 80; 
       const rotateY = (clientX - centerX) / 80;
       
-      // Target hero content elements for less disorientation
       const heroContent = document.querySelector('.hero .cta-container'); 
       const logo = document.querySelector('.logo-container');
 
@@ -1643,7 +1626,6 @@
       }, 600);
     }
    
-    // Add ripple animation with 3D
     const style = document.createElement('style');
     style.textContent = `
       @keyframes rippleAnim3D {
@@ -1672,15 +1654,12 @@
     function parallaxEffect() {
       const scrollPosition = window.pageYOffset;
      
-      // Keep cloud parallax
       document.querySelector('.clouds-layer-1').style.transform = `translateX(${scrollPosition * -0.1}px) translateZ(-50px)`;
       document.querySelector('.clouds-layer-2').style.transform = `translateX(${scrollPosition * 0.05}px) translateZ(-100px)`;
     }
    
-    // Resize canvas on window resize
     window.addEventListener('resize', resizeCanvas);
-   
-    // Preload critical images
+
     function preloadImages() {
       const images = [
         'https://zyrace.pythonanywhere.com/favicon-96x96.png',
@@ -1694,7 +1673,6 @@
       });
     }
    
-    // Initialize
     window.addEventListener('load', () => {
       preloadImages();
     });
