@@ -10,22 +10,36 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Ajmal U K" />
   <link rel="canonical" href="https://zyrace.pythonanywhere.com/" />
+  
+  <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="ZyRace: Monster Truck Physics Adventure - Free Online Game" />
   <meta property="og:description" content="Build custom monster trucks, solve realistic physics challenges on adventurous tracks with bridges, water, and mountains, and race through epic levels in ZyRace. Instant play, no downloads!" />
   <meta property="og:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
   <meta property="og:url" content="https://zyrace.pythonanywhere.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ZyRace" />
+  
+  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@ajmal_uk_" />
+  <meta name="twitter:creator" content="@ajmal_uk_" />
   <meta name="twitter:title" content="ZyRace: Monster Truck Racing Game - Build & Race Free Online" />
   <meta name="twitter:description" content="Epic monster truck builds, realistic physics puzzles, and high-speed races on wild tracks. Play ZyRace free in your browser now – no sign-up needed!" />
   <meta name="twitter:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
+  
+  <!-- Favicon and App Icons -->
   <link rel="icon" type="image/png" sizes="96x96" href="https://zyrace.pythonanywhere.com/favicon-96x96.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://zyrace.pythonanywhere.com/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://zyrace.pythonanywhere.com/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://zyrace.pythonanywhere.com/favicon-16x16.png" />
+  
+  <!-- Preload Critical Resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,11 +50,21 @@
     "url": "https://zyrace.pythonanywhere.com/",
     "image": "https://zyrace.pythonanywhere.com/og-image.jpg",
     "gamePlatform": ["Web Browser"],
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Web Browser",
     "author": {
       "@type": "Person",
       "name": "Ajmal U K",
       "url": "https://twitter.com/ajmal_uk_",
-      "sameAs": ["https://github.com/ajmaluk"]
+      "sameAs": [
+        "https://github.com/ajmaluk",
+        "https://twitter.com/ajmal_uk_"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "UTHAKKAN",
+      "url": "https://zyrace.pythonanywhere.com/"
     },
     "genre": ["Racing", "Puzzle", "Physics Simulation", "Adventure", "Vehicle Building"],
     "playMode": "Single Player",
@@ -58,29 +82,85 @@
       "bestRating": "5",
       "worstRating": "1"
     },
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Web Browser",
-    "featureList": ["Monster Truck Building", "Physics-Based Puzzles", "Adventure Tracks", "No Download Required", "Mobile Optimized"],
-    "softwareVersion": "1.0"
-  },
+    "featureList": [
+      "Monster Truck Building", 
+      "Physics-Based Puzzles", 
+      "Adventure Tracks", 
+      "No Download Required", 
+      "Mobile Optimized",
+      "Free to Play",
+      "Instant Browser Access"
+    ],
+    "softwareVersion": "1.0",
+    "releaseDate": "2025-01-01",
+    "gameLocation": {
+      "@type": "VirtualLocation",
+      "name": "Online Browser Game"
+    },
+    "characterAttribute": {
+      "@type": "Thing",
+      "name": "Monster Truck"
+    },
+    "gameTip": "Build balanced trucks with large wheels for rough terrain and boosters for speed challenges."
+  }
+  </script>
+  
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "WebApplication",
     "name": "ZyRace",
     "url": "https://zyrace.pythonanywhere.com/",
     "description": "Free online monster truck racing and building game with physics puzzles.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Ajmal U K Indie Games",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Ajmal U K",
       "url": "https://twitter.com/ajmal_uk_"
     },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://zyrace.pythonanywhere.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+    "publisher": {
+      "@type": "Organization",
+      "name": "UTHAKKAN",
+      "url": "https://zyrace.pythonanywhere.com/"
     },
-    "inLanguage": "en-US"
-  },
+    "screenshot": "https://zyrace.pythonanywhere.com/og-image.jpg",
+    "browserRequirements": "Requires HTML5 support"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "UTHAKKAN",
+    "url": "https://zyrace.pythonanywhere.com/",
+    "logo": "https://zyrace.pythonanywhere.com/favicon-96x96.png",
+    "description": "UTHAKKAN is a small single-member company founded and run by Ajmal U K in Kannur, Kerala, India. The company focuses on web application development, digital tools, and online services.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kannur",
+      "addressRegion": "Kerala",
+      "addressCountry": "India"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Ajmal U K",
+      "url": "https://twitter.com/ajmal_uk_"
+    },
+    "sameAs": [
+      "https://twitter.com/ajmal_uk_",
+      "https://github.com/ajmaluk"
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -94,14 +174,14 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Features",
-        "item": "https://zyrace.pythonanywhere.com/#features"
+        "name": "Gameplay",
+        "item": "https://zyrace.pythonanywhere.com/#gameplay"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Gameplay",
-        "item": "https://zyrace.pythonanywhere.com/#gameplay"
+        "name": "Features",
+        "item": "https://zyrace.pythonanywhere.com/#features"
       },
       {
         "@type": "ListItem",
@@ -114,49 +194,72 @@
         "position": 5,
         "name": "Blog",
         "item": "https://zyrace.pythonanywhere.com/#blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "About",
+        "item": "https://zyrace.pythonanywhere.com/#about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "FAQ",
+        "item": "https://zyrace.pythonanywhere.com/#faq"
       }
     ]
   }
   </script>
+  
   <style>
-/* ========= BASE STYLES & VARIABLES ========= */
+/* ========= CSS VARIABLES & RESET ========= */
+:root {
+  --primary: #FF8C00;
+  --primary-dark: #E67E22;
+  --primary-light: #FFA54F;
+  --sky-blue: #87CEEB;
+  --sky-blue-light: #B0E0E6;
+  --green: #32CD32;
+  --yellow: #FFD700;
+  --brown: #8B4513;
+  --white: #FFFFFF;
+  --dark-text: #2C3E50;
+  --light-text: #7F8C8D;
+  --light-bg: rgba(255, 255, 255, 0.9);
+  --light-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --medium-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --heavy-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+  --border-radius: 20px;
+  --header-height: 70px;
+  --footer-height: auto;
+  --max-width: 1200px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-:root {
---primary: #FF8C00;
---primary-dark: #E67E22;
---sky-blue: #87CEEB;
---green: #32CD32;
---yellow: #FFD700;
---brown: #8B4513;
---white: #FFFFFF;
---dark-text: #2C3E50;
---light-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
---transition: all 0.3s ease;
---block-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
---mountain-blue: #4682B4;
---mountain-dark: #4169E1;
---header-height: 70px;
-}
+
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
-/* ========= LAYOUT & TYPOGRAPHY ========= */
+
 body {
   font-family: 'Exo 2', sans-serif;
-  background: linear-gradient(to bottom, var(--sky-blue) 0%, #B0E0E6 100%);
+  background: linear-gradient(to bottom, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
   color: var(--dark-text);
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-body {
-  perspective: 1000px;
-}
+
+/* ========= CLOUD ANIMATIONS ========= */
 .clouds-layer-1, .clouds-layer-2, .clouds-layer-3 {
   position: fixed;
   top: 0;
@@ -165,233 +268,286 @@ body {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  transform-style: preserve-3d;
   will-change: transform;
 }
+
 .clouds-layer-1 {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="50" cy="40" r="15" fill="white" opacity="0.9"/><circle cx="70" cy="35" r="20" fill="white" opacity="0.9"/><circle cx="90" cy="45" r="18" fill="white" opacity="0.9"/><circle cx="150" cy="30" r="12" fill="white" opacity="0.8"/><circle cx="170" cy="25" r="16" fill="white" opacity="0.8"/></svg>');
+  background-repeat: repeat-x;
+  background-size: 300px 100px;
   animation: floatCloudsSlow 60s linear infinite;
-  transform: translateZ(-50px) rotateX(5deg);
 }
+
 .clouds-layer-2 {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="30" cy="50" r="10" fill="white" opacity="0.7"/><circle cx="50" cy="45" r="14" fill="white" opacity="0.7"/><circle cx="70" cy="55" r="12" fill="white" opacity="0.7"/><circle cx="130" cy="40" r="8" fill="white" opacity="0.6"/><circle cx="150" cy="35" r="11" fill="white" opacity="0.6"/></svg>');
+  background-repeat: repeat-x;
+  background-size: 400px 80px;
+  top: 20%;
   animation: floatCloudsFast 40s linear infinite reverse;
   opacity: 0.7;
-  transform: translateZ(-100px) rotateX(-3deg);
 }
+
 .clouds-layer-3 {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="20" cy="60" r="8" fill="white" opacity="0.5"/><circle cx="40" cy="55" r="12" fill="white" opacity="0.5"/><circle cx="60" cy="65" r="10" fill="white" opacity="0.5"/><circle cx="120" cy="50" r="6" fill="white" opacity="0.4"/><circle cx="140" cy="45" r="9" fill="white" opacity="0.4"/></svg>');
+  background-repeat: repeat-x;
+  background-size: 350px 90px;
+  top: 40%;
   animation: floatCloudsMedium 50s linear infinite;
   opacity: 0.5;
-  transform: translateZ(-150px) rotateX(2deg);
 }
+
 @keyframes floatCloudsSlow {
-  0% { transform: translateX(0) translateY(0) translateZ(-50px) rotateX(5deg); }
-  50% { transform: translateX(-25%) translateY(-2%) translateZ(-60px) rotateX(7deg); }
-  100% { transform: translateX(-50%) translateY(0) translateZ(-50px) rotateX(5deg); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
+
 @keyframes floatCloudsFast {
-  0% { transform: translateX(0) translateY(1%) translateZ(-100px) rotateX(-3deg); }
-  50% { transform: translateX(-75%) translateY(3%) translateZ(-110px) rotateX(-5deg); }
-  100% { transform: translateX(-100%) translateY(1%) translateZ(-100px) rotateX(-3deg); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
+
 @keyframes floatCloudsMedium {
-  0% { transform: translateX(0) translateY(0.5%) translateZ(-150px) rotateX(2deg); }
-  50% { transform: translateX(-40%) translateY(-1%) translateZ(-160px) rotateX(4deg); }
-  100% { transform: translateX(-80%) translateY(0.5%) translateZ(-150px) rotateX(2deg); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-80%); }
 }
+
+/* ========= LAYOUT & CONTAINERS ========= */
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 20px;
-  position: relative;
-  z-index: 10;
-  transform-style: preserve-3d;
 }
+
 main.container {
-  padding: 20px;
+  padding: 20px 0;
 }
+
 section {
   margin-bottom: 60px;
   opacity: 0;
-  transform: translateY(50px) rotateX(10deg);
-  animation: fadeInUp3D 0.8s ease forwards;
-  transform-style: preserve-3d;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 section[id] {
-  padding-top: var(--header-height);
+  scroll-margin-top: calc(var(--header-height) + 20px);
 }
-section:nth-child(1) { animation-delay: 0.2s; }
-section:nth-child(2) { animation-delay: 0.4s; }
-section:nth-child(3) { animation-delay: 0.6s; }
-section:nth-child(4) { animation-delay: 0.8s; }
-section:nth-child(5) { animation-delay: 1s; }
-section:nth-child(6) { animation-delay: 1.2s; }
-section:nth-child(7) { animation-delay: 1.4s; }
-@keyframes fadeInUp3D {
-  to {
-    opacity: 1;
-    transform: translateY(0) rotateX(0deg);
-  }
-}
-h1, h2, h3 {
+
+/* ========= TYPOGRAPHY ========= */
+h1, h2, h3, h4 {
   font-family: 'Orbitron', sans-serif;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
+
 h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
 }
+
 h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
   color: var(--primary);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
+
 h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 600;
   color: var(--dark-text);
-  margin-bottom: 15px;
 }
+
 p {
-  margin: 10px 0;
-  color: var(--dark-text);
+  margin-bottom: 1rem;
   font-size: 1.1rem;
+  line-height: 1.6;
 }
-/* ========= HEADER & NAVBAR STYLES ========= */
-.main-header {
-  width: 100%;
-  height: var(--header-height);
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+a {
+  color: var(--primary);
+  text-decoration: none;
   transition: var(--transition);
 }
+
+a:hover, a:focus {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ========= HEADER & NAVIGATION ========= */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--light-shadow);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
 }
+
 .nav-logo {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
   font-weight: 800;
   text-decoration: none;
   background: linear-gradient(90deg, var(--yellow), var(--primary));
--webkit-background-clip: text;
+  -webkit-background-clip: text;
   background-clip: text;
--webkit-text-fill-color: transparent;
-  text-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
+  -webkit-text-fill-color: transparent;
   transition: var(--transition);
 }
-.nav-logo:hover {
-  transform: scale(1.05) rotateY(10deg);
+
+.nav-logo:hover, .nav-logo:focus {
+  transform: scale(1.05);
 }
+
 .menu-toggle {
-  font-size: 1.8rem;
-  color: var(--dark-text);
-  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
   border: none;
   cursor: pointer;
+  padding: 0;
   z-index: 1001;
 }
-/* Unified Sidebar - Improved: Full height fixed, better transitions, and close on outside click */
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--dark-text);
+  margin: 3px 0;
+  transition: var(--transition);
+  transform-origin: center;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ========= SIDEBAR ========= */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -300px;
-  width: 300px;
+  right: -100%;
+  width: 100%;
+  max-width: 320px;
   height: 100vh;
-  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
-  transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 1002;
-  padding-top: var(--header-height);
-  box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+  background: var(--white);
+  box-shadow: var(--heavy-shadow);
+  z-index: 999;
+  padding: var(--header-height) 0 0;
   overflow-y: auto;
-  will-change: transform;
+  transition: right 0.3s ease;
 }
+
 .sidebar.active {
-  left: 0;
-  box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+  right: 0;
 }
+
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
+
 .sidebar li {
-  padding: 15px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+
 .sidebar a {
-  color: var(--white);
-  text-decoration: none;
   display: block;
-  font-size: 1.1rem;
+  padding: 15px 25px;
+  color: var(--dark-text);
+  font-weight: 500;
   transition: var(--transition);
   position: relative;
 }
-.sidebar a:hover {
-  color: var(--yellow);
-  transform: translateX(5px);
+
+.sidebar a:hover, .sidebar a:focus {
+  background: rgba(255, 140, 0, 0.1);
+  color: var(--primary);
+  padding-left: 30px;
 }
+
 .sidebar a::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 0;
-  background: var(--yellow);
-  transition: height 0.3s ease;
-}
-.sidebar a:hover::before {
+  top: 0;
   height: 100%;
+  width: 4px;
+  background: var(--primary);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
 }
+
+.sidebar a:hover::before, .sidebar a:focus::before {
+  transform: scaleY(1);
+}
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background: rgba(0,0,0,0.5);
-  z-index: 1001;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-  cursor: pointer;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
 .overlay.active {
   opacity: 1;
   visibility: visible;
 }
-/* ========= HERO, SECTIONS, FOOTER ========= */
+
+/* ========= HERO SECTION ========= */
 .hero {
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px 0;
+  padding: var(--header-height) 0 60px;
   position: relative;
   overflow: hidden;
-  background-image:
-radial-gradient(ellipse at bottom, var(--green) 0%, transparent 70%),
-linear-gradient(to bottom, transparent 40%, var(--sky-blue) 100%);
-  background-size: cover;
-  transform-style: preserve-3d;
-  margin-bottom: 60px;
-  padding-top: 0;
 }
+
 .hero::before {
   content: '';
   position: absolute;
@@ -399,15 +555,13 @@ linear-gradient(to bottom, transparent 40%, var(--sky-blue) 100%);
   left: 0;
   width: 100%;
   height: 60%;
-  background-image:
-url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234682B4;stop-opacity:1" /><stop offset="100%" style="stop-color:%234169E1;stop-opacity:1" /></linearGradient></defs><path d="M0,400 L200,250 L400,350 L600,200 L800,300 L1000,150 L1200,400 L1200,400 L0,400 Z" fill="url(%23grad)" /><path d="M0,400 L150,300 L350,380 L550,250 L750,320 L950,220 L1200,400 L1200,400 L0,400 Z" fill="%234682B4" opacity="0.8" /><path d="M0,400 L100,350 L300,400 L500,300 L700,370 L900,280 L1200,400 L1200,400 L0,400 Z" fill="%234169E1" opacity="0.6" /></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="mountainGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234682B4;stop-opacity:1" /><stop offset="100%" style="stop-color:%234169E1;stop-opacity:1" /></linearGradient></defs><path d="M0,400 L200,250 L400,350 L600,200 L800,300 L1000,150 L1200,400 L1200,400 L0,400 Z" fill="url(%23mountainGradient)" /><path d="M0,400 L150,300 L350,380 L550,250 L750,320 L950,220 L1200,400 L1200,400 L0,400 Z" fill="%234682B4" opacity="0.8" /><path d="M0,400 L100,350 L300,400 L500,300 L700,370 L900,280 L1200,400 L1200,400 L0,400 Z" fill="%234169E1" opacity="0.6" /></svg>');
   background-size: cover;
   background-position: bottom;
-  animation: mountainWave3D 10s ease-in-out infinite alternate;
+  animation: mountainWave 10s ease-in-out infinite alternate;
   z-index: -1;
-  transform: translateZ(-200px) rotateX(15deg);
-  will-change: transform;
 }
+
 .hero::after {
   content: '';
   position: absolute;
@@ -415,440 +569,294 @@ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120
   left: 0;
   width: 100%;
   height: 40%;
-  background-image:
-url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,200 Q300,100 600,150 Q900,80 1200,200 L1200,200 L0,200 Z" fill="%2332CD32" opacity="0.6" /><path d="M0,200 Q150,150 300,120 Q450,180 600,140 Q750,160 900,130 Q1050,170 1200,200 L1200,200 L0,200 Z" fill="%2322B14C" opacity="0.4" /></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,200 Q300,100 600,150 Q900,80 1200,200 L1200,200 L0,200 Z" fill="%2332CD32" opacity="0.6" /><path d="M0,200 Q150,150 300,120 Q450,180 600,140 Q750,160 900,130 Q1050,170 1200,200 L1200,200 L0,200 Z" fill="%2322B14C" opacity="0.4" /></svg>');
   background-size: cover;
   background-position: bottom;
   animation: groundWave 8s ease-in-out infinite alternate;
   z-index: -1;
-  transform: translateZ(-300px) rotateX(20deg);
-  will-change: transform;
 }
-@keyframes mountainWave3D {
-  0% { transform: translateZ(-200px) rotateX(15deg) scaleX(1) skewX(0deg); }
-  100% { transform: translateZ(-220px) rotateX(20deg) scaleX(1.05) skewX(2deg); }
+
+@keyframes mountainWave {
+  0% { transform: scaleX(1) skewX(0deg); }
+  100% { transform: scaleX(1.05) skewX(2deg); }
 }
+
 @keyframes groundWave {
-  0% { transform: translateZ(-300px) rotateX(20deg) scaleY(1) skewY(0deg); }
-  100% { transform: translateZ(-320px) rotateX(25deg) scaleY(1.02) skewY(1deg); }
+  0% { transform: scaleY(1) skewY(0deg); }
+  100% { transform: scaleY(1.02) skewY(1deg); }
 }
+
 .logo-container {
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
   position: relative;
-  display: inline-block;
-  transform-style: preserve-3d;
-  perspective: 800px;
-  transition: transform 0.1s ease-out;
 }
+
 .logo {
   font-size: clamp(3rem, 8vw, 6rem);
   background: linear-gradient(90deg, var(--yellow), var(--primary));
--webkit-background-clip: text;
+  -webkit-background-clip: text;
   background-clip: text;
--webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
-  animation: bounce3D 2s infinite;
-  position: relative;
-  transform-style: preserve-3d;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+  animation: bounce 3s infinite;
 }
-.logo::after {
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.tagline {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  margin: 0 auto 2.5rem;
+  max-width: 800px;
+  line-height: 1.5;
+  color: var(--dark-text);
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.tagline span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.main-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ========= BUTTONS ========= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 140, 0, 0.4);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
+}
+
+.btn i {
+  font-size: 1.2em;
+}
+
+.btn-primary i {
+  animation: bounce 1.5s infinite;
+}
+
+.how-to-play {
+  text-align: center;
+  color: var(--light-text);
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+.how-to-play span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ========= SECTIONS STYLING ========= */
+.section-container {
+  background: var(--light-bg);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  margin: 50px 0;
+  border: 3px solid var(--primary);
+  box-shadow: var(--medium-shadow);
+  position: relative;
+  z-index: 10;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
+  width: 100px;
   height: 4px;
   background: var(--primary);
   border-radius: 2px;
   animation: shine 2s infinite;
 }
-@keyframes bounce3D {
-  0%, 100% { transform: translateY(0) rotateY(0deg) rotateX(0deg) scale(1); }
-  50% { transform: translateY(-10px) rotateY(5deg) rotateX(2deg) scale(1.02); }
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
-.tagline {
-  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
-  margin: 20px 0 30px;
-  max-width: 800px;
-  line-height: 1.5;
-  color: var(--dark-text);
-  position: relative;
-  z-index: 2;
-  font-weight: 600;
-  transform-style: preserve-3d;
-}
-.tagline span {
-  color: var(--primary);
-  font-weight: 700;
-}
-.gameplay-section {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 40px;
-  margin: 50px 0;
-  border: 3px solid var(--primary);
-  box-shadow: var(--block-shadow);
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-.section-title {
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 25px;
-  color: var(--primary);
-  position: relative;
-  display: inline-block;
-  transform-style: preserve-3d;
-}
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--primary);
-  border-radius: 3px;
-  animation: shine 2s infinite;
-}
-.gameplay-grid {
+
+/* ========= CARDS & GRIDS ========= */
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
+  gap: 2rem;
+  margin-top: 2rem;
 }
-.gameplay-card {
-  background: rgba(135, 206, 235, 0.7);
+
+.gameplay-grid, .features-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.testimonial-grid, .blog-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  background: var(--white);
   border-radius: 15px;
   padding: 25px;
   text-align: center;
   transition: var(--transition);
-  border: 2px solid var(--white);
+  box-shadow: var(--light-shadow);
+  border: 2px solid transparent;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  perspective: 800px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  will-change: transform;
 }
-.gameplay-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+
+.card:hover, .card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: var(--medium-shadow);
+  border-color: var(--primary);
+}
+
+.gameplay-card, .feature-card {
   height: 100%;
-  background: linear-gradient(135deg, transparent 0%, rgba(255, 140, 0, 0.2) 100%);
-  opacity: 0;
-  transition: var(--transition);
-  z-index: 0;
-}
-.gameplay-card:hover {
-  transform: translateY(-10px) rotateY(8deg) rotateX(4deg) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-.gameplay-card:hover::before {
-  opacity: 1;
-}
-.gameplay-card:active {
-  transform: scale(0.98) rotateY(0deg);
-}
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: var(--yellow);
-  position: relative;
-  z-index: 1;
-  transition: var(--transition);
-  transform-style: preserve-3d;
-}
-.gameplay-card:hover .card-icon {
-  transform: scale(1.1) rotateY(360deg) rotateX(10deg);
-}
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--dark-text);
-  position: relative;
-  z-index: 1;
-}
-.card-desc {
-  color: var(--dark-text);
-  position: relative;
-  z-index: 1;
-}
-.cta-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
-  margin: 50px 0;
-  transition: transform 0.1s ease-out;
 }
-.main-cta {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.play-btn {
-  position: relative;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: var(--white);
-  border: none;
-  padding: 20px 50px;
-  font-size: clamp(1.2rem, 3vw, 1.4rem);
-  font-weight: 700;
-  font-family: 'Fredoka One', cursive;
-  border-radius: 50px;
-  cursor: pointer;
-  overflow: hidden;
-  z-index: 2;
-  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
-  letter-spacing: 1px;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 280px;
-  text-decoration: none;
-  transform-style: preserve-3d;
-  perspective: 600px;
-  will-change: transform;
-}
-.play-btn i {
-  font-size: 1.4em;
-  animation: bounce 1.5s infinite;
-}
-.play-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: 0.8s;
-  z-index: 1;
-}
-.play-btn:hover::before {
-  left: 100%;
-}
-.play-btn:hover {
-  transform: translateY(-5px) scale(1.05) rotateY(5deg) rotateX(2deg) translateZ(10px);
-  box-shadow: 0 10px 20px rgba(255, 140, 0, 0.4), 0 0 20px rgba(255, 140, 0, 0.2);
-}
-.play-btn:active {
-  transform: translateY(0) scale(0.98) rotateY(0deg);
-}
-.secondary-btn {
-  background: var(--white);
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
   color: var(--primary);
-  border: 3px solid var(--primary);
-  border-radius: 50px;
-  padding: 12px 35px;
-  font-family: 'Fredoka One', cursive;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
   transition: var(--transition);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transform-style: preserve-3d;
-  will-change: transform;
 }
-.secondary-btn:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: scale(1.05) rotate(3deg) rotateY(3deg) translateZ(5px);
-  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
+
+.card:hover .card-icon {
+  transform: scale(1.1);
 }
-.how-to-play {
-  text-align: center;
-  color: #7F8C8D;
-  font-size: 1.1rem;
-  max-width: 600px;
-}
-.how-to-play span {
-  color: var(--primary);
-  font-weight: 600;
-}
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-.feature-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 15px;
-  padding: 30px 25px;
-  text-align: center;
-  transition: var(--transition);
-  border: 2px solid var(--sky-blue);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  perspective: 800px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  will-change: transform;
-}
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--yellow));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
-}
-.feature-card:hover {
-  transform: translateY(-8px) rotateY(-5deg) rotateX(-3deg) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-.feature-card:hover::before {
-  transform: scaleX(1);
-}
-.feature-card:active {
-  transform: scale(0.98) rotateY(0deg);
-}
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 18px;
-  color: var(--primary);
-  position: relative;
-  z-index: 1;
-  transition: var(--transition);
-  transform-style: preserve-3d;
-}
-.feature-card:hover .feature-icon {
-  transform: scale(1.2) rotateY(360deg) rotateX(15deg);
-}
-.feature-title {
+
+.card-title {
   font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
   color: var(--dark-text);
 }
-.feature-desc {
-  color: #7F8C8D;
-  font-size: 1rem;
+
+.card-desc {
+  color: var(--light-text);
+  flex-grow: 1;
 }
-/* New Sections Styles */
-.testimonials-section {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 40px;
-  margin: 50px 0;
-  border: 3px solid var(--primary);
-  box-shadow: var(--block-shadow);
-  transform-style: preserve-3d;
-}
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
+
+/* ========= TESTIMONIALS ========= */
 .testimonial-card {
-  background: rgba(135, 206, 235, 0.3);
-  border-radius: 15px;
-  padding: 25px;
   text-align: center;
-  border: 2px solid var(--white);
-  position: relative;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: var(--transition);
+  padding: 2rem;
 }
-.testimonial-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+
 .testimonial-text {
   font-style: italic;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   color: var(--dark-text);
+  position: relative;
 }
+
+.testimonial-text::before, .testimonial-text::after {
+  content: '"';
+  font-size: 2rem;
+  color: var(--primary);
+  opacity: 0.5;
+}
+
 .testimonial-author {
   font-weight: 700;
   color: var(--primary);
 }
-.blog-section {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 40px;
-  margin: 50px 0;
-  border: 3px solid var(--primary);
-  box-shadow: var(--block-shadow);
-  transform-style: preserve-3d;
-}
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
+
+/* ========= BLOG ========= */
 .blog-card {
-  background: var(--white);
-  border-radius: 15px;
-  padding: 20px;
   text-align: left;
-  border: 1px solid var(--sky-blue);
-  transition: var(--transition);
   cursor: pointer;
 }
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
+
 .blog-title {
   font-size: 1.3rem;
   color: var(--primary);
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
+
 .blog-excerpt {
-  color: #7F8C8D;
+  color: var(--light-text);
   font-size: 0.95rem;
 }
-.about-section {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 40px;
-  margin: 50px 0;
-  border: 3px solid var(--primary);
-  box-shadow: var(--block-shadow);
-  transform-style: preserve-3d;
-  text-align: center;
-}
-.faq-section {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 40px;
-  margin: 50px 0;
-  border: 3px solid var(--primary);
-  box-shadow: var(--block-shadow);
-  transform-style: preserve-3d;
-}
+
+/* ========= FAQ ========= */
 .faq-item {
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
   border-bottom: 1px solid #E0E0E0;
-  padding-bottom: 20px;
+  padding-bottom: 1.5rem;
 }
+
 .faq-item:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
 .faq-question {
   font-size: 1.2rem;
   font-weight: 600;
@@ -860,69 +868,64 @@ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120
   transition: var(--transition);
   padding: 10px;
   border-radius: 8px;
+  background: rgba(255, 140, 0, 0.05);
+}
+
+.faq-question:hover, .faq-question:focus {
   background: rgba(255, 140, 0, 0.1);
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-.faq-question:hover {
   color: var(--primary);
-  background: rgba(255, 140, 0, 0.2);
-  transform: scale(1.02) rotateY(3deg) translateZ(10px);
 }
+
 .faq-question .faq-icon {
   transition: var(--transition);
-  transform-style: preserve-3d;
 }
+
 .faq-answer {
-  color: #7F8C8D;
-  margin-top: 15px;
+  color: var(--light-text);
+  margin-top: 1rem;
   display: none;
-  animation: fadeIn 0.3s ease;
   padding: 10px;
-  background: rgba(135, 206, 235, 0.3);
+  background: rgba(135, 206, 235, 0.1);
   border-radius: 8px;
-  transform: translateZ(20px);
 }
+
 .faq-answer.show {
   display: block;
-  animation: slideIn3D 0.5s ease forwards;
+  animation: fadeIn 0.3s ease;
 }
-@keyframes slideIn3D {
-  from { transform: translateZ(0) rotateX(90deg) translateY(20px); opacity: 0; }
-  to { transform: translateZ(20px) rotateX(0deg) translateY(0); opacity: 1; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+
+/* ========= LOADING UI ========= */
 .loading-ui {
   display: none;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  margin: 40px 0;
+  gap: 2rem;
+  margin: 3rem 0;
   width: 100%;
-  transform-style: preserve-3d;
 }
+
 .loading-container {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 40px;
+  background: var(--light-bg);
+  border-radius: var(--border-radius);
+  padding: 3rem;
   text-align: center;
   width: 100%;
   max-width: 600px;
-  box-shadow: var(--block-shadow);
+  box-shadow: var(--medium-shadow);
   border: 3px solid var(--primary);
-  animation: pulse3D 2s infinite;
-  transform-style: preserve-3d;
 }
-@keyframes pulse3D {
-  0%, 100% { transform: scale(1) rotateY(0deg) translateZ(0); }
-  50% { transform: scale(1.02) rotateY(2deg) translateZ(5px); }
-}
+
 .fuel-gauge-container {
   width: 100%;
   max-width: 400px;
-  margin: 20px auto;
-  position: relative;
-  transform-style: preserve-3d;
+  margin: 1.5rem auto;
 }
+
 .fuel-gauge {
   width: 100%;
   height: 30px;
@@ -933,6 +936,7 @@ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120
   border: 2px solid var(--primary);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .fuel-level {
   height: 100%;
   width: 0%;
@@ -941,163 +945,167 @@ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120
   transition: width 0.5s ease;
   position: relative;
   overflow: hidden;
-  transform-style: preserve-3d;
 }
-.fuel-level::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shine 2s infinite;
-}
+
 .loading-text {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
+
 .loading-subtext {
-  color: #7F8C8D;
+  color: var(--light-text);
   font-size: 1rem;
 }
+
 .loading-steps {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
-  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
+
 .loading-step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  animation: bounce3D 1s infinite alternate;
-  transform-style: preserve-3d;
+  gap: 0.5rem;
+  animation: pulse 1.5s infinite;
 }
-.loading-step:nth-child(2) { animation-delay: 0.2s; }
-.loading-step:nth-child(3) { animation-delay: 0.4s; }
-@keyframes bounce3D {
-  0%, 100% { transform: translateY(0) rotateX(0deg) translateZ(0); }
-  50% { transform: translateY(-5px) rotateX(10deg) translateZ(5px); }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
+
 .step-icon {
   font-size: 1.5rem;
   color: var(--primary);
 }
+
 .step-text {
-  color: #7F8C8D;
+  color: var(--light-text);
+  font-size: 0.9rem;
 }
+
+/* ========= CANVAS STAGE ========= */
 .canvas-stage {
   display: none;
   width: 100%;
-  max-width: 1200px;
-  margin: 40px auto;
-  border-radius: 20px;
+  max-width: var(--max-width);
+  margin: 3rem auto;
+  border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: var(--block-shadow);
-  background: #FFFFFF;
+  box-shadow: var(--medium-shadow);
+  background: var(--white);
   position: relative;
   border: 3px solid var(--primary);
-  animation: fadeInUp3D 1s ease;
-  transform-style: preserve-3d;
 }
+
 canvas {
   display: block;
   width: 100%;
   height: auto;
   max-height: 80vh;
-  transform-style: preserve-3d;
 }
+
+/* ========= FOOTER ========= */
 footer {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 40px 20px;
+  background: var(--white);
+  padding: 3rem 0 2rem;
   margin-top: auto;
   border-top: 3px solid var(--primary);
   text-align: center;
-  transform-style: preserve-3d;
+  position: relative;
+  z-index: 10;
 }
+
 .footer-content {
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 20px;
 }
+
 .footer-logo {
   font-family: 'Fredoka One', cursive;
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   background: linear-gradient(90deg, var(--yellow), var(--primary));
--webkit-background-clip: text;
+  -webkit-background-clip: text;
   background-clip: text;
--webkit-text-fill-color: transparent;
-  animation: bounce3D 3s infinite;
+  -webkit-text-fill-color: transparent;
 }
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin: 25px 0;
+  gap: 1rem;
+  margin: 1.5rem 0;
   padding: 0;
   list-style: none;
 }
-.footer-link {
-  font-size: 0.95rem;
-}
+
 .footer-link a {
   color: var(--dark-text);
   text-decoration: none;
   transition: var(--transition);
+  font-size: 0.95rem;
 }
-.footer-link a:hover {
+
+.footer-link a:hover, .footer-link a:focus {
   color: var(--primary);
   text-decoration: underline;
 }
+
 .socials {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin: 30px 0;
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
+
 .social-link {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: var(--white);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   text-decoration: none;
   transition: var(--transition);
   border: 2px solid var(--primary);
   box-shadow: var(--light-shadow);
-  transform-style: preserve-3d;
-  will-change: transform;
 }
-.social-link:hover {
+
+.social-link:hover, .social-link:focus {
   background: var(--primary);
   color: var(--white);
-  transform: translateY(-5px) scale(1.1) rotateY(360deg) rotateX(10deg);
-  box-shadow: 0 8px 16px rgba(255, 140, 0, 0.3), 0 0 15px rgba(255, 140, 0, 0.2);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 16px rgba(255, 140, 0, 0.3);
 }
+
 .copyright {
-  color: #7F8C8D;
+  color: var(--light-text);
   font-size: 0.95rem;
-  margin-top: 20px;
+  margin-top: 1.5rem;
 }
+
 .copyright a {
   color: var(--primary);
   text-decoration: none;
-  transition: var(--transition);
 }
-.copyright a:hover {
+
+.copyright a:hover, .copyright a:focus {
   text-decoration: underline;
-  transform: translateY(-1px);
 }
+
+/* ========= MODAL ========= */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1106,41 +1114,40 @@ footer {
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   z-index: 2000;
   display: none;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.modal-overlay.show {
+
+.modal-overlay.active {
   display: flex;
   opacity: 1;
 }
+
 .modal-content {
   background: var(--white);
-  padding: 30px 40px;
-  border-radius: 20px;
-  width: 90%;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  width: 100%;
   max-width: 600px;
   border: 3px solid var(--primary);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--heavy-shadow);
   position: relative;
-  transform: scale(0.9) rotateX(10deg);
+  transform: scale(0.9);
   opacity: 0;
-  animation: modalOpen 0.4s ease forwards;
-  transform-style: preserve-3d;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.modal-overlay.show .modal-content {
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
   opacity: 1;
 }
-@keyframes modalOpen {
-  to {
-    opacity: 1;
-    transform: scale(1) rotateX(0deg) translateZ(20px);
-  }
-}
+
 .modal-close {
   position: absolute;
   top: 15px;
@@ -1151,26 +1158,35 @@ footer {
   border: none;
   cursor: pointer;
   transition: var(--transition);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.modal-close:hover {
+
+.modal-close:hover, .modal-close:focus {
   color: var(--primary);
-  transform: rotate(90deg) scale(1.1);
+  transform: rotate(90deg);
 }
+
 .modal-title {
   font-family: 'Fredoka One', cursive;
   color: var(--primary);
   font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
+
 .modal-steps {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
+
 .modal-steps li {
   font-size: 1.1rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   line-height: 1.5;
   padding: 10px;
   background: rgba(255, 140, 0, 0.05);
@@ -1178,14 +1194,17 @@ footer {
   border-radius: 5px;
   transition: var(--transition);
 }
+
 .modal-steps li:hover {
-  transform: translateX(5px) rotateY(5deg);
+  transform: translateX(5px);
 }
+
 .modal-steps li span {
   font-weight: 700;
   color: var(--dark-text);
   margin-right: 8px;
 }
+
 .modal-tip {
   font-size: 1.1rem;
   text-align: center;
@@ -1193,127 +1212,199 @@ footer {
   padding: 15px;
   border-radius: 10px;
 }
+
 .modal-tip span {
   font-weight: 700;
   color: var(--primary);
 }
-@keyframes shine {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+
+/* ========= ACCESSIBILITY ========= */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
+
+/* Focus styles for better accessibility */
+button:focus, a:focus, .card:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 /* ========= RESPONSIVE DESIGN ========= */
 @media (max-width: 900px) {
-.main-cta {
+  .main-cta {
     flex-direction: column;
     align-items: center;
   }
-.play-btn {
+  
+  .btn {
     width: 100%;
     max-width: 350px;
   }
-.sidebar {
-    width: 280px;
-    left: -280px;
+  
+  .section-container {
+    padding: 30px 20px;
   }
 }
+
 @media (max-width: 768px) {
-.logo {
-    font-size: 4.5rem;
-  }
-.hero {
+  .hero {
     min-height: auto;
     padding-bottom: 40px;
   }
-.gameplay-card {
-    min-height: auto;
-  }
-.section-title {
+  
+  .section-title {
     font-size: 1.8rem;
   }
-h2 {
+  
+  h2 {
     font-size: 2rem;
   }
-.loading-steps {
+  
+  .loading-steps {
     flex-direction: column;
-    gap: 15px;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
   }
 }
+
 @media (max-width: 600px) {
-.logo {
+  .logo {
     font-size: 3.8rem;
   }
-.tagline {
+  
+  .tagline {
     font-size: 1.3rem;
   }
-.play-btn {
-    padding: 16px 30px;
-    font-size: 1.2rem;
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
   }
-.feature-icon {
-    font-size: 2rem;
+  
+  .card-icon {
+    font-size: 2.5rem;
   }
-.social-link {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
   }
-section {
+  
+  section {
     margin-bottom: 40px;
   }
-.faq-section {
-    padding: 30px 20px;
+  
+  .section-container {
+    padding: 25px 15px;
+    margin: 30px 0;
   }
-.modal-content {
-    padding: 25px 20px;
+  
+  .modal-content {
+    padding: 1.5rem;
   }
-.modal-title {
+  
+  .modal-title {
     font-size: 1.5rem;
   }
 }
+
 @media (max-width: 480px) {
-.logo {
+  .logo {
     font-size: 3.2rem;
   }
-.tagline {
+  
+  .tagline {
     font-size: 1.15rem;
   }
-.container {
+  
+  .container {
     width: 100%;
-    padding: 0 10px;
-  }
-main.container {
-    padding: 10px;
-  }
-.navbar {
     padding: 0 15px;
   }
-.gameplay-card, .feature-card {
+  
+  main.container {
+    padding: 10px 0;
+  }
+  
+  .navbar {
+    padding: 0 15px;
+  }
+  
+  .card {
     padding: 20px 15px;
   }
-.play-btn {
-    padding: 14px 25px;
-    font-size: 1.1rem;
+  
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
   }
-.section-title {
+  
+  .section-title {
     font-size: 1.5rem;
+  }
+  
+  .sidebar {
+    max-width: 280px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .main-header, .sidebar, .overlay, .cta-container, .socials, footer {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .section-container {
+    border: 1px solid #ccc;
+    box-shadow: none;
   }
 }
 </style>
 </head>
 <body>
-  <div class="clouds-layer-1" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;50&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;70&quot; cy=&quot;35&quot; r=&quot;20&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;90&quot; cy=&quot;45&quot; r=&quot;18&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;150&quot; cy=&quot;30&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.8&quot;/><circle cx=&quot;170&quot; cy=&quot;25&quot; r=&quot;16&quot; fill=&quot;white&quot; opacity=&quot;0.8&quot;/></svg>'); background-repeat: repeat-x; background-size: 300px 100px;"></div>
-  <div class="clouds-layer-2" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;30&quot; cy=&quot;50&quot; r=&quot;10&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;14&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;70&quot; cy=&quot;55&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;130&quot; cy=&quot;40&quot; r=&quot;8&quot; fill=&quot;white&quot; opacity=&quot;0.6&quot;/><circle cx=&quot;150&quot; cy=&quot;35&quot; r=&quot;11&quot; fill=&quot;white&quot; opacity=&quot;0.6&quot;/></svg>'); background-repeat: repeat-x; background-size: 400px 80px; top: 20%;"></div>
-  <div class="clouds-layer-3" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;20&quot; cy=&quot;60&quot; r=&quot;8&quot; fill=&quot;white&quot; opacity=&quot;0.5&quot;/><circle cx=&quot;40&quot; cy=&quot;55&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.5&quot;/><circle cx=&quot;60&quot; cy=&quot;65&quot; r=&quot;10&quot; fill=&quot;white&quot; opacity=&quot;0.5&quot;/><circle cx=&quot;120&quot; cy=&quot;50&quot; r=&quot;6&quot; fill=&quot;white&quot; opacity=&quot;0.4&quot;/><circle cx=&quot;140&quot; cy=&quot;45&quot; r=&quot;9&quot; fill=&quot;white&quot; opacity=&quot;0.4&quot;/></svg>'); background-repeat: repeat-x; background-size: 350px 90px; top: 40%;"></div>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+  
+  <!-- Cloud Layers -->
+  <div class="clouds-layer-1"></div>
+  <div class="clouds-layer-2"></div>
+  <div class="clouds-layer-3"></div>
+  
+  <!-- Overlay for sidebar -->
   <div class="overlay" id="sidebar-overlay"></div>
-  <header class="main-header">
-    <nav class="navbar container">
+  
+  <!-- Header with navigation -->
+  <header class="main-header" role="banner">
+    <nav class="navbar container" aria-label="Main navigation">
       <a href="/" class="nav-logo">Zy<span style="color:var(--yellow);">Race</span></a>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </nav>
   </header>
-  <div id="sidebar" class="sidebar">
+  
+  <!-- Sidebar navigation -->
+  <div id="sidebar" class="sidebar" role="navigation" aria-label="Sidebar navigation">
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="#gameplay">Gameplay</a></li>
@@ -1334,158 +1425,176 @@ main.container {
       <li><a href="/documentation">Documentation</a></li>
     </ul>
   </div>
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="logo-container">
-        <h1 class="logo">Zy<span style="color:var(--yellow);">Race</span></h1>
-      </div>
-      <p class="tagline">Buckle up for <span>ZyRace</span>, the ultimate free online monster truck adventure! Build rugged vehicles, smash physics puzzles on wild bridges and tracks, and race through mountains, rivers, and chaos. Adventure awaits – no downloads needed!</p>
-      <div class="cta-container">
-        <p class="how-to-play">No downloads or sign-ups – just grab your truck and <span>conquer the tracks!</span></p>
-        <div class="main-cta">
-          <button id="play-btn" class="play-btn" onclick="startAdventure()">
-            <i class="fas fa-play"></i> START ADVENTURE
-          </button>
-          <button id="how-to-btn" class="secondary-btn">
-            <i class="fas fa-question"></i> HOW TO PLAY
-          </button>
+  
+  <!-- Main content -->
+  <main id="main-content">
+    <!-- Hero section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="logo-container">
+          <h1 class="logo">Zy<span style="color:var(--yellow);">Race</span></h1>
+        </div>
+        <p class="tagline">Buckle up for <span>ZyRace</span>, the ultimate free online monster truck adventure! Build rugged vehicles, smash physics puzzles on wild bridges and tracks, and race through mountains, rivers, and chaos. Adventure awaits – no downloads needed!</p>
+        <div class="cta-container">
+          <p class="how-to-play">No downloads or sign-ups – just grab your truck and <span>conquer the tracks!</span></p>
+          <div class="main-cta">
+            <button id="play-btn" class="btn btn-primary" onclick="startAdventure()">
+              <i class="fas fa-play" aria-hidden="true"></i> START ADVENTURE
+            </button>
+            <button id="how-to-btn" class="btn btn-secondary">
+              <i class="fas fa-question" aria-hidden="true"></i> HOW TO PLAY
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <main class="container">
-    <section class="gameplay-section" id="gameplay">
+    </section>
+    
+    <!-- Gameplay section -->
+    <section class="section-container" id="gameplay">
       <h2 class="section-title">Your Epic ZyRace Journey: Build, Smash, Race Monster Trucks!</h2>
-      <div class="gameplay-grid">
-        <div class="gameplay-card">
-          <div class="card-icon"><i class="fas fa-tools"></i></div>
+      <div class="grid gameplay-grid">
+        <div class="card gameplay-card">
+          <div class="card-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
           <h3 class="card-title">Build Monster Trucks</h3>
           <p class="card-desc">Assemble tough trucks with big wheels, boosters, and armor. Drag parts to create beasts ready for any terrain in this free monster truck builder!</p>
         </div>
-        <div class="gameplay-card">
-          <div class="card-icon"><i class="fas fa-puzzle-piece"></i></div>
+        <div class="card gameplay-card">
+          <div class="card-icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
           <h3 class="card-title">Crush Physics Challenges</h3>
           <p class="card-desc">Tackle ramps, bridges over water, and rocky paths. Master gravity and momentum to survive the wild levels in realistic physics racing.</p>
         </div>
-        <div class="gameplay-card">
-          <div class="card-icon"><i class="fas fa-flag-checkered"></i></div>
+        <div class="card gameplay-card">
+          <div class="card-icon"><i class="fas fa-flag-checkered" aria-hidden="true"></i></div>
           <h3 class="card-title">Race to Glory</h3>
           <p class="card-desc">Blast through obstacles, collect stars, and finish first. Unlock new trucks and tracks as you level up in epic online truck adventures!</p>
         </div>
       </div>
     </section>
+    
+    <!-- Features section -->
     <section id="features">
       <h2 class="section-title">Why ZyRace is the Best Free Monster Truck Game Online</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-          <h3 class="feature-title">Instant Thrills</h3>
-          <p class="feature-desc">Load up in seconds – no apps or accounts needed. Perfect for quick races or long adventures in browser-based racing!</p>
+      <div class="grid features-grid">
+        <div class="card feature-card">
+          <div class="card-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+          <h3 class="card-title">Instant Thrills</h3>
+          <p class="card-desc">Load up in seconds – no apps or accounts needed. Perfect for quick races or long adventures in browser-based racing!</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-atom"></i></div>
-          <h3 class="feature-title">Real Physics Fun</h3>
-          <p class="feature-desc">Feel the bumps, splashes, and crashes with authentic simulations. Every jump and turn matters in this physics puzzle racer!</p>
+        <div class="card feature-card">
+          <div class="card-icon"><i class="fas fa-atom" aria-hidden="true"></i></div>
+          <h3 class="card-title">Real Physics Fun</h3>
+          <p class="card-desc">Feel the bumps, splashes, and crashes with authentic simulations. Every jump and turn matters in this physics puzzle racer!</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-infinity"></i></div>
-          <h3 class="feature-title">Endless Builds</h3>
-          <p class="feature-desc">Mix and match hundreds of parts for unique trucks. From speedy racers to indestructible crushers in monster truck challenges!</p>
+        <div class="card feature-card">
+          <div class="card-icon"><i class="fas fa-infinity" aria-hidden="true"></i></div>
+          <h3 class="card-title">Endless Builds</h3>
+          <p class="card-desc">Mix and match hundreds of parts for unique trucks. From speedy racers to indestructible crushers in monster truck challenges!</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h3 class="feature-title">Play Anywhere</h3>
-          <p class="feature-desc">Smooth on phones, tablets, or desktops. Touch or click to build and race on the go with no download racing games.</p>
+        <div class="card feature-card">
+          <div class="card-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+          <h3 class="card-title">Play Anywhere</h3>
+          <p class="card-desc">Smooth on phones, tablets, or desktops. Touch or click to build and race on the go with no download racing games.</p>
         </div>
       </div>
     </section>
-    <section class="testimonials-section" id="testimonials">
+    
+    <!-- Testimonials section -->
+    <section class="section-container" id="testimonials">
       <h2 class="section-title">What Players Say About ZyRace Monster Truck Adventures</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
+      <div class="grid testimonial-grid">
+        <div class="card testimonial-card">
           <p class="testimonial-text">"ZyRace is the ultimate monster truck builder! The physics puzzles are addictive and the races are thrilling. Best free online game ever!"</p>
           <div class="testimonial-author">- Alex R., Racing Fan</div>
         </div>
-        <div class="testimonial-card">
+        <div class="card testimonial-card">
           <p class="testimonial-text">"Love building custom trucks and smashing through tracks. No downloads, just pure fun. Highly recommend this physics racing game!"</p>
           <div class="testimonial-author">- Sarah K., Gamer Mom</div>
         </div>
-        <div class="testimonial-card">
+        <div class="card testimonial-card">
           <p class="testimonial-text">"Epic adventures with realistic crashes and jumps. ZyRace keeps me coming back for more monster truck challenges!"</p>
           <div class="testimonial-author">- Mike T., Adventure Seeker</div>
         </div>
       </div>
     </section>
-    <section class="blog-section" id="blog">
+    
+    <!-- Blog section -->
+    <section class="section-container" id="blog">
       <h2 class="section-title">Latest ZyRace Blog: Tips for Monster Truck Racing</h2>
-      <div class="blog-grid">
-        <div class="blog-card">
+      <div class="grid blog-grid">
+        <div class="card blog-card">
           <h3 class="blog-title">Top 5 Monster Truck Builds for Beginners</h3>
           <p class="blog-excerpt">Discover easy vehicle builder tips to conquer your first physics puzzles in ZyRace. Perfect for new players!</p>
         </div>
-        <div class="blog-card">
+        <div class="card blog-card">
           <h3 class="blog-title">Mastering Bridges and Water Hazards</h3>
           <p class="blog-excerpt">Pro strategies for adventure tracks with realistic physics. Race smarter, not harder in this free browser game.</p>
         </div>
-        <div class="blog-card">
+        <div class="card blog-card">
           <h3 class="blog-title">Upcoming Updates: New Tracks & Parts</h3>
           <p class="blog-excerpt">What's next for ZyRace? More monster truck challenges and epic races coming soon!</p>
         </div>
       </div>
     </section>
-    <section class="about-section" id="about">
+    
+    <!-- About section -->
+    <section class="section-container" id="about">
       <h2 class="section-title">About ZyRace: Crafted for Truck Lovers</h2>
       <p>ZyRace is an indie-developed free online racing game born from a passion for monster trucks, physics simulations, and adventurous gameplay. Created by Ajmal U K in Kerala, India, it's designed for anyone who loves building vehicles and tackling wild tracks. Join thousands of players in this no-download browser experience!</p>
+      <p>ZyRace was created with one mission: to give people a free, enjoyable car-racing experience accessible to everyone. The game is continually updated and maintained by Ajmal U K, the founder of UTHAKKAN.</p>
       <p>Follow updates on Twitter <a href="https://twitter.com/ajmal_uk_" target="_blank" rel="noopener noreferrer">@ajmal_uk_</a> and contribute on GitHub.</p>
     </section>
-    <section class="faq-section" id="faq">
+    
+    <!-- FAQ section -->
+    <section class="section-container" id="faq">
       <h2 class="section-title">ZyRace FAQ: Get Rolling with Monster Truck Tips!</h2>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
           <span>What makes ZyRace special in monster truck games?</span>
-          <i class="fas fa-chevron-down faq-icon"></i>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
         </div>
         <div class="faq-answer">
           <p>ZyRace combines monster truck building, realistic physics puzzles, and racing adventures in a colorful world of bridges, mountains, and water hazards. It's free, fun, and full of surprises for online truck enthusiasts!</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
           <span>Is ZyRace completely free with no ads?</span>
-          <i class="fas fa-chevron-down faq-icon"></i>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
         </div>
         <div class="faq-answer">
           <p>Yes! Enjoy all levels, trucks, and features without ads or payments. Pure adventure at zero cost in this browser-based racing game.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
           <span>How do I build my first truck in the vehicle builder?</span>
-          <i class="fas fa-chevron-down faq-icon"></i>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
         </div>
         <div class="faq-answer">
           <p>Start the game, select parts from the garage, and snap them together. Test on the track and tweak for the perfect ride in physics racing!</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
           <span>Does ZyRace work on mobile for on-the-go racing?</span>
-          <i class="fas fa-chevron-down faq-icon"></i>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
         </div>
         <div class="faq-answer">
           <p>Totally! Optimized touch controls let you build and race anywhere, anytime in this no-download monster truck simulator.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
           <span>Who built ZyRace and why focus on physics puzzles?</span>
-          <i class="fas fa-chevron-down faq-icon"></i>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
         </div>
         <div class="faq-answer">
           <p>Indie dev Ajmal U K from Kerala, India. The realistic physics add depth to monster truck challenges – check Twitter @ajmal_uk_ for tips and updates!</p>
         </div>
       </div>
     </section>
+    
+    <!-- Loading UI -->
     <div class="loading-ui" id="loading-ui">
       <div class="loading-container">
         <p class="loading-text">Revving Up ZyRace...</p>
@@ -1497,28 +1606,32 @@ main.container {
         <p class="loading-subtext">Assembling trucks, plotting tracks, and fueling adventures...</p>
         <div class="loading-steps">
           <div class="loading-step">
-            <div class="step-icon"><i class="fas fa-cogs"></i></div>
+            <div class="step-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
             <div class="step-text">Physics Loaded</div>
           </div>
           <div class="loading-step">
-            <div class="step-icon"><i class="fas fa-volume-up"></i></div>
+            <div class="step-icon"><i class="fas fa-volume-up" aria-hidden="true"></i></div>
             <div class="step-text">Engine Roar On</div>
           </div>
           <div class="loading-step">
-            <div class="step-icon"><i class="fas fa-tachometer-alt"></i></div>
+            <div class="step-icon"><i class="fas fa-tachometer-alt" aria-hidden="true"></i></div>
             <div class="step-text">Tracks Ready</div>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Canvas Stage -->
     <div class="canvas-stage" id="canvas-stage">
       <canvas id="canvas" tabindex="0" aria-label="ZyRace Game Canvas - Build monster trucks and race on epic tracks with physics puzzles"></canvas>
     </div>
   </main>
-  <footer>
+  
+  <!-- Footer -->
+  <footer role="contentinfo">
     <div class="footer-content">
       <div class="footer-logo">ZyRace</div>
-      <p style="color: #7F8C8D; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <p style="color: var(--light-text); margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
         Monster truck madness meets physics puzzles in ZyRace. Crafted with adventure in Kerala, India – hit the gas on wild tracks!
       </p>
       <ul class="footer-links">
@@ -1539,24 +1652,26 @@ main.container {
       </ul>
       <div class="socials">
         <a href="https://twitter.com/ajmal_uk_" target="_blank" rel="noopener noreferrer" class="social-link" title="Follow ZyRace on Twitter for updates on monster truck games" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
+          <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
         <a href="https://github.com/ajmaluk" target="_blank" rel="noopener noreferrer" class="social-link" title="ZyRace on GitHub - Contribute to physics racing features" aria-label="GitHub">
-          <i class="fab fa-github"></i>
+          <i class="fab fa-github" aria-hidden="true"></i>
         </a>
-        <a href="mailto:ajmal.uk.dev@gmail.com" class="social-link" title="Contact Developer for ZyRace support" aria-label="Email">
-          <i class="fas fa-envelope"></i>
+        <a href="mailto:contact.uthakka@gmail.com" class="social-link" title="Contact Developer for ZyRace support" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
         </a>
         <a href="#" class="social-link" title="Join ZyRace Community for tips on truck building" aria-label="Discord">
-          <i class="fab fa-discord"></i>
+          <i class="fab fa-discord" aria-hidden="true"></i>
         </a>
       </div>
       <p class="copyright">© 2025 ZyRace · Made in Kerala 🇮🇳 · All Rights Reserved · <a href="/privacy">Privacy</a></p>
     </div>
   </footer>
+  
+  <!-- How to Play Modal -->
   <div class="modal-overlay" id="how-to-modal">
     <div class="modal-content">
-      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
       <h2 class="modal-title">🛻 How to Play ZyRace: Monster Truck Builder Guide 🛻</h2>
       <ol class="modal-steps">
         <li><span>BUILD:</span> Drag wheels, cabins, and boosters to craft your truck in the garage for custom vehicle building.</li>
@@ -1567,136 +1682,225 @@ main.container {
       <p class="modal-tip"><span>💥 TIP:</span> Big tires for rough terrain, rockets for speed boosts. Experiment and conquer in this free online racing game!</p>
     </div>
   </div>
+  
+  <!-- JavaScript -->
   <script>
-function toggleFAQ(element) {
-const answer = element.nextElementSibling;
-const icon = element.querySelector('.faq-icon');
-const isShowing = answer.classList.toggle('show');
-  icon.style.transform = isShowing ? 'rotate(180deg) rotateX(180deg)' : 'rotate(0deg)';
-}
-function startAdventure() {
-const btn = document.getElementById('play-btn');
-const loadingUI = document.getElementById('loading-ui');
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Launching...';
-  btn.disabled = true;
-  loadingUI.style.display = 'flex';
-let progress = 0;
-const loadingInterval = setInterval(() => {
-    progress += Math.random() * 8 + 3;
-if (progress >= 100) {
-      progress = 100;
-clearInterval(loadingInterval);
-      document.querySelector('.loading-text').textContent = 'Ready to Race!';
-      document.querySelector('.loading-subtext').textContent = 'Redirecting to game...';
-setTimeout(() => {
-        window.location.href = '/start';
-      }, 1500);
+    // Enhanced JavaScript with better performance and accessibility
+    
+    // Preload critical resources
+    function preloadResources() {
+      const resources = [
+        'https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
+        'https://zyrace.pythonanywhere.com/favicon-96x96.png',
+        'https://zyrace.pythonanywhere.com/apple-touch-icon.png',
+        'https://zyrace.pythonanywhere.com/og-image.jpg'
+      ];
+      
+      resources.forEach(resource => {
+        if (resource.endsWith('.css')) {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = resource;
+          document.head.appendChild(link);
+        } else {
+          const img = new Image();
+          img.src = resource;
+        }
+      });
     }
-    document.getElementById('fuel-level').style.width = `${Math.min(progress, 100)}%`;
-  }, 50);
-}
-function openSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
-  const menuIcon = document.getElementById('menu-toggle').querySelector('i');
-  sidebar.classList.add('active');
-  overlay.classList.add('active');
-  menuIcon.classList.remove('fa-bars');
-  menuIcon.classList.add('fa-times');
-  document.body.style.overflow = 'hidden'; // Prevent body scroll when sidebar open
-}
-function closeSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
-  const menuIcon = document.getElementById('menu-toggle').querySelector('i');
-  sidebar.classList.remove('active');
-  overlay.classList.remove('active');
-  menuIcon.classList.remove('fa-times');
-  menuIcon.classList.add('fa-bars');
-  document.body.style.overflow = ''; // Restore body scroll
-}
-document.addEventListener('DOMContentLoaded', () => {
-// Reset state on page load (fixes back button issues)
-const loadingUI = document.getElementById('loading-ui');
-const playBtn = document.getElementById('play-btn');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('sidebar-overlay');
-const menuIcon = document.getElementById('menu-toggle').querySelector('i');
-  loadingUI.style.display = 'none';
-  playBtn.disabled = false;
-  playBtn.innerHTML = '<i class="fas fa-play"></i> START ADVENTURE';
-  document.getElementById('fuel-level').style.width = '0%';
-  document.querySelector('.loading-text').textContent = 'Revving Up ZyRace...';
-  document.querySelector('.loading-subtext').textContent = 'Assembling trucks, plotting tracks, and fueling adventures...';
-  closeSidebar(); // Ensure closed on load
-const howToBtn = document.getElementById('how-to-btn');
-const howToModal = document.getElementById('how-to-modal');
-const modalCloseBtn = document.getElementById('modal-close-btn');
-const menuToggle = document.getElementById('menu-toggle');
-  howToBtn.addEventListener('click', function(e) {
-    howToModal.classList.add('show');
-  });
-  modalCloseBtn.addEventListener('click', () => {
-    howToModal.classList.remove('show');
-  });
-  howToModal.addEventListener('click', (e) => {
-if (e.target === howToModal) {
-      howToModal.classList.remove('show');
-    }
-  });
-  menuToggle.addEventListener('click', () => {
-    if (sidebar.classList.contains('active')) {
-      closeSidebar();
-    } else {
-      openSidebar();
-    }
-  });
-  overlay.addEventListener('click', closeSidebar);
-// Smooth scroll for sidebar links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-const target = document.querySelector(this.getAttribute('href'));
-if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+    
+    // Toggle FAQ answer visibility
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('.faq-icon');
+      const isExpanded = element.getAttribute('aria-expanded') === 'true';
+      
+      if (isExpanded) {
+        answer.classList.remove('show');
+        element.setAttribute('aria-expanded', 'false');
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        answer.classList.add('show');
+        element.setAttribute('aria-expanded', 'true');
+        icon.style.transform = 'rotate(180deg)';
       }
-    });
-  });
-// Close sidebar on link clicks
-const sidebarLinks = document.querySelectorAll('#sidebar a[href^="#"]');
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', closeSidebar);
-  });
-// Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-      closeSidebar();
     }
-  });
-});
-function mouseParallax(e) {
-const { clientX, clientY } = e;
-const centerX = window.innerWidth / 2;
-const centerY = window.innerHeight / 2;
-const rotateX = (clientY - centerY) / 80;
-const rotateY = (clientX - centerX) / 80;
-const heroContent = document.querySelector('.hero .cta-container');
-const logo = document.querySelector('.logo-container');
-if (heroContent) heroContent.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-if (logo) logo.style.transform = `rotateX(${-rotateX / 2}deg) rotateY(${-rotateY / 2}deg) translateZ(5px)`;
-}
-document.addEventListener('mousemove', mouseParallax);
-function preloadImages() {
-const images = [
-'https://zyrace.pythonanywhere.com/favicon-96x96.png',
-'https://zyrace.pythonanywhere.com/apple-touch-icon.png',
-'https://zyrace.pythonanywhere.com/og-image.jpg'
-  ];
-  images.forEach(src => { const img = new Image(); img.src = src; });
-}
-window.addEventListener('load', preloadImages);
-</script>
-  <script defer src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js"></script>
-  <script defer src="https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js"></script>
+    
+    // Start game adventure with loading simulation
+    function startAdventure() {
+      const btn = document.getElementById('play-btn');
+      const loadingUI = document.getElementById('loading-ui');
+      
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Launching...';
+      btn.disabled = true;
+      loadingUI.style.display = 'flex';
+      
+      let progress = 0;
+      const loadingInterval = setInterval(() => {
+        progress += Math.random() * 8 + 3;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(loadingInterval);
+          document.querySelector('.loading-text').textContent = 'Ready to Race!';
+          document.querySelector('.loading-subtext').textContent = 'Redirecting to game...';
+          setTimeout(() => {
+            window.location.href = '/start';
+          }, 1500);
+        }
+        document.getElementById('fuel-level').style.width = `${Math.min(progress, 100)}%`;
+      }, 50);
+    }
+    
+    // Sidebar functionality
+    function openSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebar-overlay');
+      const menuToggle = document.getElementById('menu-toggle');
+      
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+      menuToggle.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebar-overlay');
+      const menuToggle = document.getElementById('menu-toggle');
+      
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    
+    // Modal functionality
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    // Intersection Observer for section animations
+    function initScrollAnimations() {
+      const sections = document.querySelectorAll('section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    }
+    
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Preload resources
+      preloadResources();
+      
+      // Initialize scroll animations
+      initScrollAnimations();
+      
+      // Set up event listeners
+      const menuToggle = document.getElementById('menu-toggle');
+      const overlay = document.getElementById('sidebar-overlay');
+      const howToBtn = document.getElementById('how-to-btn');
+      const howToModal = document.getElementById('how-to-modal');
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+      const sidebarLinks = document.querySelectorAll('#sidebar a');
+      
+      // Menu toggle
+      menuToggle.addEventListener('click', () => {
+        if (menuToggle.classList.contains('active')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+      
+      // Overlay click to close sidebar
+      overlay.addEventListener('click', closeSidebar);
+      
+      // How to play modal
+      howToBtn.addEventListener('click', () => openModal('how-to-modal'));
+      modalCloseBtn.addEventListener('click', () => closeModal('how-to-modal'));
+      howToModal.addEventListener('click', (e) => {
+        if (e.target === howToModal) {
+          closeModal('how-to-modal');
+        }
+      });
+      
+      // Close sidebar when a link is clicked
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', closeSidebar);
+      });
+      
+      // Close sidebar on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeSidebar();
+          closeModal('how-to-modal');
+        }
+      });
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Add focus styles for keyboard navigation
+      document.addEventListener('keyup', (e) => {
+        if (e.key === 'Tab') {
+          document.body.classList.add('keyboard-nav');
+        }
+      });
+      
+      document.addEventListener('mousedown', () => {
+        document.body.classList.remove('keyboard-nav');
+      });
+    });
+    
+    // Performance optimization: Lazy load non-critical resources
+    window.addEventListener('load', () => {
+      // Load non-critical resources after page load
+      const nonCriticalResources = [
+        'https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js',
+        'https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js'
+      ];
+      
+      nonCriticalResources.forEach(resource => {
+        const script = document.createElement('script');
+        script.src = resource;
+        script.defer = true;
+        document.body.appendChild(script);
+      });
+    });
+  </script>
 </body>
 </html>

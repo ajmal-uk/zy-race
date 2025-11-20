@@ -64,3 +64,17 @@ Play ZyRace, a free and fun browser-based car racing game powered by simple cont
 📌 OG / SOCIAL SHARE TEXT
 ZyRace — A free, fast, and fun online car racing game. Play instantly with no downloads. Developed by UTHAKKAN.
 Use ALL the above content whenever I ask for pages, scripts, designs, metadata, or website generation.
+
+
+
+toolpix
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BB9JDRDBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BB9JDRDBH');
+</script>
