@@ -1,0 +1,66 @@
+I am building a website and content for my free online car game ZyRace and my small company UTHAKKAN.
+Use the following complete details to generate any pages or content I request.
+🚗 GAME — ZYRACE
+ZyRace is a free, browser-based online car game where players control a physics-driven car and enjoy fast, obstacle-based racing. The game is simple, fun, and designed for all ages. It loads instantly, requires no download, and offers an engaging experience with smooth controls, speed, and skill-based challenges.
+Key features:
+100% free gameplay
+No payments, no DLC, no subscriptions
+Simple, fun, physics-based controls
+Works directly in the browser
+Suitable for all ages
+Optimized for PC and mobile
+Created and maintained by one indie developer
+🏢 COMPANY — UTHAKKAN
+UTHAKKAN is a small single-member company founded and run by Ajmal U K in Kannur, Kerala, India.
+The company focuses on:
+Web application development
+Digital tools and utilities
+Online services
+Content creation (video editing, media production)
+Freelancing and custom projects
+Notable projects:
+ByteAI — https://byteai.pythonanywhere.com/
+ZyMail — https://zymail.pythonanywhere.com/
+ToolPix — https://toolpix.pythonanywhere.com/
+UTHAKKAN operates as a multi-service creative and software development studio run independently by the founder.
+📄 ABOUT PAGE CONTENT
+About ZyRace
+ZyRace is a fast, fun, and physics-driven online car game designed to be played instantly in your browser — no downloads required. It blends racing, balance control, and arcade-style challenges, offering players a simple yet addictive experience.
+ZyRace was created with one mission:
+to give people a free, enjoyable car-racing experience accessible to everyone.
+The game is continually updated and maintained by Ajmal U K, the founder of UTHAKKAN.
+🧑‍💻 ABOUT THE DEVELOPER
+My name is Ajmal U K, an indie developer and the founder of UTHAKKAN. I create web apps, tools, and digital services while also managing content creation projects. ZyRace is one of my independent creations, built, hosted, and maintained entirely by me.
+I aim to build simple, useful, and fun digital products that help or entertain people worldwide.
+🛡️ PRIVACY POLICY CONTENT
+ZyRace does not collect personal information directly from players. The game is free to play and requires no account or registration.
+The website may use:
+Google Analytics (for anonymous usage statistics)
+Data used by Google Analytics may include:
+Device type
+Browser type
+Country/region
+Non-personal usage activity
+No private information like names, emails, passwords, or payment details is collected.
+All data is handled in accordance with general data protection practices.
+Players can freely enjoy the game without worrying about personal data collection.
+⚖️ TERMS OF SERVICE CONTENT
+ZyRace is a free online game for entertainment purposes.
+Users play the game at their own discretion and responsibility.
+No payments, subscriptions, or financial transactions exist on the website.
+The game and website are provided “as is,” with no guarantees of uninterrupted access.
+All intellectual property, including the name ZyRace and site content, belongs to UTHAKKAN.
+Users must not misuse or attempt to damage the website, game, or server.
+Any updates or changes may occur without prior notice.
+Because ZyRace is completely free and contains no paid features, no refund policy is required.
+💬 CONTACT PAGE CONTENT
+Contact Email: contact.uthakka@gmaill.com
+Location: Made in India — Kannur, Kerala
+For inquiries about the game, feedback, collaboration, freelancing, or company services, users may contact through the provided email.
+📌 SHORT SEO DESCRIPTION
+ZyRace is a free online physics-based car game. Play instantly in your browser — no download, no payment, full fun. Created by indie developer Ajmal U K from UTHAKKAN.
+📌 LONG SEO DESCRIPTION
+Play ZyRace, a free and fun browser-based car racing game powered by simple controls and arcade-style physics. No downloads, no payments — just instant entertainment. Built and maintained by UTHAKKAN, an indie developer studio from Kerala, India.
+📌 OG / SOCIAL SHARE TEXT
+ZyRace — A free, fast, and fun online car racing game. Play instantly with no downloads. Developed by UTHAKKAN.
+Use ALL the above content whenever I ask for pages, scripts, designs, metadata, or website generation.

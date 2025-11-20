@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Cookies Policy - ZyRace: Free Online Monster Truck Physics Puzzle Racing Game</title>
+  <meta name="description" content="Learn about ZyRace's Cookies Policy. We use essential cookies for site functionality and analytics cookies to improve your monster truck gaming experience. Manage your preferences anytime." />
+  <meta name="keywords" content="ZyRace cookies policy, cookie management, privacy cookies, monster truck game cookies, free online game privacy" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Ajmal U K" />
+  <link rel="canonical" href="https://zyrace.pythonanywhere.com/cookies" />
+  <meta property="og:title" content="Cookies Policy - ZyRace Monster Truck Game" />
+  <meta property="og:description" content="ZyRace Cookies Policy: Essential and analytics cookies for smooth browser-based racing. No tracking without consent. Play free with privacy in mind!" />
+  <meta property="og:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
+  <meta property="og:url" content="https://zyrace.pythonanywhere.com/cookies" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ajmal_uk_" />
+  <meta name="twitter:title" content="ZyRace Cookies Policy - Privacy for Monster Truck Adventures" />
+  <meta name="twitter:description" content="Transparent cookie use in ZyRace: Only what's needed for epic physics puzzles and races. Control your data easily." />
+  <meta name="twitter:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="https://zyrace.pythonanywhere.com/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://zyrace.pythonanywhere.com/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ZyRace Cookies Policy",
+    "description": "ZyRace's policy on cookies and similar technologies used on our free online monster truck racing game website.",
+    "url": "https://zyrace.pythonanywhere.com/cookies",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ajmal U K Indie Games",
+      "url": "https://twitter.com/ajmal_uk_"
+    },
+    "inLanguage": "en-US"
+  }
+  </script>
+  <style>
+/* ========= BASE STYLES & VARIABLES ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+--primary: #FF8C00;
+--primary-dark: #E67E22;
+--sky-blue: #87CEEB;
+--green: #32CD32;
+--yellow: #FFD700;
+--brown: #8B4513;
+--white: #FFFFFF;
+--dark-text: #2C3E50;
+--light-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+--transition: all 0.3s ease;
+--block-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+--mountain-blue: #4682B4;
+--mountain-dark: #4169E1;
+--header-height: 70px;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* ========= LAYOUT & TYPOGRAPHY ========= */
+body {
+  font-family: 'Exo 2', sans-serif;
+  background: linear-gradient(to bottom, var(--sky-blue) 0%, #B0E0E6 100%);
+  color: var(--dark-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+body {
+  perspective: 1000px;
+}
+.clouds-layer-1, .clouds-layer-2, .clouds-layer-3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.clouds-layer-1 {
+  animation: floatCloudsSlow 60s linear infinite;
+  transform: translateZ(-50px) rotateX(5deg);
+}
+.clouds-layer-2 {
+  animation: floatCloudsFast 40s linear infinite reverse;
+  opacity: 0.7;
+  transform: translateZ(-100px) rotateX(-3deg);
+}
+.clouds-layer-3 {
+  animation: floatCloudsMedium 50s linear infinite;
+  opacity: 0.5;
+  transform: translateZ(-150px) rotateX(2deg);
+}
+@keyframes floatCloudsSlow {
+  0% { transform: translateX(0) translateY(0) translateZ(-50px) rotateX(5deg); }
+  50% { transform: translateX(-25%) translateY(-2%) translateZ(-60px) rotateX(7deg); }
+  100% { transform: translateX(-50%) translateY(0) translateZ(-50px) rotateX(5deg); }
+}
+@keyframes floatCloudsFast {
+  0% { transform: translateX(0) translateY(1%) translateZ(-100px) rotateX(-3deg); }
+  50% { transform: translateX(-75%) translateY(3%) translateZ(-110px) rotateX(-5deg); }
+  100% { transform: translateX(-100%) translateY(1%) translateZ(-100px) rotateX(-3deg); }
+}
+@keyframes floatCloudsMedium {
+  0% { transform: translateX(0) translateY(0.5%) translateZ(-150px) rotateX(2deg); }
+  50% { transform: translateX(-40%) translateY(-1%) translateZ(-160px) rotateX(4deg); }
+  100% { transform: translateX(-80%) translateY(0.5%) translateZ(-150px) rotateX(2deg); }
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  transform-style: preserve-3d;
+}
+main.container {
+  padding: 20px;
+}
+section {
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(50px) rotateX(10deg);
+  animation: fadeInUp3D 0.8s ease forwards;
+  transform-style: preserve-3d;
+}
+section[id] {
+  padding-top: var(--header-height);
+}
+section:nth-child(1) { animation-delay: 0.2s; }
+section:nth-child(2) { animation-delay: 0.4s; }
+section:nth-child(3) { animation-delay: 0.6s; }
+section:nth-child(4) { animation-delay: 0.8s; }
+section:nth-child(5) { animation-delay: 1s; }
+@keyframes fadeInUp3D {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+h1 {
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 15px;
+}
+p {
+  margin: 10px 0;
+  color: var(--dark-text);
+  font-size: 1.1rem;
+}
+/* ========= HEADER & NAVBAR STYLES ========= */
+.main-header {
+  width: 100%;
+  height: var(--header-height);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.nav-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: linear-gradient(90deg, var(--yellow), var(--primary));
+-webkit-background-clip: text;
+  background-clip: text;
+-webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
+  transition: var(--transition);
+}
+.nav-logo:hover {
+  transform: scale(1.05) rotateY(10deg);
+}
+.menu-toggle {
+  font-size: 1.8rem;
+  color: var(--dark-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+/* Unified Sidebar - Improved: Full height fixed, better transitions, and close on outside click */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+  transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1002;
+  padding-top: var(--header-height);
+  box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  will-change: transform;
+}
+.sidebar.active {
+  left: 0;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar li {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.sidebar a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  position: relative;
+}
+.sidebar a:hover {
+  color: var(--yellow);
+  transform: translateX(5px);
+}
+.sidebar a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 0;
+  background: var(--yellow);
+  transition: height 0.3s ease;
+}
+.sidebar a:hover::before {
+  height: 100%;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  cursor: pointer;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+/* ========= HERO, SECTIONS, FOOTER ========= */
+.hero {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+  background-image:
+radial-gradient(ellipse at bottom, var(--green) 0%, transparent 70%),
+linear-gradient(to bottom, transparent 40%, var(--sky-blue) 100%);
+  background-size: cover;
+  transform-style: preserve-3d;
+  margin-bottom: 60px;
+  padding-top: 0;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-image:
+url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234682B4;stop-opacity:1" /><stop offset="100%" style="stop-color:%234169E1;stop-opacity:1" /></linearGradient></defs><path d="M0,400 L200,250 L400,350 L600,200 L800,300 L1000,150 L1200,400 L1200,400 L0,400 Z" fill="url(%23grad)" /><path d="M0,400 L150,300 L350,380 L550,250 L750,320 L950,220 L1200,400 L1200,400 L0,400 Z" fill="%234682B4" opacity="0.8" /><path d="M0,400 L100,350 L300,400 L500,300 L700,370 L900,280 L1200,400 L1200,400 L0,400 Z" fill="%234169E1" opacity="0.6" /></svg>');
+  background-size: cover;
+  background-position: bottom;
+  animation: mountainWave3D 10s ease-in-out infinite alternate;
+  z-index: -1;
+  transform: translateZ(-200px) rotateX(15deg);
+  will-change: transform;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-image:
+url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,200 Q300,100 600,150 Q900,80 1200,200 L1200,200 L0,200 Z" fill="%2332CD32" opacity="0.6" /><path d="M0,200 Q150,150 300,120 Q450,180 600,140 Q750,160 900,130 Q1050,170 1200,200 L1200,200 L0,200 Z" fill="%2322B14C" opacity="0.4" /></svg>');
+  background-size: cover;
+  background-position: bottom;
+  animation: groundWave 8s ease-in-out infinite alternate;
+  z-index: -1;
+  transform: translateZ(-300px) rotateX(20deg);
+  will-change: transform;
+}
+@keyframes mountainWave3D {
+  0% { transform: translateZ(-200px) rotateX(15deg) scaleX(1) skewX(0deg); }
+  100% { transform: translateZ(-220px) rotateX(20deg) scaleX(1.05) skewX(2deg); }
+}
+@keyframes groundWave {
+  0% { transform: translateZ(-300px) rotateX(20deg) scaleY(1) skewY(0deg); }
+  100% { transform: translateZ(-320px) rotateX(25deg) scaleY(1.02) skewY(1deg); }
+}
+.logo-container {
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  transition: transform 0.1s ease-out;
+}
+.logo {
+  font-size: clamp(3rem, 8vw, 6rem);
+  background: linear-gradient(90deg, var(--yellow), var(--primary));
+-webkit-background-clip: text;
+  background-clip: text;
+-webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+  animation: bounce3D 2s infinite;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+  animation: shine 2s infinite;
+}
+@keyframes bounce3D {
+  0%, 100% { transform: translateY(0) rotateY(0deg) rotateX(0deg) scale(1); }
+  50% { transform: translateY(-10px) rotateY(5deg) rotateX(2deg) scale(1.02); }
+}
+.tagline {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  margin: 20px 0 30px;
+  max-width: 800px;
+  line-height: 1.5;
+  color: var(--dark-text);
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  transform-style: preserve-3d;
+}
+.tagline span {
+  color: var(--primary);
+  font-weight: 700;
+}
+/* Policy Section Styles */
+.policy-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px 0;
+  border: 3px solid var(--primary);
+  box-shadow: var(--block-shadow);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+  animation: shine 2s infinite;
+}
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+.policy-card {
+  background: rgba(135, 206, 235, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid var(--white);
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: var(--transition);
+  transform-style: preserve-3d;
+}
+.policy-card:hover {
+  transform: translateY(-5px) rotateY(5deg) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.policy-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+  text-align: center;
+}
+.policy-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--dark-text);
+  text-align: center;
+}
+.policy-desc {
+  color: #7F8C8D;
+  line-height: 1.6;
+}
+.cookie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.cookie-table th,
+.cookie-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0;
+}
+.cookie-table th {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+}
+.cookie-table tr:hover {
+  background: rgba(255, 140, 0, 0.05);
+}
+.cookie-table tr:last-child td {
+  border-bottom: none;
+}
+.last-updated {
+  text-align: center;
+  color: #7F8C8D;
+  font-size: 0.95rem;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #E0E0E0;
+}
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin: 50px 0;
+  transition: transform 0.1s ease-out;
+}
+.main-cta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.play-btn {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  border: none;
+  padding: 20px 50px;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+  font-weight: 700;
+  font-family: 'Fredoka One', cursive;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
+  letter-spacing: 1px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+  text-decoration: none;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  will-change: transform;
+}
+.play-btn i {
+  font-size: 1.4em;
+  animation: bounce 1.5s infinite;
+}
+.play-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.8s;
+  z-index: 1;
+}
+.play-btn:hover::before {
+  left: 100%;
+}
+.play-btn:hover {
+  transform: translateY(-5px) scale(1.05) rotateY(5deg) rotateX(2deg) translateZ(10px);
+  box-shadow: 0 10px 20px rgba(255, 140, 0, 0.4), 0 0 20px rgba(255, 140, 0, 0.2);
+}
+.play-btn:active {
+  transform: translateY(0) scale(0.98) rotateY(0deg);
+}
+.secondary-btn {
+  background: var(--white);
+  color: var(--primary);
+  border: 3px solid var(--primary);
+  border-radius: 50px;
+  padding: 12px 35px;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.secondary-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.05) rotate(3deg) rotateY(3deg) translateZ(5px);
+  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
+}
+.how-to-play {
+  text-align: center;
+  color: #7F8C8D;
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+.how-to-play span {
+  color: var(--primary);
+  font-weight: 600;
+}
+footer {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px;
+  margin-top: auto;
+  border-top: 3px solid var(--primary);
+  text-align: center;
+  transform-style: preserve-3d;
+}
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.footer-logo {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--yellow), var(--primary));
+-webkit-background-clip: text;
+  background-clip: text;
+-webkit-text-fill-color: transparent;
+  animation: bounce3D 3s infinite;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-link {
+  font-size: 0.95rem;
+}
+.footer-link a {
+  color: var(--dark-text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.footer-link a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 30px 0;
+}
+.social-link {
+  width: 60px;
+  height: 60px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid var(--primary);
+  box-shadow: var(--light-shadow);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.social-link:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-5px) scale(1.1) rotateY(360deg) rotateX(10deg);
+  box-shadow: 0 8px 16px rgba(255, 140, 0, 0.3), 0 0 15px rgba(255, 140, 0, 0.2);
+}
+.copyright {
+  color: #7F8C8D;
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+.copyright a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.copyright a:hover {
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes bounce3D {
+  0%, 100% { transform: translateY(0) rotateY(0deg) rotateX(0deg) scale(1); }
+  50% { transform: translateY(-10px) rotateY(5deg) rotateX(2deg) scale(1.02); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+/* ========= RESPONSIVE DESIGN ========= */
+@media (max-width: 900px) {
+.main-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+.play-btn {
+    width: 100%;
+    max-width: 350px;
+  }
+.sidebar {
+    width: 280px;
+    left: -280px;
+  }
+}
+@media (max-width: 768px) {
+.logo {
+    font-size: 4.5rem;
+  }
+.hero {
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+.section-title {
+    font-size: 1.8rem;
+  }
+h2 {
+    font-size: 2rem;
+  }
+.policy-grid {
+    grid-template-columns: 1fr;
+  }
+.cookie-table {
+    font-size: 0.9rem;
+  }
+.cookie-table th,
+.cookie-table td {
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+.logo {
+    font-size: 3.8rem;
+  }
+.tagline {
+    font-size: 1.3rem;
+  }
+.play-btn {
+    padding: 16px 30px;
+    font-size: 1.2rem;
+  }
+.social-link {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+section {
+    margin-bottom: 40px;
+  }
+.policy-section {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 480px) {
+.logo {
+    font-size: 3.2rem;
+  }
+.tagline {
+    font-size: 1.15rem;
+  }
+.container {
+    width: 100%;
+    padding: 0 10px;
+  }
+main.container {
+    padding: 10px;
+  }
+.navbar {
+    padding: 0 15px;
+  }
+.play-btn {
+    padding: 14px 25px;
+    font-size: 1.1rem;
+  }
+.section-title {
+    font-size: 1.5rem;
+  }
+.cookie-table {
+    font-size: 0.85rem;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="clouds-layer-1" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;50&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;70&quot; cy=&quot;35&quot; r=&quot;20&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;90&quot; cy=&quot;45&quot; r=&quot;18&quot; fill=&quot;white&quot; opacity=&quot;0.9&quot;/><circle cx=&quot;150&quot; cy=&quot;30&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.8&quot;/><circle cx=&quot;170&quot; cy=&quot;25&quot; r=&quot;16&quot; fill=&quot;white&quot; opacity=&quot;0.8&quot;/></svg>'); background-repeat: repeat-x; background-size: 300px 100px;"></div>
+  <div class="clouds-layer-2" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;30&quot; cy=&quot;50&quot; r=&quot;10&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;14&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;70&quot; cy=&quot;55&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.7&quot;/><circle cx=&quot;130&quot; cy=&quot;40&quot; r=&quot;8&quot; fill=&quot;white&quot; opacity=&quot;0.6&quot;/><circle cx=&quot;150&quot; cy=&quot;35&quot; r=&quot;11&quot; fill=&quot;white&quot; opacity=&quot;0.6&quot;/></svg>'); background-repeat: repeat-x; background-size: 400px 80px; top: 20%;"></div>
+  <div class="clouds-layer-3" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 100&quot;><circle cx=&quot;20&quot; cy=&quot;60&quot; r=&quot;8&quot; fill=&quot;white&quot; opacity=&quot;0.5&quot;/><circle cx=&quot;40&quot; cy=&quot;55&quot; r=&quot;12&quot; fill=&quot;white&quot; opacity=&quot;0.5&quot;/><circle cx=&quot;60&quot; cy=&quot;65&quot; r=&quot;10&quot; fill=&quot;white&quot; opacity=&quot;0.5&quot;/><circle cx=&quot;120&quot; cy=&quot;50&quot; r=&quot;6&quot; fill=&quot;white&quot; opacity=&quot;0.4&quot;/><circle cx=&quot;140&quot; cy=&quot;45&quot; r=&quot;9&quot; fill=&quot;white&quot; opacity=&quot;0.4&quot;/></svg>'); background-repeat: repeat-x; background-size: 350px 90px; top: 40%;"></div>
+  <div class="overlay" id="sidebar-overlay"></div>
+  <header class="main-header">
+    <nav class="navbar container">
+      <a href="/" class="nav-logo">Zy<span style="color:var(--yellow);">Race</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+  <div id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#gameplay">Gameplay</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#testimonials">Testimonials</a></li>
+      <li><a href="/#blog">Blog</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/" onclick="startAdventure(); return false;">Play Now</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/terms">Terms</a></li>
+      <li><a href="/cookies">Cookies</a></li>
+      <li><a href="/gdpr">GDPR</a></li>
+      <li><a href="/dmca">DMCA</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/refund-policy">Refund Policy</a></li>
+      <li><a href="/help">Help</a></li>
+      <li><a href="/documentation">Documentation</a></li>
+    </ul>
+  </div>
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="logo-container">
+        <h1 class="logo">Cookies <span style="color:var(--yellow);">Policy</span></h1>
+      </div>
+      <p class="tagline">Transparent cookie use in <span>ZyRace</span>: Essential for smooth racing, optional for better adventures. Your privacy fuels our monster truck world!</p>
+      <div class="cta-container">
+        <div class="main-cta">
+          <a href="/" class="play-btn">
+            <i class="fas fa-gamepad"></i> BACK TO RACE
+          </a>
+          <a href="/privacy" class="secondary-btn">
+            <i class="fas fa-shield-alt"></i> PRIVACY POLICY
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="container">
+    <section class="policy-section" id="cookies">
+      <h2 class="section-title">ZyRace Cookies: Fueling Your Gaming Adventure Responsibly</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">At ZyRace, we use cookies to enhance your free online monster truck experience. This policy explains what cookies we use, why, and how you can manage them. Last updated: November 20, 2025.</p>
+      <div class="policy-grid">
+        <div class="policy-card">
+          <div class="policy-icon"><i class="fas fa-cookie-bite"></i></div>
+          <h3 class="policy-title">What Are Cookies?</h3>
+          <p class="policy-desc">Cookies are small text files stored on your device when you visit our site. They help remember preferences, track usage, and ensure smooth browser-based racing without downloads.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-icon"><i class="fas fa-cogs"></i></div>
+          <h3 class="policy-title">Essential Cookies</h3>
+          <p class="policy-desc">These are required for basic functionality, like session management during truck building and physics puzzles. They don't track you across sites.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-icon"><i class="fas fa-chart-line"></i></div>
+          <h3 class="policy-title">Analytics Cookies</h3>
+          <p class="policy-desc">Optional cookies help us understand how players interact with tracks and features. We use anonymized data to improve ZyRace adventures.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-icon"><i class="fas fa-user-shield"></i></div>
+          <h3 class="policy-title">No Marketing Cookies</h3>
+          <p class="policy-desc">ZyRace is ad-free! We don't use cookies for targeted ads or third-party marketing, keeping your focus on epic races.</p>
+        </div>
+      </div>
+      <h3 style="text-align: center; margin: 40px 0 20px;">Cookies We Use</h3>
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Cookie Name</th>
+            <th>Type</th>
+            <th>Purpose</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>session_id</td>
+            <td>Essential</td>
+            <td>Maintains user session for building and racing</td>
+            <td>Session</td>
+          </tr>
+          <tr>
+            <td>_ga</td>
+            <td>Analytics (Google Analytics)</td>
+            <td>Tracks site usage anonymously</td>
+            <td>2 years</td>
+          </tr>
+          <tr>
+            <td>_gid</td>
+            <td>Analytics (Google Analytics)</td>
+            <td>Short-term site analytics</td>
+            <td>24 hours</td>
+          </tr>
+          <tr>
+            <td>consent_cookie</td>
+            <td>Essential</td>
+            <td>Stores cookie consent preferences</td>
+            <td>1 year</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 style="text-align: center; margin: 40px 0 20px;">Managing Your Cookies</h3>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">You can manage cookies through your browser settings. Most browsers let you block or delete them. Note: Blocking essential cookies may affect site functionality, like saving your monster truck builds.</p>
+      <ul style="max-width: 800px; margin: 0 auto; text-align: left; font-size: 1.1rem;">
+        <li><strong>Browser Settings:</strong> Check your browser's help section (e.g., Chrome, Firefox) for cookie controls.</li>
+        <li><strong>Opt-Out:</strong> For analytics, visit <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-Out</a>.</li>
+        <li><strong>Contact Us:</strong> Questions? Email <a href="mailto:ajmal.uk.dev@gmail.com">ajmal.uk.dev@gmail.com</a>.</li>
+      </ul>
+      <p class="last-updated">Last Updated: November 20, 2025 | ZyRace by Ajmal U K</p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">ZyRace</div>
+      <p style="color: #7F8C8D; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Monster truck madness meets physics puzzles in ZyRace. Crafted with adventure in Kerala, India – hit the gas on wild tracks!
+      </p>
+      <ul class="footer-links">
+        <li class="footer-link"><a href="/#gameplay">Gameplay</a></li>
+        <li class="footer-link"><a href="/#features">Features</a></li>
+        <li class="footer-link"><a href="/#testimonials">Testimonials</a></li>
+        <li class="footer-link"><a href="/#blog">Blog</a></li>
+        <li class="footer-link"><a href="/#about">About</a></li>
+        <li class="footer-link"><a href="/#faq">FAQ</a></li>
+        <li class="footer-link"><a href="/privacy">Privacy</a></li>
+        <li class="footer-link"><a href="/terms">Terms</a></li>
+        <li class="footer-link"><a href="/cookies">Cookies</a></li>
+        <li class="footer-link"><a href="/gdpr">GDPR</a></li>
+        <li class="footer-link"><a href="/dmca">DMCA</a></li>
+        <li class="footer-link"><a href="/disclaimer">Disclaimer</a></li>
+        <li class="footer-link"><a href="/help">Help</a></li>
+        <li class="footer-link"><a href="/documentation">Documentation</a></li>
+      </ul>
+      <div class="socials">
+        <a href="https://twitter.com/ajmal_uk_" target="_blank" rel="noopener noreferrer" class="social-link" title="Follow ZyRace on Twitter for updates on monster truck games" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/ajmaluk" target="_blank" rel="noopener noreferrer" class="social-link" title="ZyRace on GitHub - Contribute to physics racing features" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:ajmal.uk.dev@gmail.com" class="social-link" title="Contact Developer for ZyRace support" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" class="social-link" title="Join ZyRace Community for tips on truck building" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+      </div>
+      <p class="copyright">© 2025 ZyRace · Made in Kerala 🇮🇳 · All Rights Reserved · <a href="/privacy">Privacy</a></p>
+    </div>
+  </footer>
+  <script>
+function openSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const menuIcon = document.getElementById('menu-toggle').querySelector('i');
+  sidebar.classList.add('active');
+  overlay.classList.add('active');
+  menuIcon.classList.remove('fa-bars');
+  menuIcon.classList.add('fa-times');
+  document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const menuIcon = document.getElementById('menu-toggle').querySelector('i');
+  sidebar.classList.remove('active');
+  overlay.classList.remove('active');
+  menuIcon.classList.remove('fa-times');
+  menuIcon.classList.add('fa-bars');
+  document.body.style.overflow = '';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  closeSidebar();
+  const menuToggle = document.getElementById('menu-toggle');
+  const overlay = document.getElementById('sidebar-overlay');
+  menuToggle.addEventListener('click', () => {
+    if (document.getElementById('sidebar').classList.contains('active')) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  });
+  overlay.addEventListener('click', closeSidebar);
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+  const sidebarLinks = document.querySelectorAll('#sidebar a[href^="#"]');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', closeSidebar);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('sidebar').classList.contains('active')) {
+      closeSidebar();
+    }
+  });
+});
+function mouseParallax(e) {
+  const { clientX, clientY } = e;
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+  const rotateX = (clientY - centerY) / 80;
+  const rotateY = (clientX - centerX) / 80;
+  const heroContent = document.querySelector('.hero .cta-container');
+  const logo = document.querySelector('.logo-container');
+  if (heroContent) heroContent.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+  if (logo) logo.style.transform = `rotateX(${-rotateX / 2}deg) rotateY(${-rotateY / 2}deg) translateZ(5px)`;
+}
+document.addEventListener('mousemove', mouseParallax);
+function preloadImages() {
+  const images = [
+    'https://zyrace.pythonanywhere.com/favicon-96x96.png',
+    'https://zyrace.pythonanywhere.com/apple-touch-icon.png',
+    'https://zyrace.pythonanywhere.com/og-image.jpg'
+  ];
+  images.forEach(src => { const img = new Image(); img.src = src; });
+}
+window.addEventListener('load', preloadImages);
+</script>
+</body>
+</html>
