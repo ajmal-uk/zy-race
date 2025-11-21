@@ -10,7 +10,6 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Ajmal U K" />
   <link rel="canonical" href="https://zyrace.pythonanywhere.com/" />
-  
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="ZyRace: Monster Truck Physics Adventure - Free Online Game" />
   <meta property="og:description" content="Build custom monster trucks, solve realistic physics challenges on adventurous tracks with bridges, water, and mountains, and race through epic levels in ZyRace. Instant play, no downloads!" />
@@ -18,7 +17,6 @@
   <meta property="og:url" content="https://zyrace.pythonanywhere.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ZyRace" />
-  
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@ajmal_uk_" />
@@ -26,19 +24,16 @@
   <meta name="twitter:title" content="ZyRace: Monster Truck Racing Game - Build & Race Free Online" />
   <meta name="twitter:description" content="Epic monster truck builds, realistic physics puzzles, and high-speed races on wild tracks. Play ZyRace free in your browser now – no sign-up needed!" />
   <meta name="twitter:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
-  
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/png" sizes="96x96" href="https://zyrace.pythonanywhere.com/favicon-96x96.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://zyrace.pythonanywhere.com/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="https://zyrace.pythonanywhere.com/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="https://zyrace.pythonanywhere.com/favicon-16x16.png" />
-  
   <!-- Preload Critical Resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
   <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
   {
@@ -104,7 +99,6 @@
     "gameTip": "Build balanced trucks with large wheels for rough terrain and boosters for speed challenges."
   }
   </script>
-  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -133,7 +127,6 @@
     "browserRequirements": "Requires HTML5 support"
   }
   </script>
-  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -159,7 +152,6 @@
     ]
   }
   </script>
-  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -210,7 +202,6 @@
     ]
   }
   </script>
-  
   <style>
 /* ========= CSS VARIABLES & RESET ========= */
 :root {
@@ -234,19 +225,18 @@
   --header-height: 70px;
   --footer-height: auto;
   --max-width: 1200px;
+  /* New variable for section padding */
+  --section-padding: 20px;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
-
 body {
   font-family: 'Exo 2', sans-serif;
   background: linear-gradient(to bottom, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
@@ -258,7 +248,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 /* ========= CLOUD ANIMATIONS ========= */
 .clouds-layer-1, .clouds-layer-2, .clouds-layer-3 {
   position: fixed;
@@ -270,14 +259,12 @@ body {
   pointer-events: none;
   will-change: transform;
 }
-
 .clouds-layer-1 {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="50" cy="40" r="15" fill="white" opacity="0.9"/><circle cx="70" cy="35" r="20" fill="white" opacity="0.9"/><circle cx="90" cy="45" r="18" fill="white" opacity="0.9"/><circle cx="150" cy="30" r="12" fill="white" opacity="0.8"/><circle cx="170" cy="25" r="16" fill="white" opacity="0.8"/></svg>');
   background-repeat: repeat-x;
   background-size: 300px 100px;
   animation: floatCloudsSlow 60s linear infinite;
 }
-
 .clouds-layer-2 {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="30" cy="50" r="10" fill="white" opacity="0.7"/><circle cx="50" cy="45" r="14" fill="white" opacity="0.7"/><circle cx="70" cy="55" r="12" fill="white" opacity="0.7"/><circle cx="130" cy="40" r="8" fill="white" opacity="0.6"/><circle cx="150" cy="35" r="11" fill="white" opacity="0.6"/></svg>');
   background-repeat: repeat-x;
@@ -286,7 +273,6 @@ body {
   animation: floatCloudsFast 40s linear infinite reverse;
   opacity: 0.7;
 }
-
 .clouds-layer-3 {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="20" cy="60" r="8" fill="white" opacity="0.5"/><circle cx="40" cy="55" r="12" fill="white" opacity="0.5"/><circle cx="60" cy="65" r="10" fill="white" opacity="0.5"/><circle cx="120" cy="50" r="6" fill="white" opacity="0.4"/><circle cx="140" cy="45" r="9" fill="white" opacity="0.4"/></svg>');
   background-repeat: repeat-x;
@@ -295,32 +281,35 @@ body {
   animation: floatCloudsMedium 50s linear infinite;
   opacity: 0.5;
 }
-
 @keyframes floatCloudsSlow {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
 @keyframes floatCloudsFast {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
-
 @keyframes floatCloudsMedium {
   0% { transform: translateX(0); }
   100% { transform: translateX(-80%); }
 }
-
 /* ========= LAYOUT & CONTAINERS ========= */
 .container {
   width: 90%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--section-padding); /* Apply consistent padding */
 }
-
 main.container {
-  padding: 20px 0;
+  padding: var(--section-padding) 0;
+}
+/* Specific style for the hero section to be 100% width */
+section#hero {
+  width: 100vw;
+  margin-left: calc(-1 * var(--section-padding)); /* Offset the container padding */
+  margin-right: calc(-1 * var(--section-padding)); /* Offset the container padding */
+  padding-left: var(--section-padding);
+  padding-right: var(--section-padding);
 }
 
 section {
@@ -328,15 +317,27 @@ section {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  /* Adjust height for sections other than hero */
+  min-height: calc(100vh - var(--header-height) - 60px - var(--footer-height)); /* Adjusted calculation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
 section.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 section[id] {
   scroll-margin-top: calc(var(--header-height) + 20px);
+}
+
+/* Adjust section container height if needed */
+.section-container {
+  /* Removed fixed height, let it grow with content */
+  min-height: calc(100vh - var(--header-height) - 60px - var(--footer-height) - 100px); /* Subtract some buffer */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ========= TYPOGRAPHY ========= */
@@ -345,13 +346,11 @@ h1, h2, h3, h4 {
   line-height: 1.2;
   margin-bottom: 1rem;
 }
-
 h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   letter-spacing: 1px;
 }
-
 h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
@@ -359,30 +358,25 @@ h2 {
   margin-bottom: 2rem;
   color: var(--primary);
 }
-
 h3 {
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 600;
   color: var(--dark-text);
 }
-
 p {
   margin-bottom: 1rem;
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
 a {
   color: var(--primary);
   text-decoration: none;
   transition: var(--transition);
 }
-
 a:hover, a:focus {
   color: var(--primary-dark);
   text-decoration: underline;
 }
-
 /* ========= HEADER & NAVIGATION ========= */
 .main-header {
   position: fixed;
@@ -397,14 +391,12 @@ a:hover, a:focus {
   z-index: 1000;
   transition: var(--transition);
 }
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
 }
-
 .nav-logo {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
@@ -416,11 +408,9 @@ a:hover, a:focus {
   -webkit-text-fill-color: transparent;
   transition: var(--transition);
 }
-
 .nav-logo:hover, .nav-logo:focus {
   transform: scale(1.05);
 }
-
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -434,7 +424,6 @@ a:hover, a:focus {
   padding: 0;
   z-index: 1001;
 }
-
 .menu-toggle span {
   display: block;
   width: 25px;
@@ -444,19 +433,15 @@ a:hover, a:focus {
   transition: var(--transition);
   transform-origin: center;
 }
-
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
-
 .menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
-
 .menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
-
 /* ========= SIDEBAR ========= */
 .sidebar {
   position: fixed;
@@ -472,20 +457,16 @@ a:hover, a:focus {
   overflow-y: auto;
   transition: right 0.3s ease;
 }
-
 .sidebar.active {
   right: 0;
 }
-
 .sidebar ul {
   list-style: none;
   padding: 0;
 }
-
 .sidebar li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-
 .sidebar a {
   display: block;
   padding: 15px 25px;
@@ -494,13 +475,11 @@ a:hover, a:focus {
   transition: var(--transition);
   position: relative;
 }
-
 .sidebar a:hover, .sidebar a:focus {
   background: rgba(255, 140, 0, 0.1);
   color: var(--primary);
   padding-left: 30px;
 }
-
 .sidebar a::before {
   content: '';
   position: absolute;
@@ -512,11 +491,9 @@ a:hover, a:focus {
   transform: scaleY(0);
   transition: transform 0.3s ease;
 }
-
 .sidebar a:hover::before, .sidebar a:focus::before {
   transform: scaleY(1);
 }
-
 .overlay {
   position: fixed;
   top: 0;
@@ -529,15 +506,13 @@ a:hover, a:focus {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
 .overlay.active {
   opacity: 1;
   visibility: visible;
 }
-
 /* ========= HERO SECTION ========= */
 .hero {
-  min-height: 100vh;
+  min-height: 100vh; /* Ensure full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -547,7 +522,6 @@ a:hover, a:focus {
   position: relative;
   overflow: hidden;
 }
-
 .hero::before {
   content: '';
   position: absolute;
@@ -561,7 +535,6 @@ a:hover, a:focus {
   animation: mountainWave 10s ease-in-out infinite alternate;
   z-index: -1;
 }
-
 .hero::after {
   content: '';
   position: absolute;
@@ -575,22 +548,18 @@ a:hover, a:focus {
   animation: groundWave 8s ease-in-out infinite alternate;
   z-index: -1;
 }
-
 @keyframes mountainWave {
   0% { transform: scaleX(1) skewX(0deg); }
   100% { transform: scaleX(1.05) skewX(2deg); }
 }
-
 @keyframes groundWave {
   0% { transform: scaleY(1) skewY(0deg); }
   100% { transform: scaleY(1.02) skewY(1deg); }
 }
-
 .logo-container {
   margin-bottom: 2rem;
   position: relative;
 }
-
 .logo {
   font-size: clamp(3rem, 8vw, 6rem);
   background: linear-gradient(90deg, var(--yellow), var(--primary));
@@ -600,12 +569,10 @@ a:hover, a:focus {
   text-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
   animation: bounce 3s infinite;
 }
-
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
-
 .tagline {
   font-size: clamp(1.2rem, 3.5vw, 1.6rem);
   margin: 0 auto 2.5rem;
@@ -616,12 +583,10 @@ a:hover, a:focus {
   position: relative;
   z-index: 2;
 }
-
 .tagline span {
   color: var(--primary);
   font-weight: 700;
 }
-
 .cta-container {
   display: flex;
   flex-direction: column;
@@ -629,14 +594,12 @@ a:hover, a:focus {
   gap: 1.5rem;
   margin: 2rem 0;
 }
-
 .main-cta {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 /* ========= BUTTONS ========= */
 .btn {
   display: inline-flex;
@@ -655,63 +618,57 @@ a:hover, a:focus {
   position: relative;
   overflow: hidden;
 }
-
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: var(--white);
   box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
 }
-
 .btn-primary:hover, .btn-primary:focus {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(255, 140, 0, 0.4);
 }
-
 .btn-secondary {
   background: var(--white);
   color: var(--primary);
   border: 2px solid var(--primary);
 }
-
 .btn-secondary:hover, .btn-secondary:focus {
   background: var(--primary);
   color: var(--white);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
 }
-
 .btn i {
   font-size: 1.2em;
 }
-
 .btn-primary i {
   animation: bounce 1.5s infinite;
 }
-
 .how-to-play {
   text-align: center;
   color: var(--light-text);
   font-size: 1.1rem;
   max-width: 600px;
 }
-
 .how-to-play span {
   color: var(--primary);
   font-weight: 600;
 }
-
 /* ========= SECTIONS STYLING ========= */
 .section-container {
   background: var(--light-bg);
   border-radius: var(--border-radius);
-  padding: 40px;
+  padding: 40px var(--section-padding); /* Use the variable here too */
   margin: 50px 0;
   border: 3px solid var(--primary);
   box-shadow: var(--medium-shadow);
   position: relative;
   z-index: 10;
+  /* Adjusted for responsiveness */
+  min-height: auto; /* Reset to auto for content flow */
+  margin-top: 100px; /* Add margin-top to account for fixed header */
+  margin-bottom: 100px; /* Add margin-bottom for spacing */
 }
-
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.2rem);
   text-align: center;
@@ -721,7 +678,6 @@ a:hover, a:focus {
   display: inline-block;
   width: 100%;
 }
-
 .section-title::after {
   content: '';
   position: absolute;
@@ -734,27 +690,22 @@ a:hover, a:focus {
   border-radius: 2px;
   animation: shine 2s infinite;
 }
-
 @keyframes shine {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
-
 /* ========= CARDS & GRIDS ========= */
 .grid {
   display: grid;
   gap: 2rem;
   margin-top: 2rem;
 }
-
 .gameplay-grid, .features-grid {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
-
 .testimonial-grid, .blog-grid {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
 .card {
   background: var(--white);
   border-radius: 15px;
@@ -766,97 +717,81 @@ a:hover, a:focus {
   position: relative;
   overflow: hidden;
 }
-
 .card:hover, .card:focus-within {
   transform: translateY(-8px);
   box-shadow: var(--medium-shadow);
   border-color: var(--primary);
 }
-
 .gameplay-card, .feature-card {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .card-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
   color: var(--primary);
   transition: var(--transition);
 }
-
 .card:hover .card-icon {
   transform: scale(1.1);
 }
-
 .card-title {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: var(--dark-text);
 }
-
 .card-desc {
   color: var(--light-text);
   flex-grow: 1;
 }
-
 /* ========= TESTIMONIALS ========= */
 .testimonial-card {
   text-align: center;
   padding: 2rem;
 }
-
 .testimonial-text {
   font-style: italic;
   margin-bottom: 1.5rem;
   color: var(--dark-text);
   position: relative;
 }
-
 .testimonial-text::before, .testimonial-text::after {
   content: '"';
   font-size: 2rem;
   color: var(--primary);
   opacity: 0.5;
 }
-
 .testimonial-author {
   font-weight: 700;
   color: var(--primary);
 }
-
 /* ========= BLOG ========= */
 .blog-card {
   text-align: left;
   cursor: pointer;
 }
-
 .blog-title {
   font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 1rem;
 }
-
 .blog-excerpt {
   color: var(--light-text);
   font-size: 0.95rem;
 }
-
 /* ========= FAQ ========= */
 .faq-item {
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #E0E0E0;
   padding-bottom: 1.5rem;
 }
-
 .faq-item:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-
 .faq-question {
   font-size: 1.2rem;
   font-weight: 600;
@@ -870,16 +805,13 @@ a:hover, a:focus {
   border-radius: 8px;
   background: rgba(255, 140, 0, 0.05);
 }
-
 .faq-question:hover, .faq-question:focus {
   background: rgba(255, 140, 0, 0.1);
   color: var(--primary);
 }
-
 .faq-question .faq-icon {
   transition: var(--transition);
 }
-
 .faq-answer {
   color: var(--light-text);
   margin-top: 1rem;
@@ -888,17 +820,14 @@ a:hover, a:focus {
   background: rgba(135, 206, 235, 0.1);
   border-radius: 8px;
 }
-
 .faq-answer.show {
   display: block;
   animation: fadeIn 0.3s ease;
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
 /* ========= LOADING UI ========= */
 .loading-ui {
   display: none;
@@ -908,7 +837,6 @@ a:hover, a:focus {
   margin: 3rem 0;
   width: 100%;
 }
-
 .loading-container {
   background: var(--light-bg);
   border-radius: var(--border-radius);
@@ -919,13 +847,11 @@ a:hover, a:focus {
   box-shadow: var(--medium-shadow);
   border: 3px solid var(--primary);
 }
-
 .fuel-gauge-container {
   width: 100%;
   max-width: 400px;
   margin: 1.5rem auto;
 }
-
 .fuel-gauge {
   width: 100%;
   height: 30px;
@@ -936,7 +862,6 @@ a:hover, a:focus {
   border: 2px solid var(--primary);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .fuel-level {
   height: 100%;
   width: 0%;
@@ -946,19 +871,16 @@ a:hover, a:focus {
   position: relative;
   overflow: hidden;
 }
-
 .loading-text {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
-
 .loading-subtext {
   color: var(--light-text);
   font-size: 1rem;
 }
-
 .loading-steps {
   display: flex;
   justify-content: space-around;
@@ -966,7 +888,6 @@ a:hover, a:focus {
   flex-wrap: wrap;
   gap: 1rem;
 }
-
 .loading-step {
   display: flex;
   flex-direction: column;
@@ -974,22 +895,18 @@ a:hover, a:focus {
   gap: 0.5rem;
   animation: pulse 1.5s infinite;
 }
-
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
-
 .step-icon {
   font-size: 1.5rem;
   color: var(--primary);
 }
-
 .step-text {
   color: var(--light-text);
   font-size: 0.9rem;
 }
-
 /* ========= CANVAS STAGE ========= */
 .canvas-stage {
   display: none;
@@ -1003,14 +920,12 @@ a:hover, a:focus {
   position: relative;
   border: 3px solid var(--primary);
 }
-
 canvas {
   display: block;
   width: 100%;
   height: auto;
   max-height: 80vh;
 }
-
 /* ========= FOOTER ========= */
 footer {
   background: var(--white);
@@ -1020,14 +935,14 @@ footer {
   text-align: center;
   position: relative;
   z-index: 10;
+  /* Ensure footer doesn't overlap content */
+  margin-top: 100px;
 }
-
 .footer-content {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--section-padding); /* Apply padding here too */
 }
-
 .footer-logo {
   font-family: 'Fredoka One', cursive;
   font-size: 2rem;
@@ -1037,7 +952,6 @@ footer {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -1047,26 +961,22 @@ footer {
   padding: 0;
   list-style: none;
 }
-
 .footer-link a {
   color: var(--dark-text);
   text-decoration: none;
   transition: var(--transition);
   font-size: 0.95rem;
 }
-
 .footer-link a:hover, .footer-link a:focus {
   color: var(--primary);
   text-decoration: underline;
 }
-
 .socials {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin: 2rem 0;
 }
-
 .social-link {
   width: 50px;
   height: 50px;
@@ -1082,29 +992,24 @@ footer {
   border: 2px solid var(--primary);
   box-shadow: var(--light-shadow);
 }
-
 .social-link:hover, .social-link:focus {
   background: var(--primary);
   color: var(--white);
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 8px 16px rgba(255, 140, 0, 0.3);
 }
-
 .copyright {
   color: var(--light-text);
   font-size: 0.95rem;
   margin-top: 1.5rem;
 }
-
 .copyright a {
   color: var(--primary);
   text-decoration: none;
 }
-
 .copyright a:hover, .copyright a:focus {
   text-decoration: underline;
 }
-
 /* ========= MODAL ========= */
 .modal-overlay {
   position: fixed;
@@ -1123,12 +1028,10 @@ footer {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
 .modal-overlay.active {
   display: flex;
   opacity: 1;
 }
-
 .modal-content {
   background: var(--white);
   padding: 2rem;
@@ -1142,12 +1045,10 @@ footer {
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .modal-overlay.active .modal-content {
   transform: scale(1);
   opacity: 1;
 }
-
 .modal-close {
   position: absolute;
   top: 15px;
@@ -1164,12 +1065,10 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
 .modal-close:hover, .modal-close:focus {
   color: var(--primary);
   transform: rotate(90deg);
 }
-
 .modal-title {
   font-family: 'Fredoka One', cursive;
   color: var(--primary);
@@ -1177,13 +1076,11 @@ footer {
   text-align: center;
   margin-bottom: 1.5rem;
 }
-
 .modal-steps {
   list-style: none;
   padding-left: 0;
   margin-bottom: 1.5rem;
 }
-
 .modal-steps li {
   font-size: 1.1rem;
   margin-bottom: 1rem;
@@ -1194,17 +1091,14 @@ footer {
   border-radius: 5px;
   transition: var(--transition);
 }
-
 .modal-steps li:hover {
   transform: translateX(5px);
 }
-
 .modal-steps li span {
   font-weight: 700;
   color: var(--dark-text);
   margin-right: 8px;
 }
-
 .modal-tip {
   font-size: 1.1rem;
   text-align: center;
@@ -1212,12 +1106,10 @@ footer {
   padding: 15px;
   border-radius: 10px;
 }
-
 .modal-tip span {
   font-weight: 700;
   color: var(--primary);
 }
-
 /* ========= ACCESSIBILITY ========= */
 .sr-only {
   position: absolute;
@@ -1230,148 +1122,188 @@ footer {
   white-space: nowrap;
   border: 0;
 }
-
 /* Focus styles for better accessibility */
 button:focus, a:focus, .card:focus {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
-
 /* ========= RESPONSIVE DESIGN ========= */
 @media (max-width: 900px) {
   .main-cta {
     flex-direction: column;
     align-items: center;
   }
-  
   .btn {
     width: 100%;
     max-width: 350px;
   }
-  
   .section-container {
-    padding: 30px 20px;
+    padding: 30px var(--section-padding); /* Maintain padding */
+    margin-top: 80px; /* Adjusted for mobile */
+    margin-bottom: 80px; /* Adjusted for mobile */
   }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: auto;
-    padding-bottom: 40px;
-  }
-  
   .section-title {
-    font-size: 1.8rem;
+     font-size: 1.8rem;
   }
-  
   h2 {
     font-size: 2rem;
   }
-  
   .loading-steps {
     flex-direction: column;
     gap: 1rem;
   }
-  
   .footer-links {
     flex-direction: column;
     align-items: center;
   }
+  /* Mobile-specific adjustments for hero section */
+  .hero {
+      min-height: calc(100vh - var(--header-height)); /* Adjust for header */
+  }
+  section:not(#hero) {
+      min-height: calc(100vh - var(--header-height) - 80px - var(--footer-height)); /* Adjust for header, footer, margin */
+  }
+  .section-container {
+      min-height: auto; /* Let it flow on mobile */
+      margin-top: 60px; /* Smaller margin */
+      margin-bottom: 60px; /* Smaller margin */
+  }
 }
-
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto; /* Allow it to grow on smaller screens if needed */
+    padding-bottom: 40px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .loading-steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Mobile-specific adjustments for hero section */
+  .hero {
+      min-height: calc(100vh - var(--header-height)); /* Adjust for header */
+  }
+  section:not(#hero) {
+      min-height: calc(100vh - var(--header-height) - 80px - var(--footer-height)); /* Adjust for header, footer, margin */
+  }
+  .section-container {
+      min-height: auto; /* Let it flow on mobile */
+      margin-top: 60px; /* Smaller margin */
+      margin-bottom: 60px; /* Smaller margin */
+      padding: 25px var(--section-padding); /* Maintain padding */
+  }
+}
 @media (max-width: 600px) {
   .logo {
     font-size: 3.8rem;
   }
-  
   .tagline {
     font-size: 1.3rem;
   }
-  
   .btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
-  
   .card-icon {
     font-size: 2.5rem;
   }
-  
   .social-link {
     width: 45px;
     height: 45px;
     font-size: 1.3rem;
   }
-  
   section {
     margin-bottom: 40px;
   }
-  
   .section-container {
-    padding: 25px 15px;
-    margin: 30px 0;
+    padding: 25px var(--section-padding); /* Maintain padding */
+    margin-top: 50px; /* Smaller margin */
+    margin-bottom: 50px; /* Smaller margin */
   }
-  
   .modal-content {
     padding: 1.5rem;
   }
-  
   .modal-title {
     font-size: 1.5rem;
   }
+  /* Mobile-specific adjustments for hero section */
+  .hero {
+      min-height: calc(100vh - var(--header-height)); /* Adjust for header */
+  }
+  section:not(#hero) {
+      min-height: calc(100vh - var(--header-height) - 60px - var(--footer-height)); /* Adjust for header, footer, margin */
+  }
+  .section-container {
+      min-height: auto; /* Let it flow on mobile */
+      margin-top: 40px; /* Smaller margin */
+      margin-bottom: 40px; /* Smaller margin */
+  }
 }
-
 @media (max-width: 480px) {
   .logo {
     font-size: 3.2rem;
   }
-  
   .tagline {
     font-size: 1.15rem;
   }
-  
   .container {
     width: 100%;
-    padding: 0 15px;
+    padding: 0 var(--section-padding); /* Maintain padding */
   }
-  
   main.container {
-    padding: 10px 0;
+    padding: var(--section-padding) 0; /* Maintain padding */
   }
-  
   .navbar {
-    padding: 0 15px;
+    padding: 0 var(--section-padding); /* Maintain padding */
   }
-  
   .card {
     padding: 20px 15px;
   }
-  
   .btn {
     padding: 0.7rem 1.2rem;
     font-size: 0.95rem;
   }
-  
   .section-title {
     font-size: 1.5rem;
   }
-  
   .sidebar {
     max-width: 280px;
   }
+  /* Mobile-specific adjustments for hero section */
+  .hero {
+      min-height: calc(100vh - var(--header-height)); /* Adjust for header */
+  }
+  section:not(#hero) {
+      min-height: calc(100vh - var(--header-height) - 50px - var(--footer-height)); /* Adjust for header, footer, margin */
+  }
+  .section-container {
+      min-height: auto; /* Let it flow on mobile */
+      margin-top: 30px; /* Smaller margin */
+      margin-bottom: 30px; /* Smaller margin */
+      padding: 20px var(--section-padding); /* Maintain padding */
+  }
+  footer {
+      margin-top: 80px; /* Adjust footer margin on very small screens */
+  }
 }
-
 /* Print styles */
 @media print {
   .main-header, .sidebar, .overlay, .cta-container, .socials, footer {
     display: none;
   }
-  
   body {
     background: white;
     color: black;
   }
-  
   .section-container {
     border: 1px solid #ccc;
     box-shadow: none;
@@ -1382,15 +1314,12 @@ button:focus, a:focus, .card:focus {
 <body>
   <!-- Skip to main content for accessibility -->
   <a href="#main-content" class="sr-only">Skip to main content</a>
-  
   <!-- Cloud Layers -->
   <div class="clouds-layer-1"></div>
   <div class="clouds-layer-2"></div>
   <div class="clouds-layer-3"></div>
-  
   <!-- Overlay for sidebar -->
   <div class="overlay" id="sidebar-overlay"></div>
-  
   <!-- Header with navigation -->
   <header class="main-header" role="banner">
     <nav class="navbar container" aria-label="Main navigation">
@@ -1402,7 +1331,6 @@ button:focus, a:focus, .card:focus {
       </button>
     </nav>
   </header>
-  
   <!-- Sidebar navigation -->
   <div id="sidebar" class="sidebar" role="navigation" aria-label="Sidebar navigation">
     <ul>
@@ -1425,7 +1353,6 @@ button:focus, a:focus, .card:focus {
       <li><a href="/documentation">Documentation</a></li>
     </ul>
   </div>
-  
   <!-- Main content -->
   <main id="main-content">
     <!-- Hero section -->
@@ -1448,7 +1375,6 @@ button:focus, a:focus, .card:focus {
         </div>
       </div>
     </section>
-    
     <!-- Gameplay section -->
     <section class="section-container" id="gameplay">
       <h2 class="section-title">Your Epic ZyRace Journey: Build, Smash, Race Monster Trucks!</h2>
@@ -1470,7 +1396,6 @@ button:focus, a:focus, .card:focus {
         </div>
       </div>
     </section>
-    
     <!-- Features section -->
     <section id="features">
       <h2 class="section-title">Why ZyRace is the Best Free Monster Truck Game Online</h2>
@@ -1497,7 +1422,6 @@ button:focus, a:focus, .card:focus {
         </div>
       </div>
     </section>
-    
     <!-- Testimonials section -->
     <section class="section-container" id="testimonials">
       <h2 class="section-title">What Players Say About ZyRace Monster Truck Adventures</h2>
@@ -1516,7 +1440,6 @@ button:focus, a:focus, .card:focus {
         </div>
       </div>
     </section>
-    
     <!-- Blog section -->
     <section class="section-container" id="blog">
       <h2 class="section-title">Latest ZyRace Blog: Tips for Monster Truck Racing</h2>
@@ -1535,7 +1458,6 @@ button:focus, a:focus, .card:focus {
         </div>
       </div>
     </section>
-    
     <!-- About section -->
     <section class="section-container" id="about">
       <h2 class="section-title">About ZyRace: Crafted for Truck Lovers</h2>
@@ -1543,7 +1465,6 @@ button:focus, a:focus, .card:focus {
       <p>ZyRace was created with one mission: to give people a free, enjoyable car-racing experience accessible to everyone. The game is continually updated and maintained by Ajmal U K, the founder of UTHAKKAN.</p>
       <p>Follow updates on Twitter <a href="https://twitter.com/ajmal_uk_" target="_blank" rel="noopener noreferrer">@ajmal_uk_</a> and contribute on GitHub.</p>
     </section>
-    
     <!-- FAQ section -->
     <section class="section-container" id="faq">
       <h2 class="section-title">ZyRace FAQ: Get Rolling with Monster Truck Tips!</h2>
@@ -1593,7 +1514,6 @@ button:focus, a:focus, .card:focus {
         </div>
       </div>
     </section>
-    
     <!-- Loading UI -->
     <div class="loading-ui" id="loading-ui">
       <div class="loading-container">
@@ -1620,13 +1540,11 @@ button:focus, a:focus, .card:focus {
         </div>
       </div>
     </div>
-    
     <!-- Canvas Stage -->
     <div class="canvas-stage" id="canvas-stage">
       <canvas id="canvas" tabindex="0" aria-label="ZyRace Game Canvas - Build monster trucks and race on epic tracks with physics puzzles"></canvas>
     </div>
   </main>
-  
   <!-- Footer -->
   <footer role="contentinfo">
     <div class="footer-content">
@@ -1667,7 +1585,6 @@ button:focus, a:focus, .card:focus {
       <p class="copyright">© 2025 ZyRace · Made in Kerala 🇮🇳 · All Rights Reserved · <a href="/privacy">Privacy</a></p>
     </div>
   </footer>
-  
   <!-- How to Play Modal -->
   <div class="modal-overlay" id="how-to-modal">
     <div class="modal-content">
@@ -1682,11 +1599,9 @@ button:focus, a:focus, .card:focus {
       <p class="modal-tip"><span>💥 TIP:</span> Big tires for rough terrain, rockets for speed boosts. Experiment and conquer in this free online racing game!</p>
     </div>
   </div>
-  
   <!-- JavaScript -->
   <script>
     // Enhanced JavaScript with better performance and accessibility
-    
     // Preload critical resources
     function preloadResources() {
       const resources = [
@@ -1696,7 +1611,6 @@ button:focus, a:focus, .card:focus {
         'https://zyrace.pythonanywhere.com/apple-touch-icon.png',
         'https://zyrace.pythonanywhere.com/og-image.jpg'
       ];
-      
       resources.forEach(resource => {
         if (resource.endsWith('.css')) {
           const link = document.createElement('link');
@@ -1709,13 +1623,11 @@ button:focus, a:focus, .card:focus {
         }
       });
     }
-    
     // Toggle FAQ answer visibility
     function toggleFAQ(element) {
       const answer = element.nextElementSibling;
       const icon = element.querySelector('.faq-icon');
       const isExpanded = element.getAttribute('aria-expanded') === 'true';
-      
       if (isExpanded) {
         answer.classList.remove('show');
         element.setAttribute('aria-expanded', 'false');
@@ -1726,74 +1638,45 @@ button:focus, a:focus, .card:focus {
         icon.style.transform = 'rotate(180deg)';
       }
     }
-    
-    // Start game adventure with loading simulation
+    // Start game adventure without loading simulation
     function startAdventure() {
-      const btn = document.getElementById('play-btn');
-      const loadingUI = document.getElementById('loading-ui');
-      
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Launching...';
-      btn.disabled = true;
-      loadingUI.style.display = 'flex';
-      
-      let progress = 0;
-      const loadingInterval = setInterval(() => {
-        progress += Math.random() * 8 + 3;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(loadingInterval);
-          document.querySelector('.loading-text').textContent = 'Ready to Race!';
-          document.querySelector('.loading-subtext').textContent = 'Redirecting to game...';
-          setTimeout(() => {
-            window.location.href = '/start';
-          }, 1500);
-        }
-        document.getElementById('fuel-level').style.width = `${Math.min(progress, 100)}%`;
-      }, 50);
+      window.location.href = '/start';
     }
-    
     // Sidebar functionality
     function openSidebar() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('sidebar-overlay');
       const menuToggle = document.getElementById('menu-toggle');
-      
       sidebar.classList.add('active');
       overlay.classList.add('active');
       menuToggle.classList.add('active');
       menuToggle.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     }
-    
     function closeSidebar() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('sidebar-overlay');
       const menuToggle = document.getElementById('menu-toggle');
-      
       sidebar.classList.remove('active');
       overlay.classList.remove('active');
       menuToggle.classList.remove('active');
       menuToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
-    
     // Modal functionality
     function openModal(modalId) {
       const modal = document.getElementById(modalId);
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-    
     function closeModal(modalId) {
       const modal = document.getElementById(modalId);
       modal.classList.remove('active');
       document.body.style.overflow = '';
     }
-    
     // Intersection Observer for section animations
     function initScrollAnimations() {
       const sections = document.querySelectorAll('section');
-      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -1804,20 +1687,16 @@ button:focus, a:focus, .card:focus {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
       });
-      
       sections.forEach(section => {
         observer.observe(section);
       });
     }
-    
     // Initialize everything when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
       // Preload resources
       preloadResources();
-      
       // Initialize scroll animations
       initScrollAnimations();
-      
       // Set up event listeners
       const menuToggle = document.getElementById('menu-toggle');
       const overlay = document.getElementById('sidebar-overlay');
@@ -1825,7 +1704,6 @@ button:focus, a:focus, .card:focus {
       const howToModal = document.getElementById('how-to-modal');
       const modalCloseBtn = document.getElementById('modal-close-btn');
       const sidebarLinks = document.querySelectorAll('#sidebar a');
-      
       // Menu toggle
       menuToggle.addEventListener('click', () => {
         if (menuToggle.classList.contains('active')) {
@@ -1834,10 +1712,8 @@ button:focus, a:focus, .card:focus {
           openSidebar();
         }
       });
-      
       // Overlay click to close sidebar
       overlay.addEventListener('click', closeSidebar);
-      
       // How to play modal
       howToBtn.addEventListener('click', () => openModal('how-to-modal'));
       modalCloseBtn.addEventListener('click', () => closeModal('how-to-modal'));
@@ -1846,12 +1722,10 @@ button:focus, a:focus, .card:focus {
           closeModal('how-to-modal');
         }
       });
-      
       // Close sidebar when a link is clicked
       sidebarLinks.forEach(link => {
         link.addEventListener('click', closeSidebar);
       });
-      
       // Close sidebar on Escape key
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
@@ -1859,7 +1733,6 @@ button:focus, a:focus, .card:focus {
           closeModal('how-to-modal');
         }
       });
-      
       // Smooth scroll for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -1873,19 +1746,16 @@ button:focus, a:focus, .card:focus {
           }
         });
       });
-      
       // Add focus styles for keyboard navigation
       document.addEventListener('keyup', (e) => {
         if (e.key === 'Tab') {
           document.body.classList.add('keyboard-nav');
         }
       });
-      
       document.addEventListener('mousedown', () => {
         document.body.classList.remove('keyboard-nav');
       });
     });
-    
     // Performance optimization: Lazy load non-critical resources
     window.addEventListener('load', () => {
       // Load non-critical resources after page load
@@ -1893,7 +1763,6 @@ button:focus, a:focus, .card:focus {
         'https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.wasm.js',
         'https://deckard.openprocessing.org/user485717/visual2458132/hf42bec4b58ab09712c0f3bedb92cada1/index.data.js'
       ];
-      
       nonCriticalResources.forEach(resource => {
         const script = document.createElement('script');
         script.src = resource;
