@@ -1,0 +1,933 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ZyRace — Documentation | Developer Guide, API & Mechanics</title>
+  <meta name="description" content="ZyRace documentation: Explore game mechanics, physics engine, car tuning API, and backend setup. Understand and integrate elements of this free browser-based racing puzzle game hosted on PythonAnywhere with Flask." />
+  <meta name="keywords" content="ZyRace docs, game documentation, physics engine guide, car tuning API, browser game mechanics, Flask backend, PythonAnywhere hosting" />
+  <meta name="robots" content="index, follow, max-snippet:200, max-image-preview:large" />
+  <meta name="author" content="Ajmal U K" />
+  <meta name="theme-color" content="#FF8C00" />
+  <link rel="canonical" href="https://zyrace.pythonanywhere.com/documentation" />
+  <link rel="alternate" href="https://zyrace.pythonanywhere.com/" hreflang="en" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="ZyRace Documentation: Mechanics & API Guide" />
+  <meta property="og:description" content="Dive into ZyRace's core mechanics: Physics simulations, vehicle tuning API, and Flask backend setup on PythonAnywhere. Essential guide for understanding this free car racing puzzle game." />
+  <meta property="og:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
+  <meta property="og:image:alt" content="ZyRace — Developer documentation for car physics game" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://zyrace.pythonanywhere.com/documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ZyRace" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ajmal_uk_" />
+  <meta name="twitter:creator" content="@ajmal_uk_" />
+  <meta name="twitter:title" content="ZyRace Docs: Physics, API & Backend Guide" />
+  <meta name="twitter:description" content="Unlock ZyRace's mechanics: Detailed insights on realistic physics, vehicle tuning system, and Flask backend on PythonAnywhere. Learn how this free browser racing game works!" />
+  <meta name="twitter:image" content="https://zyrace.pythonanywhere.com/og-image.jpg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="https://zyrace.pythonanywhere.com/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://zyrace.pythonanywhere.com/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://zyrace.pythonanywhere.com/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://zyrace.pythonanywhere.com/favicon-16x16.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://zyrace.pythonanywhere.com/#website",
+    "url": "https://zyrace.pythonanywhere.com/",
+    "name": "ZyRace",
+    "description": "ZyRace — Free browser car physics puzzle racing game. Tune vehicles, solve physics-based tracks and race instantly in your browser.",
+    "publisher": {
+      "@id": "https://zyrace.pythonanywhere.com/#organization"
+    },
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://zyrace.pythonanywhere.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }</script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://zyrace.pythonanywhere.com/documentation#webpage",
+    "url": "https://zyrace.pythonanywhere.com/documentation",
+    "name": "ZyRace Documentation — Developer Guide & Mechanics Reference",
+    "description": "In-depth ZyRace docs: Game architecture, physics simulation, car tuning API, backend setup with Flask on PythonAnywhere, and mechanics overview.",
+    "inLanguage": "en",
+    "isPartOf": { "@id": "https://zyrace.pythonanywhere.com/#website" },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://zyrace.pythonanywhere.com/og-image.jpg",
+      "width": 1200,
+      "height": 630
+    },
+    "breadcrumb": { "@id": "https://zyrace.pythonanywhere.com/documentation#breadcrumb" }
+  }</script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "@id": "https://zyrace.pythonanywhere.com/#game",
+    "name": "ZyRace",
+    "alternateName": "ZyRace Car Tuner & Racer",
+    "description": "ZyRace is a free online car physics puzzle racing game where players tune custom vehicles to conquer adventurous tracks with bridges, water hazards and mountains.",
+    "url": "https://zyrace.pythonanywhere.com/",
+    "image": "https://zyrace.pythonanywhere.com/og-image.jpg",
+    "gamePlatform": ["Web Browser"],
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Web Browser",
+    "author": {
+      "@type": "Person",
+      "name": "Ajmal U K",
+      "url": "https://twitter.com/ajmal_uk_"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "UTHAKKAN",
+      "url": "https://zyrace.pythonanywhere.com/",
+      "logo": "https://zyrace.pythonanywhere.com/favicon-96x96.png"
+    },
+    "isFamilyFriendly": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "200", "bestRating": "5", "worstRating": "1" }
+  }</script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://zyrace.pythonanywhere.com/#webapp",
+    "name": "ZyRace Backend",
+    "description": "Flask-based backend for ZyRace, hosted on PythonAnywhere. Handles session persistence, leaderboards, and game data for the free browser car racing game.",
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "Python 3",
+    "author": { "@type": "Person", "name": "Ajmal U K" }
+  }</script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How does ZyRace's physics engine work?","acceptedAnswer":{"@type":"Answer","text":"Powered by Matter.js for 2D rigid body simulations. Key elements include gravity, friction, and collision events for realistic car dynamics."}},
+      {"@type":"Question","name":"What's the structure of the car tuning API?","acceptedAnswer":{"@type":"Answer","text":"JSON-based configs for chassis, parts, wheels, and constraints. Designed for balanced vehicle assembly in physics puzzles."}},
+      {"@type":"Question","name":"How is the backend hosted?","acceptedAnswer":{"@type":"Answer","text":"Using Flask on PythonAnywhere for lightweight, scalable hosting. Supports session data and optional leaderboards."}},
+      {"@type":"Question","name":"Can I integrate ZyRace mechanics into other projects?","acceptedAnswer":{"@type":"Answer","text":"Yes! Use the documented APIs and examples to adapt physics and tuning systems. Contact for collaboration."}},
+      {"@type":"Question","name":"What data does ZyRace handle?","acceptedAnswer":{"@type":"Answer","text":"Anonymous usage stats via Google Analytics; no personal data collected. All gameplay is client-side for privacy."}}
+    ]
+  }</script>
+<!-- BreadcrumbList for search results (keeps consistency with visible nav) -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://zyrace.pythonanywhere.com/documentation#breadcrumb",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://zyrace.pythonanywhere.com/"},
+      {"@type":"ListItem","position":2,"name":"Documentation","item":"https://zyrace.pythonanywhere.com/documentation"}
+    ]
+  }</script>
+<!-- Styles (enhanced for docs with code blocks) -->
+  <style>
+/* ========= CSS VARIABLES & RESET ========= */
+:root {
+--primary: #FF8C00;
+--primary-dark: #E67E22;
+--primary-light: #FFA54F;
+--sky-blue: #87CEEB;
+--sky-blue-light: #B0E0E6;
+--green: #32CD32;
+--yellow: #FFD700;
+--brown: #8B4513;
+--white: #FFFFFF;
+--dark-text: #2C3E50;
+--light-text: #7F8C8D;
+--light-bg: rgba(255, 255, 255, 0.9);
+--light-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+--medium-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+--heavy-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+--transition: all 0.3s ease;
+--border-radius: 20px;
+--header-height: 70px;
+--footer-height: 100px;
+--max-width: 1200px;
+--section-padding: 20px;
+    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Exo 2', sans-serif; background: linear-gradient(to bottom, var(--sky-blue) 0%, var(--sky-blue-light) 100%); color: var(--dark-text); min-height: 100vh; overflow-x: hidden; position: relative; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/* ========= CLOUD ANIMATIONS ========= */
+.clouds-layer-1, .clouds-layer-2, .clouds-layer-3 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      will-change: transform;
+      background-repeat: repeat-x;
+    }
+.clouds-layer-1 {
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"%3E%3Ccircle cx="50" cy="40" r="15" fill="white" opacity="0.9"/%3E%3Ccircle cx="70" cy="35" r="20" fill="white" opacity="0.9"/%3E%3Ccircle cx="90" cy="45" r="18" fill="white" opacity="0.9"/%3E%3Ccircle cx="150" cy="30" r="12" fill="white" opacity="0.8"/%3E%3Ccircle cx="170" cy="25" r="16" fill="white" opacity="0.8"/%3E%3C/svg%3E');
+      background-size: 300px 100px;
+      animation: floatCloudsSlow 60s linear infinite;
+    }
+.clouds-layer-2 {
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"%3E%3Ccircle cx="30" cy="50" r="10" fill="white" opacity="0.7"/%3E%3Ccircle cx="50" cy="45" r="14" fill="white" opacity="0.7"/%3E%3Ccircle cx="70" cy="55" r="12" fill="white" opacity="0.7"/%3E%3Ccircle cx="130" cy="40" r="8" fill="white" opacity="0.6"/%3E%3Ccircle cx="150" cy="35" r="11" fill="white" opacity="0.6"/%3E%3C/svg%3E');
+      background-size: 400px 80px;
+      top: 20%;
+      animation: floatCloudsFast 40s linear infinite reverse;
+      opacity: 0.7;
+    }
+.clouds-layer-3 {
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"%3E%3Ccircle cx="20" cy="60" r="8" fill="white" opacity="0.5"/%3E%3Ccircle cx="40" cy="55" r="12" fill="white" opacity="0.5"/%3E%3Ccircle cx="60" cy="65" r="10" fill="white" opacity="0.5"/%3E%3Ccircle cx="120" cy="50" r="6" fill="white" opacity="0.4"/%3E%3Ccircle cx="140" cy="45" r="9" fill="white" opacity="0.4"/%3E%3C/svg%3E');
+      background-size: 350px 90px;
+      top: 40%;
+      animation: floatCloudsMedium 50s linear infinite;
+      opacity: 0.5;
+    }
+@keyframes floatCloudsSlow { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes floatCloudsFast { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+@keyframes floatCloudsMedium { 0% { transform: translateX(0); } 100% { transform: translateX(-80%); } }
+/* ========= LAYOUT & CONTAINERS ========= */
+.container { width: 90%; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--section-padding); }
+main.container { padding: var(--section-padding) 0; }
+section#hero { width: 100%; margin: 0; padding: 0; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+section { margin-bottom: 60px; opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; min-height: calc(100vh - var(--header-height)); display: flex; flex-direction: column; justify-content: center; }
+.hero .container { width: 100%; max-width: none; padding: 0; margin: 0; }
+section.visible { opacity: 1; transform: translateY(0); }
+section[id] { scroll-margin-top: calc(var(--header-height) + 20px); }
+/* ========= TYPOGRAPHY ========= */
+h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; line-height: 1.2; margin-bottom: 1rem; }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: 1px; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; text-align: center; margin-bottom: 2rem; color: var(--primary); }
+h3 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 600; color: var(--dark-text); }
+p { margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6; }
+a { color: var(--primary); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--primary-dark); text-decoration: underline; }
+/* ========= HEADER & NAVIGATION ========= */
+.main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: var(--light-shadow); z-index: 1000; transition: var(--transition); }
+.navbar { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.nav-logo { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 800; text-decoration: none; background: linear-gradient(90deg, var(--yellow), var(--primary)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: var(--transition); }
+.nav-logo:hover, .nav-logo:focus { transform: scale(1.05); }
+.menu-toggle { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; }
+.menu-toggle span { display: block; width: 25px; height: 3px; background: var(--dark-text); margin: 3px 0; transition: var(--transition); transform-origin: center; }
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+/* ========= SIDEBAR ========= */
+.sidebar { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: var(--white); box-shadow: var(--heavy-shadow); z-index: 999; padding: var(--header-height) 0 0; overflow-y: auto; transition: right 0.3s ease; }
+.sidebar.active { right: 0; }
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar li { border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+.sidebar a { display: block; padding: 15px 25px; color: var(--dark-text); font-weight: 500; transition: var(--transition); position: relative; }
+.sidebar a:hover, .sidebar a:focus { background: rgba(255, 140, 0, 0.1); color: var(--primary); padding-left: 30px; }
+.sidebar a::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--primary); transform: scaleY(0); transition: transform 0.3s ease; }
+.sidebar a:hover::before, .sidebar a:focus::before { transform: scaleY(1); }
+.sidebar-section { padding: 15px 25px; background: rgba(255, 140, 0, 0.05); font-weight: 600; color: var(--primary); border-bottom: 2px solid var(--primary); margin-top: 10px; }
+.sidebar-section:first-child { margin-top: 0; }
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 998; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+.overlay.active { opacity: 1; visibility: visible; }
+/* ========= HERO SECTION ========= */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: var(--header-height) 0 60px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"%3E%3Cdefs%3E%3ClinearGradient id="mountainGradient" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%234682B4;stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:%234169E1;stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d="M0,400 L200,250 L400,350 L600,200 L800,300 L1000,150 L1200,400 L1200,400 L0,400 Z" fill="url(%23mountainGradient)" /%3E%3Cpath d="M0,400 L150,300 L350,380 L550,250 L750,320 L950,220 L1200,400 L1200,400 L0,400 Z" fill="%234682B4" opacity="0.8" /%3E%3Cpath d="M0,400 L100,350 L300,400 L500,300 L700,370 L900,280 L1200,400 L1200,400 L0,400 Z" fill="%234169E1" opacity="0.6" /%3E%3C/svg%3E'); background-size: cover; background-position: bottom; animation: mountainWave 10s ease-in-out infinite alternate; z-index: -1; }
+.hero::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 40%; background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"%3E%3Cpath d="M0,200 Q300,100 600,150 Q900,80 1200,200 L1200,200 L0,200 Z" fill="%2332CD32" opacity="0.6" /%3E%3Cpath d="M0,200 Q150,150 300,120 Q450,180 600,140 Q750,160 900,130 Q1050,170 1200,200 L1200,200 L0,200 Z" fill="%2322B14C" opacity="0.4" /%3E%3C/svg%3E'); background-size: cover; background-position: bottom; animation: groundWave 8s ease-in-out infinite alternate; z-index: -1; }
+@keyframes mountainWave { 0% { transform: scaleX(1) skewX(0deg); } 100% { transform: scaleX(1.05) skewX(2deg); } }
+@keyframes groundWave { 0% { transform: scaleY(1) skewY(0deg); } 100% { transform: scaleY(1.02) skewY(1deg); } }
+.logo-container { margin-bottom: 2rem; position: relative; }
+.logo { font-size: clamp(3rem, 8vw, 6rem); background: linear-gradient(90deg, var(--yellow), var(--primary)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 10px rgba(255, 140, 0, 0.3); animation: bounce 3s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.tagline { font-size: clamp(1.2rem, 3.5vw, 1.6rem); margin: 0 auto 2.5rem; max-width: 800px; line-height: 1.5; color: var(--dark-text); font-weight: 600; position: relative; z-index: 2; }
+.tagline span { color: var(--primary); font-weight: 700; }
+.cta-container { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; margin: 2rem 0; }
+.main-cta { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+/* ========= BUTTONS ========= */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; font-family: 'Fredoka One', cursive; font-weight: 600; font-size: 1.1rem; border-radius: 50px; cursor: pointer; transition: var(--transition); text-decoration: none; border: none; position: relative; overflow: hidden; }
+.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3); }
+.btn-primary:hover, .btn-primary:focus { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255, 140, 0, 0.4); }
+.btn-secondary { background: var(--white); color: var(--primary); border: 2px solid var(--primary); }
+.btn-secondary:hover, .btn-secondary:focus { background: var(--primary); color: var(--white); transform: translateY(-3px); box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3); }
+.btn i { font-size: 1.2em; }
+.btn-primary i { animation: bounce 1.5s infinite; }
+.how-to-play { text-align: center; color: var(--light-text); font-size: 1.1rem; max-width: 600px; }
+.how-to-play span { color: var(--primary); font-weight: 600; }
+/* ========= SECTIONS STYLING ========= */
+.section-container { background: var(--light-bg); border-radius: var(--border-radius); padding: 40px var(--section-padding); margin: 50px 0; border: 3px solid var(--primary); box-shadow: var(--medium-shadow); position: relative; z-index: 10; }
+.section-title { font-size: clamp(1.8rem, 4vw, 2.2rem); text-align: center; margin-bottom: 2rem; color: var(--primary); position: relative; display: inline-block; width: 100%; }
+.section-title::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 100px; height: 4px; background: var(--primary); border-radius: 2px; animation: shine 2s infinite; }
+@keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+/* ========= CARDS & GRIDS ========= */
+.grid { display: grid; gap: 2rem; margin-top: 2rem; }
+.gameplay-grid, .features-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.testimonial-grid, .blog-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card { background: var(--white); border-radius: 15px; padding: 25px; text-align: center; transition: var(--transition); box-shadow: var(--light-shadow); border: 2px solid transparent; position: relative; overflow: hidden; }
+.card:hover, .card:focus-within { transform: translateY(-8px); box-shadow: var(--medium-shadow); border-color: var(--primary); }
+.gameplay-card, .feature-card { height: 100%; display: flex; flex-direction: column; align-items: center; }
+.card-icon { font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary); transition: var(--transition); }
+.card:hover .card-icon { transform: scale(1.1); }
+.card-title { font-size: 1.4rem; margin-bottom: 1rem; color: var(--dark-text); }
+.card-desc { color: var(--light-text); flex-grow: 1; }
+/* ========= CODE BLOCKS FOR DOCS ========= */
+.code-block { background: #2d3748; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto; position: relative; }
+.code-block pre { margin: 0; font-family: 'Roboto Mono', monospace; font-size: 0.9rem; line-height: 1.4; color: #e2e8f0; }
+.code-block code { white-space: pre-wrap; }
+.code-block .copy-btn { position: absolute; top: 0.5rem; right: 0.5rem; background: var(--primary); color: white; border: none; padding: 0.5rem; border-radius: 5px; cursor: pointer; font-size: 0.8rem; }
+.api-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.api-table th, .api-table td { padding: 1rem; border: 1px solid #e2e8f0; text-align: left; }
+.api-table th { background: rgba(255, 140, 0, 0.1); font-weight: 600; }
+.api-table code { background: rgba(0,0,0,0.1); padding: 0.2rem 0.4rem; border-radius: 3px; }
+/* ========= FAQ ========= */
+.faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #E0E0E0; padding-bottom: 1.5rem; }
+.faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.faq-question { font-size: 1.2rem; font-weight: 600; color: var(--dark-text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); padding: 10px; border-radius: 8px; background: rgba(255, 140, 0, 0.05); }
+.faq-question:hover, .faq-question:focus { background: rgba(255, 140, 0, 0.1); color: var(--primary); }
+.faq-question .faq-icon { transition: var(--transition); }
+.faq-answer { color: var(--light-text); margin-top: 1rem; display: none; padding: 10px; background: rgba(135, 206, 235, 0.1); border-radius: 8px; }
+.faq-answer.show { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+/* ========= FOOTER ========= */
+footer { background: var(--white); padding: 3rem 0 2rem; border-top: 3px solid var(--primary); text-align: center; position: relative; z-index: 10; }
+.footer-content { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--section-padding); }
+.footer-logo { font-family: 'Fredoka One', cursive; font-size: 2rem; margin-bottom: 1.5rem; background: linear-gradient(90deg, var(--yellow), var(--primary)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+.footer-link a { color: var(--dark-text); text-decoration: none; transition: var(--transition); font-size: 0.95rem; }
+.footer-link a:hover, .footer-link a:focus { color: var(--primary); text-decoration: underline; }
+.footer-column { min-width: 200px; flex: 1; }
+.footer-column h3 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.2rem; font-family: 'Orbitron', sans-serif; font-weight: 700; }
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column li { margin-bottom: 0.5rem; }
+.socials { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
+.social-link { width: 50px; height: 50px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem; text-decoration: none; transition: var(--transition); border: 2px solid var(--primary); box-shadow: var(--light-shadow); }
+.social-link:hover, .social-link:focus { background: var(--primary); color: var(--white); transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 16px rgba(255, 140, 0, 0.3); }
+.copyright { color: var(--light-text); font-size: 0.95rem; margin-top: 1.5rem; }
+.copyright a { color: var(--primary); text-decoration: none; }
+.copyright a:hover, .copyright a:focus { text-decoration: underline; }
+/* ========= MODAL ========= */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 2000; display: none; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-content { background: var(--white); padding: 2rem; border-radius: var(--border-radius); width: 100%; max-width: 600px; border: 3px solid var(--primary); box-shadow: var(--heavy-shadow); position: relative; transform: scale(0.9); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+.modal-overlay.active .modal-content { transform: scale(1); opacity: 1; }
+.modal-close { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: #aaa; background: none; border: none; cursor: pointer; transition: var(--transition); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.modal-close:hover, .modal-close:focus { color: var(--primary); transform: rotate(90deg); }
+.modal-title { font-family: 'Fredoka One', cursive; color: var(--primary); font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem; }
+.modal-steps { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+.modal-steps li { font-size: 1.1rem; margin-bottom: 1rem; line-height: 1.5; padding: 10px; background: rgba(255, 140, 0, 0.05); border-left: 4px solid var(--primary); border-radius: 5px; transition: var(--transition); }
+.modal-steps li:hover { transform: translateX(5px); }
+.modal-steps li span { font-weight: 700; color: var(--dark-text); margin-right: 8px; }
+.modal-tip { font-size: 1.1rem; text-align: center; background: rgba(255, 140, 0, 0.1); padding: 15px; border-radius: 10px; }
+.modal-tip span { font-weight: 700; color: var(--primary); }
+/* ========= NAVIGATION FOR DOCS ========= */
+.docs-nav { background: var(--white); border-radius: var(--border-radius); padding: 1rem; margin: 2rem 0; box-shadow: var(--light-shadow); }
+.docs-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; list-style: none; }
+.docs-nav a { padding: 0.5rem 1rem; background: rgba(255, 140, 0, 0.1); border-radius: 20px; transition: var(--transition); }
+.docs-nav a:hover { background: var(--primary); color: white; }
+/* ========= ACCESSIBILITY ========= */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+button:focus, a:focus, .card:focus { outline: 2px solid var(--primary); outline-offset: 2px; }
+/* ========= RESPONSIVE DESIGN ========= */
+@media (max-width: 1200px) { :root { --max-width: 1100px; } }
+@media (max-width: 992px) { :root { --max-width: 900px; } .logo { font-size: clamp(2.5rem, 7vw, 5rem); } .tagline { font-size: clamp(1.1rem, 3vw, 1.4rem); } section { min-height: calc(100vh - var(--header-height) - 40px); } .hero { min-height: calc(100vh - var(--header-height)); } }
+@media (max-width: 768px) { :root { --max-width: 700px; --section-padding: 15px; } .logo { font-size: clamp(2.2rem, 6vw, 4.5rem); } .tagline { font-size: clamp(1rem, 2.5vw, 1.2rem); } .section-container { padding: 30px var(--section-padding); } section { min-height: calc(100vh - var(--header-height) - 20px); margin-bottom: 40px; } .hero { min-height: calc(100vh - var(--header-height)); padding: 80px 0 40px; height: 100vh; } .main-cta { flex-direction: column; align-items: center; } .btn { width: 100%; max-width: 350px; } .loading-steps { flex-direction: column; gap: 1rem; } .footer-links { flex-direction: column; align-items: center; } .footer-column { min-width: auto; flex: none; width: 100%; } .docs-nav ul { flex-direction: column; } }
+@media (max-width: 576px) { :root { --max-width: 500px; --section-padding: 10px; } .logo { font-size: clamp(2rem, 5vw, 4rem); } .tagline { font-size: clamp(0.9rem, 2vw, 1rem); } .section-container { padding: 25px var(--section-padding); } section { min-height: calc(100vh - var(--header-height) - 10px); margin-bottom: 30px; } .hero { min-height: calc(100vh - var(--header-height)); padding: 60px 0 30px; } .section-title { font-size: 1.6rem; } h2 { font-size: 1.8rem; } .card-icon { font-size: 2.2rem; } .social-link { width: 40px; height: 40px; font-size: 1.2rem; } .code-block { padding: 1rem; } .api-table { font-size: 0.9rem; } }
+/* Print styles */
+@media print { .main-header, .sidebar, .overlay, .cta-container, .socials, footer { display: none; } body { background: white; color: black; } .section-container { border: 1px solid #ccc; box-shadow: none; } }
+html, body { height: 100%; margin: 0; padding: 0; }
+a, button, .card { -webkit-tap-highlight-color: rgba(0, 0, 0, 0.2); }
+</style>
+</head>
+<body>
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+  <div class="clouds-layer-1"></div>
+  <div class="clouds-layer-2"></div>
+  <div class="clouds-layer-3"></div>
+  <div class="overlay" id="sidebar-overlay"></div>
+  <header class="main-header" role="banner">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="/" class="nav-logo">Zy<span style="color:var(--yellow);">Race</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+  <aside id="sidebar" class="sidebar" role="navigation" aria-label="Sidebar navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/start" onclick="startAdventure(); return false;">Play Now</a></li>
+      <li><a href="/gameplay">Gameplay</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/testimonials">Testimonials</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/help">Help</a></li>
+      <li><a href="/guide">Guide</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/terms">Terms</a></li>
+      <li><a href="/cookies">Cookies</a></li>
+      <li><a href="/gdpr">GDPR</a></li>
+      <li><a href="/dmca">DMCA</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/refund-policy">Refunds</a></li>
+      <li><a href="/security">Security</a></li>
+      <li><a href="/partners">Partners</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/use-cases">Use Cases</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/documentation">Docs</a></li>
+      <li><a href="/troubleshoot">Troubleshoot</a></li>
+      <li><a href="/download">Download</a></li>
+    </ul>
+  </aside>
+<!-- Main content -->
+  <main id="main-content">
+<!-- Hero section -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="logo-container">
+          <h1 id="hero-heading" class="logo">Zy<span style="color:var(--yellow);">Race</span></h1>
+        </div>
+        <p class="tagline">Welcome to the <span>ZyRace Documentation Hub</span> — your guide to the game's mechanics, APIs, and backend setup. Explore how this free physics-driven racing puzzle works, hosted seamlessly on PythonAnywhere with Flask.</p>
+        <div class="cta-container">
+          <p class="how-to-play">Dive into sections below for mechanics and integration insights. For custom needs, <span>contact the developer!</span></p>
+          <div class="main-cta">
+            <a href="/contact" class="btn btn-primary">
+              <i class="fas fa-envelope" aria-hidden="true"></i> CONTACT FOR INTEGRATION
+            </a>
+            <button id="how-to-btn" class="btn btn-secondary" aria-haspopup="dialog" aria-controls="how-to-modal">
+              <i class="fas fa-book-open" aria-hidden="true"></i> QUICK OVERVIEW
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Navigation for Docs -->
+    <nav class="docs-nav container" aria-label="Documentation sections">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#physics">Physics Engine</a></li>
+        <li><a href="#tuning-api">Tuning API</a></li>
+        <li><a href="#customization">Customization Guide</a></li>
+        <li><a href="#backend">Backend Setup</a></li>
+        <li><a href="#data">Data Handling</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+      </ul>
+    </nav>
+<!-- Overview section -->
+    <section class="section-container" id="overview" aria-labelledby="overview-heading">
+      <h2 id="overview-heading" class="section-title">Project Overview</h2>
+      <p>ZyRace is a free, browser-based car physics puzzle racing game built with HTML5, JavaScript (using Matter.js for physics), and a lightweight Python Flask backend hosted on PythonAnywhere. Players tune vehicles to solve track challenges involving gravity, momentum, and hazards like bridges and water.</p>
+      <p><strong>Key Features:</strong></p>
+      <ul style="list-style: disc; padding-left: 2rem; color: var(--light-text);">
+        <li>Realistic 2D physics simulation using Matter.js.</li>
+        <li>Modular car tuning system with JSON configs.</li>
+        <li>Procedural track generation and hazard integration.</li>
+        <li>Offline-capable via browser caching; seamless hosting on PythonAnywhere.</li>
+        <li>Extensible API for custom parts, levels, and events (via documented interfaces).</li>
+      </ul>
+      <p>Current Version: <strong>2.1.0</strong> (Released Nov 2025). Developed and maintained by Ajmal U K of UTHAKKAN.</p>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>// Quick setup example for local testing (educational)
+# Backend: Flask on PythonAnywhere
+pip install flask
+python app.py  # Run on localhost:5000
+
+# Frontend: Open index.html in browser
+# Integrates with backend via fetch('/api/game-state')
+</code></pre>
+      </div>
+      <p>For production, the game is fully hosted on PythonAnywhere, ensuring reliable, low-latency access without user setup.</p>
+    </section>
+<!-- Architecture section -->
+    <section class="section-container" id="architecture" aria-labelledby="architecture-heading">
+      <h2 id="architecture-heading" class="section-title">Game Architecture</h2>
+      <p>ZyRace uses a client-server model with emphasis on client-side rendering for smooth performance. Core stack:</p>
+      <ul style="list-style: disc; padding-left: 2rem; color: var(--light-text);">
+        <li><strong>Frontend:</strong> HTML5 Canvas + Matter.js (physics) + vanilla JS for rendering and controls.</li>
+        <li><strong>State Management:</strong> In-memory store for game state (tracks, cars, scores), synced via API.</li>
+        <li><strong>Backend:</strong> Flask (Python) on PythonAnywhere for session persistence and optional leaderboards.</li>
+        <li><strong>Deployment:</strong> Static assets on PythonAnywhere; no complex build tools required.</li>
+      </ul>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>// High-level game flow (conceptual example)
+class GameEngine {
+  constructor() {
+    this.physics = new Matter.Engine.create();
+    this.renderer = new CanvasRenderer(this.physics.world);
+    this.tuner = new CarTuner();
+    this.trackGen = new TrackGenerator();
+  }
+  startLevel(trackData) {
+    this.world = this.trackGen.build(trackData);
+    this.car = this.tuner.assemble(this.carConfig);
+    Matter.World.add(this.physics.world, [this.car.body, ...this.world.bodies]);
+    this.simulate();
+  }
+  simulate() {
+    Matter.Engine.update(this.physics, 1000 / 60);
+    this.renderer.draw();
+    requestAnimationFrame(() => this.simulate());
+  }
+}
+// Integrate with Flask: fetch('/api/load-track').then(data => engine.startLevel(data));
+</code></pre>
+      </div>
+      <p>This modular design allows easy adaptation of mechanics for similar projects. Backend calls are minimal to keep gameplay responsive.</p>
+    </section>
+<!-- Physics Engine section -->
+    <section class="section-container" id="physics" aria-labelledby="physics-heading">
+      <h2 id="physics-heading" class="section-title">Physics Engine</h2>
+      <p>Powered by <a href="https://brm.io/matter-js/" target="_blank" rel="noopener">Matter.js</a> v0.19, ZyRace simulates realistic 2D rigid body dynamics: gravity (9.81 m/s² scaled), friction (0.1-0.8 per surface), restitution (bounciness 0.2-0.6). All computations run client-side for instant feedback.</p>
+      <h3>Key Components</h3>
+      <ul style="list-style: disc; padding-left: 2rem; color: var(--light-text);">
+        <li><strong>Bodies:</strong> Chassis (rectangle), wheels (circles with motor constraints).</li>
+        <li><strong>Constraints:</strong> Wheel joints with limits for suspension; revolute for steering.</li>
+        <li><strong>Forces:</strong> Thrust (engine torque), drag (air resistance), impulse for jumps.</li>
+        <li><strong>Collisions:</strong> Event-based: On water contact, apply buoyancy force; on bridges, check stability.</li>
+      </ul>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>// Conceptual vehicle simulation (Matter.js example)
+import Matter from 'matter-js';
+export class CarPhysics {
+  createCar(config) {
+    const chassis = Matter.Bodies.rectangle(0, 0, config.width, config.height, {
+      mass: config.mass,
+      restitution: 0.3,
+      friction: 0.5
+    });
+    const wheels = config.wheels.map(pos => Matter.Bodies.circle(pos.x, pos.y, config.wheelRadius, {
+      mass: 1,
+      friction: config.grip,
+      density: 0.001
+    }));
+    const constraints = wheels.map((wheel, i) => Matter.Constraint.create({
+      bodyA: chassis,
+      bodyB: wheel,
+      pointA: { x: config.anchors[i].x, y: config.anchors[i].y },
+      stiffness: 0.8,
+      length: config.suspensionLength
+    }));
+    const motor = Matter.Constraint.create({
+      bodyA: chassis,
+      bodyB: wheels[0], // Rear wheel
+      motorSpeed: config.throttle * 0.1,
+      torque: config.power * 1000,
+      type: 'motor'
+    });
+    return { bodies: [chassis, ...wheels], constraints: [...constraints, motor] };
+  }
+  applyThrust(car, throttle) {
+    Matter.Body.applyForce(car.bodies[0], { x: 0, y: 0 }, {
+      x: Math.cos(car.angle) * throttle * 0.01,
+      y: Math.sin(car.angle) * throttle * 0.01
+    });
+  }
+}
+// Usage: Integrate into your canvas loop for custom simulations.
+</code></pre>
+      </div>
+      <p><strong>Customization:</strong> Adjust gravity or add forces via Matter.js events. Ideal for educational physics demos.</p>
+    </section>
+<!-- Tuning API section -->
+    <section class="section-container" id="tuning-api" aria-labelledby="tuning-api-heading">
+      <h2 id="tuning-api-heading" class="section-title">Car Tuning API</h2>
+      <p>The tuning system uses declarative JSON for vehicle configs. Assemble via a simple interface, ensuring balanced physics for puzzles.</p>
+      <h3>Schema</h3>
+      <table class="api-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>chassis</code></td>
+            <td>Object</td>
+            <td>Base body specs</td>
+            <td>{ "width": 100, "height": 40, "mass": 50 }</td>
+          </tr>
+          <tr>
+            <td><code>parts</code></td>
+            <td>Array&lt;Object&gt;</td>
+            <td>Attached components (engine, boosters)</td>
+            <td>[ { "type": "engine", "power": 5000, "pos": [0, -20] } ]</td>
+          </tr>
+          <tr>
+            <td><code>wheels</code></td>
+            <td>Array&lt;Object&gt;</td>
+            <td>Wheel positions and grip</td>
+            <td>[ { "x": -40, "y": 20, "grip": 0.8 }, { "x": 40, "y": 20, "grip": 0.8 } ]</td>
+          </tr>
+          <tr>
+            <td><code>constraints</code></td>
+            <td>Array&lt;Object&gt;</td>
+            <td>Joint definitions</td>
+            <td>[ { "type": "revolute", "limit": Math.PI/4 } ]</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>// Usage example: Assemble from JSON config
+const config = {
+  chassis: { width: 120, height: 50, mass: 60 },
+  parts: [
+    { type: 'turbo', power: 8000, pos: [0, -30] },
+    { type: 'armor', mass: 20, pos: [0, 0] }
+  ],
+  wheels: [
+    { x: -50, y: 25, radius: 15, grip: 0.9 },
+    { x: 50, y: 25, radius: 15, grip: 0.9 }
+  ],
+  constraints: [
+    { bodyA: 'chassis', bodyB: 'wheel0', stiffness: 1, motorSpeed: 0.2 }
+  ]
+};
+// In ZyRace: tuner.assemble(config) returns a ready-to-simulate vehicle.
+</code></pre>
+      </div>
+      <p><strong>Validation:</strong> Built-in checks ensure stability. Adapt this schema for your own vehicle systems.</p>
+    </section>
+<!-- Customization Guide section -->
+    <section class="section-container" id="customization" aria-labelledby="customization-heading">
+      <h2 id="customization-heading" class="section-title">Customization Guide</h2>
+      <p>ZyRace supports advanced customization through documented APIs and configs. Adapt tracks, parts, and events for similar experiences. All changes are client-side or via backend endpoints.</p>
+      <h3>Customizing Tracks</h3>
+      <ol style="padding-left: 1.5rem; color: var(--light-text);">
+        <li>Define track data as JSON: { "id": "custom1", "svgPath": "M0 0 Q100 50 200 0 ...", "hazards": ["water", "rocks"] }.</li>
+        <li>Handle hazards via collision events: e.g., water applies upward force.</li>
+        <li>Load via API: fetch('/api/load-track/custom1').</li>
+      </ol>
+      <h3>Extending Parts</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>// Example: Custom part integration (conceptual)
+function createCustomPart(config) {
+  const part = Matter.Bodies.rectangle(config.x, config.y, 20, 10, { isSensor: true });
+  Matter.Events.on(engine, 'collisionStart', (event) => {
+    if (event.pairs.some(pair => pair.bodyA === part)) {
+      // Apply custom effect, e.g., thrust burst
+      Matter.Body.applyForce(targetCar.chassis, {x:0,y:0}, {x:0, y: -0.05});
+    }
+  });
+  return part;
+}
+// Register in tuner: tuner.registerPart('flameBooster', createCustomPart);
+</code></pre>
+      </div>
+      <p><strong>Implementation:</strong> Use the API endpoints for dynamic loading. For deeper integrations, contact UTHAKKAN.</p>
+    </section>
+<!-- Backend Setup section -->
+    <section class="section-container" id="backend" aria-labelledby="backend-heading">
+      <h2 id="backend-heading" class="section-title">Backend Setup</h2>
+      <p>ZyRace's backend is built with Flask and hosted on PythonAnywhere for reliable, scalable performance. It manages optional features like session data and leaderboards without compromising client-side privacy.</p>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code># app.py - Flask backend example (hosted on PythonAnywhere)
+from flask import Flask, jsonify, request
+app = Flask(__name__)
+
+@app.route('/api/save-score', methods=['POST'])
+def save_score():
+    data = request.json
+    # Store in SQLite: scores.db (local to PythonAnywhere)
+    return jsonify({'status': 'saved', 'id': data.get('sessionId')})
+
+@app.route('/api/leaderboard')
+def leaderboard():
+    # Fetch top 10 anonymous scores
+    return jsonify({'scores': [{'rank': 1, 'score': 1000}, ...]})
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
+# Deployment: Upload to PythonAnywhere, configure WSGI with gunicorn for production.
+</code></pre>
+      </div>
+      <p><strong>Env Vars:</strong> <code>SECRET_KEY</code>, <code>DB_PATH=./scores.db</code>. PythonAnywhere handles scaling; add Redis for high traffic.</p>
+      <p>Anonymous data only: Device type, browser, region via Google Analytics integration.</p>
+    </section>
+<!-- Data Handling section -->
+    <section class="section-container" id="data" aria-labelledby="data-heading">
+      <h2 id="data-heading" class="section-title">Data Handling</h2>
+      <p>ZyRace prioritizes privacy: No personal info collected. Gameplay is fully client-side.</p>
+      <ul style="list-style: disc; padding-left: 2rem; color: var(--light-text);">
+        <li><strong>Anonymous Stats:</strong> Google Analytics tracks device/browser/region for improvements.</li>
+        <li><strong>Game Data:</strong> Scores/sessions stored locally or via anonymous API (no emails/names).</li>
+        <li><strong>Compliance:</strong> GDPR-ready; opt-out via browser settings.</li>
+      </ul>
+      <p>For custom data needs, extend the Flask endpoints on PythonAnywhere.</p>
+    </section>
+<!-- Changelog section -->
+    <section class="section-container" id="changelog" aria-labelledby="changelog-heading">
+      <h2 id="changelog-heading" class="section-title">Changelog</h2>
+      <div class="grid features-grid">
+        <div class="card feature-card">
+          <h3 class="card-title">v2.1.0 (Nov 2025)</h3>
+          <ul style="text-align: left; color: var(--light-text);">
+            <li>Enhanced hazard mechanics for better puzzles.</li>
+            <li>Improved wheel physics and friction models.</li>
+            <li>Backend: SQLite integration on PythonAnywhere for persistent sessions.</li>
+          </ul>
+        </div>
+        <div class="card feature-card">
+          <h3 class="card-title">v2.0.0 (Aug 2025)</h3>
+          <ul style="text-align: left; color: var(--light-text);">
+            <li>Added turbo parts with dynamic thrust.</li>
+            <li>Browser caching for offline play.</li>
+            <li>Track loading optimizations.</li>
+          </ul>
+        </div>
+        <div class="card feature-card">
+          <h3 class="card-title">v1.0.0 (May 2025)</h3>
+          <ul style="text-align: left; color: var(--light-text);">
+            <li>Core release: Tuning system and 10 levels.</li>
+            <li>Matter.js physics fully integrated.</li>
+            <li>Flask backend deployed on PythonAnywhere.</li>
+          </ul>
+        </div>
+        <div class="card feature-card">
+          <h3 class="card-title">v0.9.0 (Mar 2025)</h3>
+          <ul style="text-align: left; color: var(--light-text);">
+            <li>Prototype: Basic physics and canvas rendering.</li>
+            <li>Initial Flask setup tested.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+<!-- FAQ section -->
+    <section class="section-container" id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="section-title">Documentation FAQ</h2>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
+          <span>How does ZyRace's physics engine work?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Powered by Matter.js for 2D rigid body simulations. Key elements include gravity, friction, and collision events for realistic car dynamics.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
+          <span>What's the structure of the car tuning API?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer">
+          <p>JSON-based: {chassis: {...}, parts: [{}], constraints: []}. Designed for balanced vehicle assembly in physics puzzles.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
+          <span>How is the backend hosted?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Using Flask on PythonAnywhere for lightweight, scalable hosting. Supports session data and optional leaderboards.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
+          <span>Can I integrate ZyRace mechanics into other projects?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Use the documented APIs and examples to adapt physics and tuning systems. Contact for collaboration.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)" tabindex="0" role="button" aria-expanded="false">
+          <span>What data does ZyRace handle?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Anonymous usage stats via Google Analytics; no personal data collected. All gameplay is client-side for privacy.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+<!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-logo">ZyRace</div>
+      <p style="color: var(--light-text); margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Car racing madness meets physics puzzles in ZyRace. Crafted with adventure in Kerala, India — hit the gas on wild tracks! Developed by UTHAKKAN.
+      </p>
+<!-- Responsive column layout for links -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin: 2rem 0;">
+<!-- Navigation -->
+        <div class="footer-column">
+          <h3>Navigation</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="/">Home</a></li>
+            <li class="footer-link"><a href="/start">Play Now</a></li>
+            <li class="footer-link"><a href="/features">Features</a></li>
+            <li class="footer-link"><a href="/testimonials">Testimonials</a></li>
+            <li class="footer-link"><a href="/blog">Blog</a></li>
+            <li class="footer-link"><a href="/about">About</a></li>
+            <li class="footer-link"><a href="/faq">FAQ</a></li>
+            <li class="footer-link"><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="/help">Help Center</a></li>
+            <li class="footer-link"><a href="/troubleshoot">Troubleshooting</a></li>
+            <li class="footer-link"><a href="/guide">User Guide</a></li>
+            <li class="footer-link"><a href="/download">Download</a></li>
+            <li class="footer-link"><a href="/documentation">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="/privacy">Privacy Policy</a></li>
+            <li class="footer-link"><a href="/terms">Terms of Service</a></li>
+            <li class="footer-link"><a href="/cookies">Cookies Policy</a></li>
+            <li class="footer-link"><a href="/gdpr">GDPR Compliance</a></li>
+            <li class="footer-link"><a href="/dmca">DMCA Notice</a></li>
+            <li class="footer-link"><a href="/disclaimer">Disclaimer</a></li>
+            <li class="footer-link"><a href="/refund-policy">Refund Policy</a></li>
+            <li class="footer-link"><a href="/security">Security Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="/partners">Partners</a></li>
+            <li class="footer-link"><a href="/press">Press Kit</a></li>
+            <li class="footer-link"><a href="/use-cases">Use Cases</a></li>
+            <li class="footer-link"><a href="/pricing">Pricing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://twitter.com/ajmal_uk_" target="_blank" rel="noopener noreferrer" class="social-link" title="Follow Me on Twitter" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/ajmaluk" target="_blank" rel="noopener noreferrer" class="social-link" title="Follow Me on LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/ajmaluk" target="_blank" rel="noopener noreferrer" class="social-link" title="Developer on GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:contact.thakkan@gmail.com" class="social-link" title="Contact Developer" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+      </div>
+      <p class="copyright">
+        © 2025 ZyRace · Made in Kerala 🇮🇳 by UTHAKKAN · All Rights Reserved
+      </p>
+    </div>
+  </footer>
+<!-- Quick Overview Modal -->
+  <div class="modal-overlay" id="how-to-modal" role="dialog" aria-modal="true" aria-labelledby="how-to-title" style="display:none;">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h2 id="how-to-title" class="modal-title">🔧 ZyRace Docs Quick Overview 🔧</h2>
+      <ol class="modal-steps">
+        <li><span>1. ARCHITECTURE:</span> Client-heavy with Matter.js physics and Flask backend on PythonAnywhere.</li>
+        <li><span>2. API:</span> JSON tuning configs for cars; extend via documented interfaces.</li>
+        <li><span>3. CUSTOMIZATION:</span> Adapt tracks and parts using JSON and events — client-side focus.</li>
+        <li><span>4. DATA:</span> Privacy-first: Anonymous stats only, no personal collection.</li>
+      </ol>
+      <p class="modal-tip"><span>📚 TIP:</span> Use examples for your projects. For ZyRace-specific tweaks, reach out via contact form!</p>
+    </div>
+  </div>
+<!-- JavaScript (enhanced for copy functionality) -->
+  <script defer>
+function copyCode(btn) {
+const code = btn.parentElement.querySelector('pre').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+const original = btn.textContent;
+    btn.textContent = 'Copied!';
+setTimeout(() => btn.textContent = original, 2000);
+  });
+}
+function preloadResources() {
+const resources = [
+'https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap',
+'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
+'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css',
+'https://zyrace.pythonanywhere.com/favicon-96x96.png',
+'https://zyrace.pythonanywhere.com/apple-touch-icon.png',
+'https://zyrace.pythonanywhere.com/og-image.jpg'
+  ];
+  resources.forEach(resource => {
+if (resource.endsWith('.css')) {
+const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = resource;
+      document.head.appendChild(link);
+    } else {
+const img = new Image();
+      img.src = resource;
+    }
+  });
+}
+function toggleFAQ(element) {
+const answer = element.nextElementSibling;
+const icon = element.querySelector('.faq-icon');
+const isExpanded = element.getAttribute('aria-expanded') === 'true';
+if (isExpanded) {
+    answer.classList.remove('show');
+    element.setAttribute('aria-expanded', 'false');
+    icon.style.transform = 'rotate(0deg)';
+  } else {
+    answer.classList.add('show');
+    element.setAttribute('aria-expanded', 'true');
+    icon.style.transform = 'rotate(180deg)';
+  }
+}
+function startAdventure() { window.location.href = '/start'; }
+function openSidebar() {
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebar-overlay');
+const menuToggle = document.getElementById('menu-toggle');
+  sidebar.classList.add('active'); overlay.classList.add('active'); menuToggle.classList.add('active'); menuToggle.setAttribute('aria-expanded','true'); document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebar-overlay');
+const menuToggle = document.getElementById('menu-toggle');
+  sidebar.classList.remove('active'); overlay.classList.remove('active'); menuToggle.classList.remove('active'); menuToggle.setAttribute('aria-expanded','false'); document.body.style.overflow = '';
+}
+function openModal(modalId) { const modal = document.getElementById(modalId); modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+function closeModal(modalId) { const modal = document.getElementById(modalId); modal.style.display = 'none'; document.body.style.overflow = ''; }
+document.addEventListener('DOMContentLoaded', function(){
+preloadResources();
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); }); },{ threshold:0.1, rootMargin:'0px 0px -50px 0px' });
+  sections.forEach(s => observer.observe(s));
+const menuToggle = document.getElementById('menu-toggle');
+const overlay = document.getElementById('sidebar-overlay');
+const howToBtn = document.getElementById('how-to-btn');
+const howToModal = document.getElementById('how-to-modal');
+const modalCloseBtn = document.getElementById('modal-close-btn');
+const sidebarLinks = document.querySelectorAll('#sidebar a');
+  menuToggle.addEventListener('click', ()=>{ if(menuToggle.classList.contains('active')) closeSidebar(); else openSidebar(); });
+  overlay.addEventListener('click', closeSidebar);
+  howToBtn.addEventListener('click', ()=> openModal('how-to-modal'));
+  modalCloseBtn.addEventListener('click', ()=> closeModal('how-to-modal'));
+  howToModal.addEventListener('click',(e)=>{ if(e.target === howToModal) closeModal('how-to-modal'); });
+  sidebarLinks.forEach(link => link.addEventListener('click', closeSidebar));
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape'){ closeSidebar(); closeModal('how-to-modal'); } });
+  document.querySelectorAll('a[href^="#"]').forEach(anchor=>{ anchor.addEventListener('click', function(e){ e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if(target) { history.pushState(null,'',this.getAttribute('href')); target.scrollIntoView({behavior:'smooth', block:'start'}); } }); });
+function fixViewportHeight(){ const vh = window.innerHeight * 0.01; document.documentElement.style.setProperty('--vh', `${vh}px`); }
+fixViewportHeight(); window.addEventListener('resize', fixViewportHeight);
+});
+// Load Prism for code highlighting
+window.addEventListener('load', () => {
+const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js';
+  script.onload = () => {
+    Prism.highlightAll();
+  };
+  document.body.appendChild(script);
+});
+</script>
+</body>
+</html>

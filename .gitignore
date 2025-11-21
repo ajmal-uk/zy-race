@@ -2,3 +2,4 @@
 !.vscode/settings.json
 !.vscode/extensions.json
 directory_structure.json
+venv
