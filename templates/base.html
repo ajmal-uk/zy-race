@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- SEO Meta Tags -->
+    <title>{% block title %}ZyRace — Free Browser Car Physics Puzzle Racing Game{% endblock %}</title>
+    <meta name="description"
+        content="{% block description %}ZyRace — Free browser car physics puzzle racing game. Tune vehicles, solve physics-based tracks with bridges, water hazards and mountains.{% endblock %}" />
+    <meta name="keywords"
+        content="ZyRace, car game, free online racing game, physics puzzle racer, tune cars, browser game, drive mad" />
+    <meta name="author" content="Ajmal U K" />
+    <meta name="robots" content="index, follow, max-snippet:200, max-image-preview:large" />
+    <meta name="theme-color" content="#FF8C00" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ request.url }}" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+    <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}{{ self.description() }}{% endblock %}" />
+    <meta property="og:url" content="{{ request.url }}" />
+    <meta property="og:site_name" content="ZyRace" />
+    <meta property="og:image"
+        content="{% block og_image %}https://zyrace.pythonanywhere.com/og-image.jpg{% endblock %}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ajmal_uk_" />
+    <meta name="twitter:creator" content="@ajmal_uk_" />
+    <meta name="twitter:title" content="{{ self.title() }}" />
+    <meta name="twitter:description" content="{{ self.description() }}" />
+    <meta name="twitter:image" content="{{ self.og_image() }}" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Orbitron:wght@500;700;800&family=Exo+2:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    {% block extra_css %}{% endblock %}
+
+    <!-- JSON-LD Schemas -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://zyrace.pythonanywhere.com/",
+    "name": "ZyRace",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://zyrace.pythonanywhere.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "UTHAKKAN",
+    "url": "https://zyrace.pythonanywhere.com/",
+    "logo": "https://zyrace.pythonanywhere.com/favicon-96x96.png",
+    "sameAs": ["https://twitter.com/ajmal_uk_", "https://github.com/ajmaluk"]
+  }
+  </script>
+    {% block schemas %}{% endblock %}
+</head>
+
+<body>
+    <!-- Cloud Background -->
+    <div class="clouds-container">
+        <div class="clouds-layer clouds-layer-1"></div>
+        <div class="clouds-layer clouds-layer-2"></div>
+        <div class="clouds-layer clouds-layer-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container navbar">
+            <a href="/" class="nav-logo">
+                <i class="fas fa-flag-checkered"></i> ZyRace
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/start"><i class="fas fa-play"></i> Play Now</a></li>
+            <li><a href="/features"><i class="fas fa-star"></i> Features</a></li>
+            <li><a href="/blog"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="/about"><i class="fas fa-users"></i> About Us</a></li>
+            <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">ZyRace</div>
+
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Game</h3>
+                    <ul>
+                        <li><a href="/start">Play Game</a></li>
+                        <li><a href="/features">Features</a></li>
+                        <li><a href="/guide">Game Guide</a></li>
+                        <li><a href="/download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/press">Press Kit</a></li>
+                        <li><a href="/partners">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/cookies">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="socials">
+                <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="copyright">
+                &copy; {{ current_year }} ZyRace. Developed by <a href="https://github.com/ajmaluk"
+                    target="_blank">UTHAKKAN (Ajmal U K)</a>. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Sidebar Toggle Logic
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.overlay');
+        const body = document.body;
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleMenu);
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', toggleMenu);
+        }
+
+        // Close sidebar when clicking a link
+        const sidebarLinks = document.querySelectorAll('.sidebar a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (sidebar.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — Press Kit | Media Resources{% endblock %}
+
+{% block extra_css %}
+<style>
+    .press-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .resource-card {
+        background: var(--white);
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--light-shadow);
+        transition: var(--transition);
+        border: 1px solid #eee;
+    }
+
+    .resource-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--medium-shadow);
+        border-color: var(--primary);
+    }
+
+    .resource-card h3 {
+        color: var(--dark-text);
+        margin-bottom: 0.5rem;
+    }
+
+    .resource-card p {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .fact-sheet {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: var(--light-shadow);
+        margin-bottom: 3rem;
+    }
+
+    .fact-sheet ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .fact-sheet li {
+        border-left: 3px solid var(--primary);
+        padding-left: 1rem;
+    }
+
+    .fact-sheet strong {
+        display: block;
+        color: var(--primary);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.3rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo">Press <span style="color:var(--yellow);">Kit</span></h1>
+        </div>
+        <p class="tagline">Official assets and information for media coverage.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
+                <a href="mailto:contact@uthakkan@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i>
+                    PRESS CONTACT</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container visible" id="press">
+    <h2 class="section-title">Fact Sheet</h2>
+    <div class="container">
+        <div class="fact-sheet">
+            <ul>
+                <li><strong>Developer</strong> UTHAKKAN (Ajmal U K)</li>
+                <li><strong>Release Date</strong> 2024</li>
+                <li><strong>Platforms</strong> Web Browser (Desktop & Mobile)</li>
+                <li><strong>Price</strong> Free (Ad-supported)</li>
+                <li><strong>Website</strong> zyrace.pythonanywhere.com</li>
+                <li><strong>Genre</strong> Physics Puzzle Racing</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">Media Assets</h2>
+        <div class="press-grid">
+
+            <div class="resource-card">
+                <i class="fas fa-image" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3>Logo Pack</h3>
+                <p>High-resolution logos in PNG format.</p>
+                <a href="/static/img/logo.png" class="btn btn-secondary" download><i class="fas fa-download"></i>
+                    DOWNLOAD PNG</a>
+            </div>
+
+            <div class="resource-card">
+                <i class="fas fa-images" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3>Screenshots</h3>
+                <p>Gameplay screenshots and promotional art.</p>
+                <button class="btn btn-secondary" disabled><i class="fas fa-clock"></i> COMING SOON</button>
+            </div>
+
+            <div class="resource-card">
+                <i class="fas fa-ad" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3>Banners</h3>
+                <p>Social media banners and ad creatives.</p>
+                <a href="/static/img/og-image.jpg" class="btn btn-secondary" download><i class="fas fa-download"></i>
+                    DOWNLOAD JPG</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

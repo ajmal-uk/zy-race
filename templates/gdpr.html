@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — GDPR Compliance | Your Data Rights{% endblock %}
+
+{% block extra_css %}
+<style>
+    .legal-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .legal-content h3 {
+        color: var(--primary);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .legal-content p {
+        color: var(--dark-text);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .legal-content ul {
+        list-style: disc;
+        padding-left: 2rem;
+        color: var(--light-text);
+        margin-bottom: 1rem;
+    }
+
+    .legal-content li {
+        margin-bottom: 0.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo">GDPR <span style="color:var(--yellow);">Compliance</span></h1>
+        </div>
+        <p class="tagline">Understanding your rights under the General Data Protection Regulation.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container visible" id="gdpr">
+    <h2 class="section-title">GDPR Compliance</h2>
+    <div class="legal-content">
+        <p>ZyRace is committed to ensuring the security and protection of the personal information that we process, and
+            to provide a compliant and consistent approach to data protection.</p>
+
+        <h3>Your Rights</h3>
+        <p>Under the GDPR, you have certain rights regarding your personal data:</p>
+        <ul>
+            <li><strong>The right to access:</strong> You have the right to request copies of your personal data.</li>
+            <li><strong>The right to rectification:</strong> You have the right to request that we correct any
+                information you believe is inaccurate.</li>
+            <li><strong>The right to erasure:</strong> You have the right to request that we erase your personal data,
+                under certain conditions.</li>
+            <li><strong>The right to restrict processing:</strong> You have the right to request that we restrict the
+                processing of your personal data, under certain conditions.</li>
+            <li><strong>The right to object to processing:</strong> You have the right to object to our processing of
+                your personal data, under certain conditions.</li>
+            <li><strong>The right to data portability:</strong> You have the right to request that we transfer the data
+                that we have collected to another organization, or directly to you, under certain conditions.</li>
+        </ul>
+
+        <h3>Data Processing</h3>
+        <p>We process minimal data necessary for the operation of the game and analytics (via Google Analytics). We do
+            not sell your personal data to third parties.</p>
+
+        <h3>Contact Us</h3>
+        <p>If you would like to exercise any of these rights or have any questions about our GDPR compliance, please
+            contact us at: <strong>contact@uthakkan@gmail.com</strong></p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

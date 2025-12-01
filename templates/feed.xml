@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>ZyRace Blog</title>
+  <link>https://zyrace.pythonanywhere.com/</link>
+  <description>Latest updates and news from ZyRace - Free Browser Car Physics Puzzle Racing Game.</description>
+  <language>en-us</language>
+  <lastBuildDate>{{ last_build_date }}</lastBuildDate>
+  <atom:link href="https://zyrace.pythonanywhere.com/feed.xml" rel="self" type="application/rss+xml" />
+  
+  {% for post in posts %}
+  <item>
+    <title>{{ post.title }}</title>
+    <link>https://zyrace.pythonanywhere.com/blog/{{ post.slug }}</link>
+    <guid>https://zyrace.pythonanywhere.com/blog/{{ post.slug }}</guid>
+    <pubDate>{{ post.pub_date }}</pubDate>
+    <description>{{ post.description }}</description>
+  </item>
+  {% endfor %}
+  
+</channel>
+</rss>

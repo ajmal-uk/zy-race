@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — Partners | Collaborate with Us{% endblock %}
+
+{% block extra_css %}
+<style>
+    .partner-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .partner-card {
+        background: var(--white);
+        border-radius: 15px;
+        padding: 2.5rem;
+        text-align: center;
+        box-shadow: var(--light-shadow);
+        transition: var(--transition);
+        border: 2px solid transparent;
+    }
+
+    .partner-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--medium-shadow);
+        border-color: var(--primary);
+    }
+
+    .partner-icon {
+        font-size: 3.5rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .partner-card h3 {
+        color: var(--dark-text);
+        margin-bottom: 1rem;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .partner-card p {
+        color: var(--light-text);
+        line-height: 1.6;
+    }
+
+    .contact-section {
+        text-align: center;
+        margin-top: 4rem;
+        padding: 3rem;
+        background: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--light-shadow);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo">Part<span style="color:var(--yellow);">ners</span></h1>
+        </div>
+        <p class="tagline">Join forces with ZyRace. Let's build something amazing together.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
+                <a href="/contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> CONTACT US</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container visible" id="partners">
+    <h2 class="section-title">Collaboration Opportunities</h2>
+    <div class="container">
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+            We are proud to collaborate with organizations that share our passion for gaming, education, and innovation.
+        </p>
+
+        <div class="partner-grid">
+
+            <div class="partner-card">
+                <i class="fas fa-gamepad partner-icon"></i>
+                <h3>Game Portals</h3>
+                <p>Distribute ZyRace on your gaming platform to engage your audience with high-quality, physics-based
+                    browser content. We offer easy integration options.</p>
+            </div>
+
+            <div class="partner-card">
+                <i class="fas fa-graduation-cap partner-icon"></i>
+                <h3>Schools & Education</h3>
+                <p>Use ZyRace's physics engine as a fun, interactive tool to demonstrate mechanics, engineering, and
+                    problem-solving concepts in the classroom.</p>
+            </div>
+
+            <div class="partner-card">
+                <i class="fas fa-video partner-icon"></i>
+                <h3>Content Creators</h3>
+                <p>Streamers and YouTubers are welcome to feature ZyRace. We can provide exclusive assets, early access,
+                    and support for your content creation.</p>
+            </div>
+
+        </div>
+
+        <div class="contact-section">
+            <h3>Become a Partner</h3>
+            <p>Interested in working together? We'd love to hear from you.</p>
+            <a href="mailto:contact@uthakkan@gmail.com" class="btn btn-primary" style="margin-top: 1rem;">
+                <i class="fas fa-handshake"></i> GET IN TOUCH
+            </a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

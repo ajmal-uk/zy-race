@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — Security Policy | Data Protection & Safety{% endblock %}
+
+{% block extra_css %}
+<style>
+    .legal-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .legal-content h3 {
+        color: var(--primary);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .legal-content p {
+        color: var(--dark-text);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo">Security <span style="color:var(--yellow);">Policy</span></h1>
+        </div>
+        <p class="tagline">Learn how we protect your data and ensure a safe gaming environment.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container visible" id="security">
+    <h2 class="section-title">Security Policy</h2>
+    <div class="legal-content">
+        <p>At ZyRace, we take the security of our users and our platform seriously. This policy outlines our commitment
+            to maintaining a secure environment for everyone.</p>
+
+        <h3>Data Protection</h3>
+        <p>We implement industry-standard security measures to protect your personal information from unauthorized
+            access, alteration, disclosure, or destruction. However, no method of transmission over the internet or
+            electronic storage is 100% secure.</p>
+
+        <h3>Reporting Vulnerabilities</h3>
+        <p>If you discover a security vulnerability in our application, we encourage you to report it to us immediately.
+            We appreciate the efforts of security researchers and the community in helping us keep ZyRace safe.</p>
+        <p>Please send reports to: <strong>contact@uthakkan@gmail.com</strong></p>
+
+        <h3>Account Security</h3>
+        <p>While ZyRace does not currently require user accounts for core gameplay, any future account features will be
+            protected with strong authentication mechanisms. We advise users to be cautious of phishing attempts and to
+            never share personal information with unverified sources.</p>
+
+        <h3>Third-Party Services</h3>
+        <p>We may use third-party services for analytics or hosting. We vet these partners to ensure they adhere to
+            strict security standards.</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

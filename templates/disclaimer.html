@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — Disclaimer{% endblock %}
+
+{% block extra_css %}
+<style>
+    .legal-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .legal-content h3 {
+        color: var(--primary);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .legal-content p {
+        color: var(--dark-text);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo">Dis<span style="color:var(--yellow);">claimer</span></h1>
+        </div>
+        <p class="tagline">Information regarding game content, liability, and external links.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container visible" id="disclaimer">
+    <h2 class="section-title">Disclaimer</h2>
+    <div class="legal-content">
+        <p>The information provided by ZyRace ("we," "us," or "our") on this website is for general informational and
+            entertainment purposes only. All information on the Site is provided in good faith, however we make no
+            representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity,
+            reliability, availability, or completeness of any information on the Site.</p>
+
+        <h3>External Links Disclaimer</h3>
+        <p>The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or
+            originating from third parties or links to websites and features in banners or other advertising. Such
+            external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability,
+            availability, or completeness by us.</p>
+
+        <h3>Gaming Disclaimer</h3>
+        <p>ZyRace is a game designed for entertainment. We are not responsible for any addiction or excessive time spent
+            playing. Please play responsibly.</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

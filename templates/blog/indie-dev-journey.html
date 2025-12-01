@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}From Kerala to the World: The Solo Dev Journey Behind ZyRace{% endblock %}
+{% block description %}Ajmal U K shares the story of building ZyRace as a solo developer in Kerala, India. The
+challenges, the wins, and the vision for UTHAKKAN.{% endblock %}
+
+{% block extra_css %}
+<style>
+    .blog-post {
+        background: var(--white);
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: var(--light-shadow);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .blog-meta {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    .blog-content h2 {
+        color: var(--primary);
+        margin-top: 2rem;
+    }
+
+    .blog-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .quote-box {
+        border-left: 5px solid var(--primary);
+        padding-left: 1.5rem;
+        font-style: italic;
+        color: var(--dark-text);
+        margin: 2rem 0;
+        background: rgba(255, 140, 0, 0.05);
+        padding: 1.5rem;
+        border-radius: 0 10px 10px 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero" style="min-height: 60vh;">
+    <div class="container">
+        <h1 class="logo" style="font-size: 3rem;">The Indie <span style="color:var(--yellow);">Journey</span></h1>
+        <p class="tagline">Building dreams one line of code at a time.</p>
+    </div>
+</section>
+
+<section class="section-container visible" id="post">
+    <div class="container">
+        <article class="blog-post">
+            <div class="blog-meta">
+                <span><i class="fas fa-user"></i> Ajmal U K</span> &nbsp;|&nbsp;
+                <span><i class="fas fa-calendar"></i> November 2024</span> &nbsp;|&nbsp;
+                <span><i class="fas fa-tag"></i> Story</span>
+            </div>
+
+            <div class="blog-content">
+                <p>Hi everyone! I'm <strong>Ajmal U K</strong>, the developer behind ZyRace. I run a small indie studio
+                    called <strong>UTHAKKAN</strong> from the beautiful coastal town of Kannur in Kerala, India.</p>
+
+                <h2>The Spark</h2>
+                <p>I've always been fascinated by how things work. Whether it was taking apart toy cars as a kid or
+                    debugging complex algorithms now, the curiosity has always been there. ZyRace started as a weekend
+                    project. I wanted to see if I could build a car game that ran entirely in the browser without
+                    needing heavy downloads.</p>
+
+                <div class="quote-box">
+                    "The best games aren't always the ones with the biggest budgets. They're the ones made with the most
+                    heart."
+                </div>
+
+                <h2>The Challenges of Solo Dev</h2>
+                <p>Being a solo developer means wearing many hats. One minute I'm the lead engineer fixing a physics
+                    bug, the next I'm the UI designer picking color palettes, and then I'm the marketing team writing
+                    these blog posts!</p>
+                <p>It's exhausting, but incredibly fulfilling. Every pixel on the screen is a decision I made. Every
+                    feature is something I built because I thought it would be fun.</p>
+
+                <h2>Why "UTHAKKAN"?</h2>
+                <p>UTHAKKAN represents my identity and my roots. It's a reminder to stay grounded while aiming high.
+                    Through UTHAKKAN, I aim to build not just games, but useful tools like resume builders and
+                    productivity apps that help people in their daily lives.</p>
+
+                <h2>What's Next?</h2>
+                <p>ZyRace is just the beginning. I have plans for more tracks, more cars, and maybe even a multiplayer
+                    mode. But beyond that, I want to keep learning and sharing my journey with you all.</p>
+
+                <p>Thank you for playing, for reading, and for being part of this adventure.</p>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="/blog" class="btn btn-secondary">← Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

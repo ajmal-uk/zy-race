@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — Pricing | Free Forever{% endblock %}
+
+{% block extra_css %}
+<style>
+    .price-card {
+        background: var(--white);
+        border-radius: 15px;
+        padding: 3rem;
+        max-width: 450px;
+        margin: 3rem auto;
+        box-shadow: var(--heavy-shadow);
+        border: 3px solid var(--primary);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .price-card::before {
+        content: 'BEST VALUE';
+        position: absolute;
+        top: 20px;
+        right: -35px;
+        background: var(--primary);
+        color: white;
+        padding: 5px 40px;
+        transform: rotate(45deg);
+        font-weight: bold;
+        font-size: 0.8rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .price {
+        font-size: 5rem;
+        font-weight: 800;
+        color: var(--primary);
+        font-family: 'Orbitron', sans-serif;
+        margin: 1rem 0;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .price-subtitle {
+        font-size: 1.5rem;
+        color: var(--dark-text);
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
+    .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+        text-align: left;
+    }
+
+    .features-list li {
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+        color: var(--dark-text);
+    }
+
+    .features-list li:last-child {
+        border-bottom: none;
+    }
+
+    .features-list i {
+        color: var(--green);
+        margin-right: 15px;
+        font-size: 1.2rem;
+    }
+
+    .pricing-note {
+        margin-top: 3rem;
+        color: var(--light-text);
+        font-style: italic;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo">Pric<span style="color:var(--yellow);">ing</span></h1>
+        </div>
+        <p class="tagline">The best things in life are free. ZyRace is one of them.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container visible" id="pricing">
+    <h2 class="section-title">Our Plan</h2>
+    <div class="container">
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+            We believe that everyone should have access to fun, high-quality games without paywalls or hidden fees.
+        </p>
+
+        <div class="price-card">
+            <h3 style="color: var(--light-text); text-transform: uppercase; letter-spacing: 2px; font-size: 1rem;">
+                Standard Access</h3>
+            <div class="price">$0</div>
+            <div class="price-subtitle">Forever Free</div>
+
+            <ul class="features-list">
+                <li><i class="fas fa-check-circle"></i> Unlimited Gameplay</li>
+                <li><i class="fas fa-check-circle"></i> All Tracks & Levels</li>
+                <li><i class="fas fa-check-circle"></i> Full Vehicle Tuning</li>
+                <li><i class="fas fa-check-circle"></i> No Ads (Currently)</li>
+                <li><i class="fas fa-check-circle"></i> No Credit Card Required</li>
+            </ul>
+
+            <a href="/start" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                <i class="fas fa-play"></i> PLAY NOW
+            </a>
+        </div>
+
+        <p class="pricing-note text-center">
+            "ZyRace is a passion project. We might add optional cosmetic items in the future to support server costs,
+            but the core game will always be free-to-win."
+        </p>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

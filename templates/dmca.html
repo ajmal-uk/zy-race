@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — DMCA Policy | Copyright Infringement Notice{% endblock %}
+
+{% block extra_css %}
+<style>
+    .legal-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .legal-content h3 {
+        color: var(--primary);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .legal-content p {
+        color: var(--dark-text);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .legal-content ul {
+        list-style: disc;
+        padding-left: 2rem;
+        color: var(--light-text);
+        margin-bottom: 1rem;
+    }
+
+    .legal-content li {
+        margin-bottom: 0.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo">DMCA <span style="color:var(--yellow);">Policy</span></h1>
+        </div>
+        <p class="tagline">Respecting intellectual property rights. How to report copyright infringement.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container visible" id="dmca">
+    <h2 class="section-title">DMCA Policy</h2>
+    <div class="legal-content">
+        <p>ZyRace respects the intellectual property rights of others and expects its users to do the same. In
+            accordance with the Digital Millennium Copyright Act of 1998 ("DMCA"), we will respond expeditiously to
+            claims of copyright infringement reported to our designated Copyright Agent.</p>
+
+        <h3>Reporting Copyright Infringement</h3>
+        <p>If you are a copyright owner, authorized to act on behalf of one, or authorized to act under any exclusive
+            right under copyright, please report alleged copyright infringements taking place on or through the Site by
+            delivering a Notice of Alleged Infringement to our Designated Copyright Agent.</p>
+
+        <h3>DMCA Notice of Alleged Infringement ("Notice")</h3>
+        <ul>
+            <li>Identify the copyrighted work that you claim has been infringed.</li>
+            <li>Identify the material or link you claim is infringing and that access to which is to be disabled,
+                including the URL where such material may be found.</li>
+            <li>Provide your mailing address, telephone number, and email address.</li>
+            <li>Include a statement that you have a good faith belief that the disputed use is not authorized by the
+                copyright owner, its agent, or the law.</li>
+            <li>Include a statement that the information in the Notice is accurate and, under penalty of perjury, that
+                you are the owner or authorized to act on behalf of the owner.</li>
+            <li>Provide your full legal name and your electronic or physical signature.</li>
+        </ul>
+
+        <h3>Counter-Notices</h3>
+        <p>If you believe that your material that was removed is not infringing, or that you have the authorization to
+            use the material, you may send a counter-notice to the Copyright Agent.</p>
+
+        <p><strong>Contact:</strong> contact@uthakkan@gmail.com</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — Use Cases | Who is this for?{% endblock %}
+
+{% block extra_css %}
+<style>
+    .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .use-case-card {
+        background: var(--white);
+        border-radius: 15px;
+        padding: 2.5rem;
+        text-align: center;
+        box-shadow: var(--light-shadow);
+        transition: var(--transition);
+        border: 2px solid transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .use-case-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--medium-shadow);
+        border-color: var(--primary);
+    }
+
+    .use-case-icon {
+        font-size: 3.5rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        background: rgba(255, 140, 0, 0.1);
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .use-case-card h3 {
+        color: var(--dark-text);
+        margin-bottom: 1rem;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .use-case-card p {
+        color: var(--light-text);
+        line-height: 1.6;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo">Use <span style="color:var(--yellow);">Cases</span></h1>
+        </div>
+        <p class="tagline">ZyRace isn't just a game; it's a playground for everyone.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
+                <a href="/start" class="btn btn-secondary"><i class="fas fa-play"></i> START PLAYING</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container visible" id="use-cases">
+    <h2 class="section-title">Who is ZyRace for?</h2>
+    <div class="container">
+        <div class="use-case-grid">
+
+            <div class="use-case-card">
+                <div class="use-case-icon"><i class="fas fa-coffee"></i></div>
+                <h3>Casual Gamers</h3>
+                <p>Looking for a quick break? Jump into ZyRace for instant fun. No downloads, no sign-ups—just pure
+                    racing action in your browser during coffee breaks or commutes.</p>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-icon"><i class="fas fa-wrench"></i></div>
+                <h3>Car Enthusiasts</h3>
+                <p>Love tinkering with engines and suspension? Our detailed tuning system lets you modify your vehicle
+                    to handle specific terrains perfectly. Experiment with different builds.</p>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-icon"><i class="fas fa-brain"></i></div>
+                <h3>Physics Puzzle Solvers</h3>
+                <p>It's not just about speed. Navigate tricky bridges, balance on steep slopes, and use momentum to
+                    solve physics-based challenges. It's a workout for your brain and reflexes.</p>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-icon"><i class="fas fa-stopwatch"></i></div>
+                <h3>Speedrunners</h3>
+                <p>Compete against yourself to find the fastest line. Optimize your car build and driving technique to
+                    shave milliseconds off your time and master every track.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

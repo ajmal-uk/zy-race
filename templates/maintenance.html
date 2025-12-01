@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}ZyRace — Under Maintenance{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero" style="min-height: 80vh;">
+    <div class="container">
+        <div class="logo-container">
+            <i class="fas fa-tools" style="font-size: 6rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h1 class="logo">Pit <span style="color:var(--yellow);">Stop</span></h1>
+        </div>
+        <h2 style="color: var(--dark-text); margin-bottom: 1rem;">We'll be back soon!</h2>
+        <p class="tagline">ZyRace is currently undergoing scheduled maintenance to improve your racing experience.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="https://twitter.com/ajmal_uk_" target="_blank" class="btn btn-primary"><i
+                        class="fab fa-twitter"></i> CHECK UPDATES</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}
