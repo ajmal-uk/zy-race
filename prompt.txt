@@ -78,3 +78,22 @@ toolpix
 
   gtag('config', 'G-0BB9JDRDBH');
 </script>
+
+
+in the game.html. there also add the seo needed data and content 
+
+
+and also in the ads folder there have the video of the ads
+
+that is for skip level 
+
+if the player want to skip a level it play the full ad and then show a x icon to top and skip the level 
+
+also in 6ther in the video there trhat  a redirecter in there it redrirect to the given link 
+also a buton of visit pressing that also redirect 
+
+in there mave mutliple ads video and there coersponing list store as list of dict , form tehr select randomly , not seleect only one 
+
+and also if the ad is a photo show that as 30 seconcs
+
+make it beter
