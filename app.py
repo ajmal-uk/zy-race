@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from datetime import datetime
 import pytz
+import os
 
 # Import blueprints
 from routes.main_routes import main_bp
@@ -9,6 +10,7 @@ from routes.blog_routes import blog_bp
 from routes.asset_routes import assets_bp
 
 app = Flask(__name__)
+app.secret_key = os.environ.get('SECRET_KEY', 'dev_key_please_change_in_prod')
 
 # Blog Configuration
 app.config['BLOG_POSTS'] = [
@@ -55,4 +57,5 @@ def internal_server_error(e):
     return render_template('errors/500.html'), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(debug=debug_mode, host='0.0.0.0', port=5000)
