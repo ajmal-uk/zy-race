@@ -16,13 +16,13 @@ app.config['BLOG_POSTS'] = [
         'title': 'The Physics Behind ZyRace',
         'slug': 'physics-behind-zyrace',
         'description': 'Dive deep into how we use Matter.js to simulate realistic car physics.',
-        'date': 'Nov 2024'
+        'date': 'Nov 2025'
     },
     {
         'title': 'The Indie Dev Journey',
         'slug': 'indie-dev-journey',
         'description': 'Ajmal U K shares the story of building ZyRace as a solo developer.',
-        'date': 'Nov 2024'
+        'date': 'Nov 2025'
     }
 ]
 
@@ -48,11 +48,11 @@ def add_security_headers(response):
 # Error Handlers
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return render_template('errors/404.html'), 404
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    return render_template('404.html'), 500
+    return render_template('errors/500.html'), 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

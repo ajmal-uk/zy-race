@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% block title %}404 - Page Not Found | ZyRace{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero" style="min-height: 80vh;">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo" style="font-size: 8rem;">4<span style="color:var(--yellow);">0</span>4</h1>
+        </div>
+        <h2 style="color: var(--dark-text); margin-bottom: 1rem;">Off Track!</h2>
+        <p class="tagline">The page you are looking for seems to have crashed or doesn't exist.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="{{ url_for('main.index') }}" class="btn btn-primary">
+                    <i class="fas fa-home"></i> BACK TO GARAGE
+                </a>
+                <a href="{{ url_for('main.help_') }}" class="btn btn-secondary">
+                    <i class="fas fa-map-signs"></i> GET HELP
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% block title %}500 - Internal Server Error | ZyRace{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero" style="min-height: 80vh;">
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="logo" style="font-size: 8rem;">5<span style="color:var(--primary-dark);">0</span>0</h1>
+        </div>
+        <h2 style="color: var(--dark-text); margin-bottom: 1rem;">Engine Failure!</h2>
+        <p class="tagline">Something went wrong under the hood. Our mechanics are working on it.</p>
+        <div class="cta-container">
+            <div class="main-cta">
+                <a href="{{ url_for('main.index') }}" class="btn btn-primary">
+                    <i class="fas fa-home"></i> BACK TO GARAGE
+                </a>
+                <a href="{{ url_for('main.contact') }}" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> CONTACT SUPPORT
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

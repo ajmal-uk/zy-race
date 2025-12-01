@@ -6,7 +6,7 @@ blog_bp = Blueprint('blog', __name__)
 
 @blog_bp.route('/blog')
 def blog():
-    return render_template('blog.html')
+    return render_template('blog/blog.html')
 
 @blog_bp.route('/blog/physics-behind-zyrace')
 def blog_physics():
@@ -20,7 +20,7 @@ def blog_journey():
 def rss_feed():
     try:
         last_build_date = datetime.now(pytz.UTC).strftime("%a, %d %b %Y %H:%M:%S GMT")
-        response = make_response(render_template('feed.xml',
+        response = make_response(render_template('blog/feed.xml',
                                               posts=current_app.config['BLOG_POSTS'],
                                               last_build_date=last_build_date))
         response.headers['Content-Type'] = 'application/rss+xml'
@@ -31,6 +31,6 @@ def rss_feed():
 
 @blog_bp.route('/opensearch.xml')
 def opensearch():
-    response = make_response(render_template('opensearch.xml'))
+    response = make_response(render_template('seo/opensearch.xml'))
     response.headers['Content-Type'] = 'application/opensearchdescription+xml'
     return response
