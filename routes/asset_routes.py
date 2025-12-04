@@ -1,6 +1,11 @@
-from flask import Blueprint, send_from_directory
+from flask import Blueprint, send_from_directory, current_app
+import os
 
 assets_bp = Blueprint('assets', __name__)
+
+@assets_bp.route('/ads/<path:filename>')
+def serve_ads(filename):
+    return send_from_directory(os.path.join(current_app.root_path, 'ads'), filename)
 
 @assets_bp.route('/robots.txt')
 def robots():
