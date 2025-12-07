@@ -1,10 +1,15 @@
 {% extends "base/base.html" %}
 
-{% block title %}From Kerala to the World: The Solo Dev Journey Behind ZyRace{% endblock %}
-{% block description %}
-Ajmal U K shares the story of building ZyRace as a solo developer in Kerala, India.
-The challenges, the wins, and the vision for UTHAKKAN.
-{% endblock %}
+{% block title %}Browser Games in 2025: The Golden Age of Web Gaming - ZyRace Blog{% endblock %}
+{% block description %}Discover why browser games are making a massive comeback in 2025. From WebGL to WebAssembly,
+explore the tech behind the new golden age of web gaming.{% endblock %}
+
+{% block og_title %}Browser Games in 2025: The Golden Age of Web Gaming{% endblock %}
+{% block og_description %}Discover why browser games are making a massive comeback in 2025. From WebGL to WebAssembly,
+explore the tech behind the new golden age of web gaming.{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_image %}{{ url_for('static', filename='img/blog/browser-games-comeback.jpg', _external=True) }}{% endblock
+%}
 
 {% block extra_css %}
 <style>
@@ -17,17 +22,30 @@ The challenges, the wins, and the vision for UTHAKKAN.
         margin: 0 auto;
     }
 
-    .blog-meta {
-        color: var(--light-text);
-        font-size: 0.9rem;
+    .blog-header {
         margin-bottom: 2rem;
         border-bottom: 1px solid #eee;
         padding-bottom: 1rem;
     }
 
+    .blog-meta {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
     .blog-content h2 {
         color: var(--primary);
         margin-top: 2rem;
+    }
+
+    .blog-content p {
+        line-height: 1.8;
+        font-size: 1.1rem;
+        color: #444;
     }
 </style>
 {% endblock %}
@@ -36,11 +54,14 @@ The challenges, the wins, and the vision for UTHAKKAN.
 <section>
     <article class="blog-post">
 
-        <div class="blog-meta">
-            <span><i class="fas fa-user"></i> Ajmal U K</span>&nbsp;|&nbsp;
-            <span><i class="fas fa-calendar"></i> December 2025</span>&nbsp;|&nbsp;
-            <span><i class="fas fa-tag"></i> Tech Analysis</span>
-        </div>
+        <header class="blog-header">
+            <h1>The Golden Age of Browser Games: Why 2025 is the Year of the Web</h1>
+            <div class="blog-meta">
+                <span><i class="fas fa-user"></i> Ajmal U K</span>
+                <span><i class="fas fa-calendar"></i> <time datetime="2025-12-05">December 5, 2025</time></span>
+                <span><i class="fas fa-tag"></i> Tech Analysis</span>
+            </div>
+        </header>
 
         <div class="blog-content">
 
@@ -63,7 +84,8 @@ The challenges, the wins, and the vision for UTHAKKAN.
 
             <h2>WebGL: GPU Power to the People</h2>
             <p>
-                ZyRace uses pure JavaScript and Canvas for maximum compatibility, but the next generation of
+                <a href="/">ZyRace</a> uses pure JavaScript and Canvas for maximum compatibility, but the next
+                generation of
                 web games is pushing 3D limits. WebGL allows the browser to talk directly to your Graphics Card.
                 This means:
             </p>
@@ -87,9 +109,9 @@ The challenges, the wins, and the vision for UTHAKKAN.
                 <li>Porting of classic AAA titles to the web</li>
             </ul>
 
-            <h2>ZyRace's Role</h2>
+            <h2>ZyRace's Role in the Revolution</h2>
             <p>
-                We built ZyRace to prove a point: You don't need a heavy engine to have fun.
+                We built <a href="/start">ZyRace</a> to prove a point: You don't need a heavy engine to have fun.
                 By optimizing for the lowest common denominator, we ensure that millions of students,
                 office workers, and casual gamers can enjoy a premium racing experience without needing a gaming PC.
             </p>
@@ -116,23 +138,28 @@ The challenges, the wins, and the vision for UTHAKKAN.
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "From 0 to 1.0: The UTHAKKAN Story",
-    "description": "The story of building a game engine from scratch in Kannur by indie developer Ajmal U K.",
-    "image": "https://zyrace.com/static/img/blog/indie-dev.jpg",
+    "headline": "The Golden Age of Browser Games: Why 2025 is the Year of the Web",
+    "description": "Discover why browser games are making a massive comeback in 2025. From WebGL to WebAssembly, explore the tech behind the new golden age of web gaming.",
+    "image": "https://zyrace.com/static/img/blog/browser-games-comeback.jpg",
     "author": {
         "@type": "Person",
-        "name": "Ajmal U K"
+        "name": "Ajmal U K",
+        "url": "https://zyrace.com/about"
     },
     "publisher": {
         "@type": "Organization",
-        "name": "UTHAKKAN",
+        "name": "ZuRace",
         "logo": {
             "@type": "ImageObject",
             "url": "https://zyrace.com/favicon-96x96.png"
         }
     },
-    "datePublished": "2025-11-20",
-    "dateModified": "2025-12-07"
+    "datePublished": "2025-12-05",
+    "dateModified": "2025-12-07",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://zyrace.com/blog/browser-games-comeback"
+    }
 }
 </script>
 
@@ -156,8 +183,8 @@ The challenges, the wins, and the vision for UTHAKKAN.
         {
             "@type": "ListItem",
             "position": 3,
-            "name": "Indie Dev Journey",
-            "item": "https://zyrace.com/blog/indie-dev-journey"
+            "name": "Browser Games Comeback",
+            "item": "https://zyrace.com/blog/browser-games-comeback"
         }
     ]
 }
