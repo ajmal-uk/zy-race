@@ -31,11 +31,19 @@
   .blog-image {
     height: 200px;
     background: var(--sky-blue-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    font-size: 3rem;
+    display: block;
+    width: 100%;
+  }
+
+  .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .blog-card:hover .blog-image img {
+    transform: scale(1.05);
   }
 
   .blog-content {
@@ -104,7 +112,7 @@
 
       <article class="blog-card">
         <div class="blog-image">
-          <i class="fas fa-atom"></i>
+          <img src="/static/img/blog/physics-engine.jpg" alt="Physics Engine Simulation" loading="lazy">
         </div>
         <div class="blog-content">
           <div class="blog-date">November 2025 • Engineering</div>
@@ -117,7 +125,7 @@
 
       <article class="blog-card">
         <div class="blog-image">
-          <i class="fas fa-laptop-code"></i>
+          <img src="/static/img/blog/indie-dev.jpg" alt="Indie Developer Journey" loading="lazy">
         </div>
         <div class="blog-content">
           <div class="blog-date">November 2025 • Story</div>
@@ -130,7 +138,7 @@
 
       <article class="blog-card">
         <div class="blog-image">
-          <i class="fas fa-flag-checkered"></i>
+          <img src="/static/img/blog/launch-day.jpg" alt="Launch Day Celebration" loading="lazy">
         </div>
         <div class="blog-content">
           <div class="blog-date">October 2025 • Update</div>
