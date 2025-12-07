@@ -66,12 +66,14 @@ physics, suspension, and terrain interactions in the browser.{% endblock %}
                     massive engineering challenge. Unlike native apps that have direct access to hardware, web games
                     must run efficiently within the browser's JavaScript engine. In this post, we explore how
                     <strong>ZyRace</strong> leverages <a href="https://brm.io/matter-js/" target="_blank"
-                        rel="noopener">Matter.js</a> to deliver a console-quality physics simulation at 60 FPS.</p>
+                        rel="noopener">Matter.js</a> to deliver a console-quality physics simulation at 60 FPS.
+                </p>
 
                 <h2>Why We Chose Matter.js for Rigid Body Dynamics</h2>
                 <p>When engineering the physics engine for ZyRace, we needed a library that could handle complex
                     <strong>rigid body dynamics</strong> without bloat. Matter.js emerged as the clear winner for
-                    several reasons:</p>
+                    several reasons:
+                </p>
                 <ul>
                     <li><strong>Stability:</strong> Its iterative solver handles stacking and high-speed collisions with
                         minimal tunneling.</li>
@@ -104,7 +106,8 @@ physics, suspension, and terrain interactions in the browser.{% endblock %}
                 <h3>3. High-Friction Wheels</h3>
                 <p>Traction is everything. We modify the <code>friction</code> and <code>frictionStatic</code>
                     properties of the wheel bodies dynamically based on the terrain. On ice, friction drops to
-                    <code>0.2</code>; on asphalt, it spikes to <code>0.9</code>.</p>
+                    <code>0.2</code>; on asphalt, it spikes to <code>0.9</code>.
+                </p>
 
                 <h2>Solving the "Tunneling" Problem</h2>
                 <p>One common issue in <strong>JavaScript game development</strong> is "tunneling"—where a fast-moving
@@ -131,7 +134,8 @@ physics, suspension, and terrain interactions in the browser.{% endblock %}
                 <h2>Conclusion</h2>
                 <p>The magic of ZyRace lies in the math. Every jump, crash, and drift is the result of thousands of
                     calculations happening in milliseconds. By mastering libraries like Matter.js, we prove that the
-                    <strong>open web</strong> is a viable platform for high-fidelity gaming.</p>
+                    <strong>open web</strong> is a viable platform for high-fidelity gaming.
+                </p>
             </div>
 
             <div style="margin-top: 3rem; text-align: center;">
@@ -140,6 +144,54 @@ physics, suspension, and terrain interactions in the browser.{% endblock %}
         </article>
     </div>
 </section>
+{% endblock %}
+
+{% block schemas %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mastering 2D Physics with Matter.js: A Deep Dive into ZyRace",
+  "description": "Explore how ZyRace uses Matter.js to simulate realistic car physics in the browser.",
+  "image": "https://zyrace.com/static/img/blog/physics-engine.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ajmal U K"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UTHAKKAN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zyrace.com/favicon-96x96.png"
+    }
+  },
+  "datePublished": "2025-11-15",
+  "dateModified": "2025-12-07"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://zyrace.com/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Blog",
+    "item": "https://zyrace.com/blog"
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "name": "Physics Engine",
+    "item": "https://zyrace.com/blog/physics-behind-zyrace"
+  }]
+}
+</script>
 {% endblock %}
 
 {% block scripts %}

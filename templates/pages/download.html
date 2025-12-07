@@ -4,86 +4,176 @@
 
 {% block extra_css %}
 <style>
+  .hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+  }
+
   .download-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 2rem;
   }
 
   .download-card {
     background: var(--white);
-    border-radius: 15px;
-    padding: 2.5rem;
+    border-radius: 20px;
+    padding: 3rem 2rem;
     text-align: center;
     box-shadow: var(--light-shadow);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
   }
 
-  .download-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--medium-shadow);
+  .highlight-card {
     border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
+    transform: scale(1.05);
+    z-index: 10;
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-weight: 800;
+    font-size: 0.8rem;
+    border-radius: 0 0 10px 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
   }
 
   .platform-icon {
-    font-size: 4rem;
-    color: var(--primary);
+    font-size: 5rem;
+    background: linear-gradient(135deg, var(--primary), var(--yellow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 1.5rem;
   }
+
 
   .download-card h3 {
     color: var(--dark-text);
     margin-bottom: 0.5rem;
     font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
   }
 
   .version-info {
     color: var(--light-text);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.05);
-    padding: 2px 8px;
-    border-radius: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
   }
 
   .download-list {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0;
+    margin: 0 auto 2.5rem;
     text-align: left;
+    max-width: 280px;
   }
 
   .download-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+    padding: 0.8rem 0;
     color: var(--dark-text);
-    font-size: 0.95rem;
-  }
-
-  .download-list li:last-child {
-    border-bottom: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 
   .download-list i {
     color: var(--green);
-    margin-right: 10px;
+    font-size: 1.1rem;
+    background: rgba(40, 167, 69, 0.1);
+    padding: 8px;
+    border-radius: 50%;
   }
 
-  .coming-soon-badge {
+  .download-btn {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+  }
+
+  .btn-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+  }
+
+  .file-size {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    font-family: var(--font-main);
+    margin-top: 2px;
+  }
+
+  /* Shimmer Animation */
+  .shimmer {
     position: absolute;
-    top: 20px;
-    right: -35px;
-    background: var(--light-text);
-    color: white;
-    padding: 5px 40px;
-    transform: rotate(45deg);
-    font-weight: bold;
-    font-size: 0.8rem;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent);
+    transform: skewX(-20deg);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+
+    20% {
+      left: 200%;
+    }
+
+    100% {
+      left: 200%;
+    }
+  }
+
+  .animated-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.5);
+  }
+
+  .security-badge {
+    text-align: center;
+    margin-top: 4rem;
+    color: var(--primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    opacity: 0.8;
   }
 </style>
 {% endblock %}
@@ -92,71 +182,57 @@
 <section class="hero visible" id="hero">
   <div class="container">
     <div class="logo-container">
-      <h1 class="logo">Down<span style="color:var(--yellow);">load</span></h1>
+      <h1 class="logo">Get <span style="color:var(--yellow);">ZyRace</span></h1>
     </div>
-    <p class="tagline">Take the race offline. Play anywhere, anytime.</p>
-    <div class="cta-container">
-      <div class="main-cta">
-        <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> BACK TO HOME</a>
-        <a href="/start" class="btn btn-secondary"><i class="fas fa-globe"></i> PLAY ONLINE</a>
-      </div>
-    </div>
+    <p class="tagline">Experience lag-free physics racing directly on your Android device.</p>
   </div>
 </section>
 
 <section class="section-container visible" id="downloads">
-  <h2 class="section-title">Choose Your Platform</h2>
   <div class="container">
-    <div class="download-grid">
+    <div class="download-grid" style="justify-content: center; display: flex; flex-wrap: wrap;">
 
-      <div class="download-card">
-        <i class="fab fa-windows platform-icon"></i>
-        <h3>Windows</h3>
-        <div class="version-info">v2.1.0 • 64-bit</div>
-        <ul class="download-list">
-          <li><i class="fas fa-check"></i> Standalone Executable</li>
-          <li><i class="fas fa-check"></i> Offline Mode Support</li>
-          <li><i class="fas fa-check"></i> Keyboard & Gamepad</li>
-        </ul>
-        <a href="#" class="btn btn-primary" onclick="alert('Download starting soon!'); return false;">
-          <i class="fas fa-download"></i> DOWNLOAD .EXE
-        </a>
-      </div>
-
-      <div class="download-card">
+      <!-- Android Card (Main Focus) -->
+      <div class="download-card highlight-card">
+        <div class="popular-badge">MOST POPULAR</div>
         <i class="fab fa-android platform-icon"></i>
-        <h3>Android</h3>
-        <div class="version-info">v2.1.0 • APK</div>
+        <h3>Android APK</h3>
+        <div class="version-info">Latest Version • Optimized Performance</div>
+
         <ul class="download-list">
-          <li><i class="fas fa-check"></i> Touch Controls Optimized</li>
-          <li><i class="fas fa-check"></i> Offline Play</li>
-          <li><i class="fas fa-check"></i> Battery Saver Mode</li>
+          <li><i class="fas fa-tachometer-alt"></i> Native 60 FPS Support</li>
+          <li><i class="fas fa-wifi"></i> 100% Offline Playable</li>
+          <li><i class="fas fa-battery-full"></i> Low Battery Consumption</li>
         </ul>
-        <a href="#" class="btn btn-primary" onclick="alert('Download starting soon!'); return false;">
-          <i class="fas fa-download"></i> DOWNLOAD APK
+
+        <a href="{{ url_for('assets.serve_apk') }}" class="btn btn-primary download-btn animated-btn">
+          <span class="btn-content">
+            <i class="fas fa-download"></i> DOWNLOAD NOW
+            <span class="file-size">(15 MB)</span>
+          </span>
+          <div class="shimmer"></div>
         </a>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--light-text);">Compatible with Android 8.0+</p>
       </div>
 
-      <div class="download-card" style="opacity: 0.8;">
-        <div class="coming-soon-badge">SOON</div>
-        <i class="fab fa-apple platform-icon" style="color: var(--light-text);"></i>
-        <h3 style="color: var(--light-text);">macOS / iOS</h3>
-        <div class="version-info">In Development</div>
-        <ul class="download-list" style="color: var(--light-text);">
-          <li><i class="fas fa-clock" style="color: var(--light-text);"></i> Native Metal Support</li>
-          <li><i class="fas fa-clock" style="color: var(--light-text);"></i> Game Center Sync</li>
-          <li><i class="fas fa-clock" style="color: var(--light-text);"></i> Cross-Save</li>
-        </ul>
+      <!-- Other Platforms -->
+      <div class="download-card" style="opacity: 0.7; transform: scale(0.95);">
+        <i class="fab fa-windows platform-icon" style="color: var(--light-text);"></i>
+        <h3 style="color: var(--light-text);">Windows / iOS</h3>
+        <div class="version-info">Coming Soon</div>
+        <p style="margin-bottom: 2rem; color: var(--light-text);">We are working hard to bring ZyRace to more platforms.
+          Stay tuned!</p>
         <button class="btn btn-secondary" disabled style="cursor: not-allowed; opacity: 0.6;">
-          <i class="fas fa-clock"></i> COMING SOON
+          IN DEVELOPMENT
         </button>
       </div>
 
     </div>
 
-    <p style="text-align: center; margin-top: 3rem; color: var(--light-text);">
-      <i class="fas fa-shield-alt"></i> All downloads are scanned and 100% virus-free.
-    </p>
+    <div class="security-badge">
+      <i class="fas fa-shield-check"></i>
+      <span>Verified Safe & Secure Download</span>
+    </div>
   </div>
 </section>
 {% endblock %}

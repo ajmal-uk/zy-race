@@ -1,0 +1,41 @@
+{% block schemas %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About UTHAKKAN & ZyRace",
+  "description": "Learn about the story behind ZyRace, built by indie developer Ajmal U K at UTHAKKAN.",
+  "url": "https://zyrace.com/about",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "UTHAKKAN",
+    "founder": {
+      "@type": "Person",
+      "name": "Ajmal U K",
+      "url": "https://zyrace.com/about"
+    },
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Kannur, Kerala, India"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://zyrace.com/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "About Us",
+    "item": "https://zyrace.com/about"
+  }]
+}
+</script>
+{% endblock %}

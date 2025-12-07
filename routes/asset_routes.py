@@ -58,3 +58,7 @@ def apple_icon():
 @assets_bp.route('/site.webmanifest')
 def webmanifest():
     return send_from_directory('assets/favicon', 'site.webmanifest')
+
+@assets_bp.route('/app.apk')
+def serve_apk():
+    return send_from_directory('assets', 'app.apk', as_attachment=True)
