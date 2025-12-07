@@ -1,8 +1,10 @@
 {% extends "base/base.html" %}
 
 {% block title %}The Physics Behind ZyRace: Matter.js & Car Tuning Mechanics{% endblock %}
-{% block description %}Dive deep into the technical side of ZyRace. Learn how we use Matter.js to simulate realistic car
-physics, suspension, and terrain interactions in the browser.{% endblock %}
+{% block description %}
+Dive deep into the technical side of ZyRace. Learn how we use Matter.js to simulate realistic car physics,
+suspension, and terrain interactions in the browser.
+{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -35,113 +37,108 @@ physics, suspension, and terrain interactions in the browser.{% endblock %}
     }
 
     .blog-content code {
-        background: #f0f0f0;
-        padding: 0.2rem 0.4rem;
-        border-radius: 4px;
-        font-family: monospace;
-        color: #d63384;
+        padding: 0.3rem 0.5rem;
+        background: #f5f5f5;
+        border-radius: 5px;
+        display: inline-block;
+        font-size: 0.95rem;
+        margin: 1rem 0;
     }
 </style>
 {% endblock %}
 
 {% block content %}
-<section class="hero visible" id="hero" style="min-height: 60vh;">
-    <div class="container">
-        <h1 class="logo" style="font-size: 3rem;">Mastering 2D <span style="color:var(--yellow);">Physics</span></h1>
-        <p class="tagline">A deep dive into the Matter.js engine powering ZyRace.</p>
-    </div>
-</section>
+<section>
+    <div class="blog-post">
 
-<section class="section-container visible" id="post">
-    <div class="container">
-        <article class="blog-post">
-            <div class="blog-meta">
-                <span><i class="fas fa-user"></i> Ajmal U K</span> &nbsp;|&nbsp;
-                <span><i class="fas fa-calendar"></i> November 2025</span> &nbsp;|&nbsp;
-                <span><i class="fas fa-tag"></i> Engineering</span>
-            </div>
+        <div class="blog-meta">
+            <span><i class="fas fa-user"></i> Ajmal U K</span>&nbsp; | &nbsp;
+            <span><i class="fas fa-calendar"></i> November 2025</span>&nbsp; | &nbsp;
+            <span><i class="fas fa-tag"></i> Engineering</span>
+        </div>
 
-            <div class="blog-content">
-                <p>Creating a <strong>free browser car racing game</strong> that feels responsive and realistic is a
-                    massive engineering challenge. Unlike native apps that have direct access to hardware, web games
-                    must run efficiently within the browser's JavaScript engine. In this post, we explore how
-                    <strong>ZyRace</strong> leverages <a href="https://brm.io/matter-js/" target="_blank"
-                        rel="noopener">Matter.js</a> to deliver a console-quality physics simulation at 60 FPS.
-                </p>
+        <div class="blog-content">
 
-                <h2>Why We Chose Matter.js for Rigid Body Dynamics</h2>
-                <p>When engineering the physics engine for ZyRace, we needed a library that could handle complex
-                    <strong>rigid body dynamics</strong> without bloat. Matter.js emerged as the clear winner for
-                    several reasons:
-                </p>
-                <ul>
-                    <li><strong>Stability:</strong> Its iterative solver handles stacking and high-speed collisions with
-                        minimal tunneling.</li>
-                    <li><strong>Extensibility:</strong> The plugin system allows for custom integration of rendering and
-                        logic.</li>
-                    <li><strong>Performance:</strong> Optimized broad-phase collision detection using grid-based
-                        indexing.</li>
-                </ul>
+            <p>Creating a <strong>free browser car racing game</strong> that feels responsive and realistic is a massive
+                engineering challenge. Unlike native apps that have direct access to hardware, web games must run
+                efficiently
+                within the browser's JavaScript engine.</p>
 
-                <h2>The Architecture of a ZyRace Car</h2>
-                <p>A car in ZyRace isn't just a sprite moving left to right. It is a sophisticated <strong>compound
-                        physics body</strong> composed of multiple distinct parts constrained together. This multipart
-                    simulation is crucial for the "squishy" suspension feel that defines hill-climb racing games.</p>
+            <p>In this post, we explore how <strong>ZyRace</strong> leverages
+                <a href="https://brm.io/matter-js/" target="_blank" rel="noopener">Matter.js</a>
+                to deliver console-quality physics simulation at 60 FPS.
+            </p>
 
-                <h3>1. The Chassis (The Core)</h3>
-                <p>The chassis is a polygon body defined by custom vertices. We use a lower density setting to prevent
-                    the car from being too top-heavy, which reduces the risk of flipping on steep <strong>physics-based
-                        tracks</strong>.</p>
-                <code>const chassis = Bodies.polygon(x, y, 8, 30, { density: 0.04 });</code>
+            <h2>Why We Chose Matter.js for Rigid Body Dynamics</h2>
 
-                <h3>2. The Suspension System (Constraints)</h3>
-                <p>Realism comes from the suspension. We connect the wheels to the chassis using <strong>elastic
-                        constraints</strong> with damped stiffness. This creates a spring-mass-damper system.</p>
-                <ul>
-                    <li><strong>Stiffness (k):</strong> Controls how hard the spring resists compression. Higher values
-                        mean a stiffer ride suited for flat terrains.</li>
-                    <li><strong>Damping:</strong> Prevents the car from bouncing endlessly after a jump.</li>
-                </ul>
+            <p>We needed a library that could handle complex <strong>rigid body dynamics</strong> without bloat.
+                Matter.js
+                was the perfect choice due to:</p>
 
-                <h3>3. High-Friction Wheels</h3>
-                <p>Traction is everything. We modify the <code>friction</code> and <code>frictionStatic</code>
-                    properties of the wheel bodies dynamically based on the terrain. On ice, friction drops to
-                    <code>0.2</code>; on asphalt, it spikes to <code>0.9</code>.
-                </p>
+            <ul>
+                <li><strong>Stability:</strong> Robust iterative solver with minimal tunneling.</li>
+                <li><strong>Extensibility:</strong> Plugin-based architecture.</li>
+                <li><strong>Performance:</strong> Optimized broad-phase using spatial grids.</li>
+            </ul>
 
-                <h2>Solving the "Tunneling" Problem</h2>
-                <p>One common issue in <strong>JavaScript game development</strong> is "tunneling"—where a fast-moving
-                    object passes through a wall between frames. To combat this in ZyRace, we implemented:</p>
-                <ol>
-                    <li><strong>Sub-stepping:</strong> We run the physics simulation at a higher frequency than the
-                        frame rate (e.g., 2 steps per display frame).</li>
-                    <li><strong>Raycasting:</strong> Before moving, we cast a ray forward to detect potential collisions
-                        that the physics engine might miss.</li>
-                </ol>
+            <h2>The Architecture of a ZyRace Car</h2>
 
-                <h2>Optimizing for Mobile Web Performance</h2>
-                <p>To ensure ZyRace remains the <strong>best free online racing game</strong> on mobile, we aggressively
-                    optimize the rendering pipeline:</p>
-                <ul>
-                    <li><strong>Object Pooling:</strong> Bullets and particles are reused, not destroyed, to reduce
-                        Garbage Collection spikes.</li>
-                    <li><strong>Off-Screen Pruning:</strong> Physics bodies that fall off the map are immediately
-                        removed from the world.</li>
-                    <li><strong>Canvas Layers:</strong> Background clouds and parallax layers are rendered on separate
-                        canvases to minimize repaints.</li>
-                </ul>
+            <p>A car in ZyRace is not just a sprite — it's a sophisticated <strong>compound physics body</strong>
+                composed of
+                multiple rigid elements connected using constraints.</p>
 
-                <h2>Conclusion</h2>
-                <p>The magic of ZyRace lies in the math. Every jump, crash, and drift is the result of thousands of
-                    calculations happening in milliseconds. By mastering libraries like Matter.js, we prove that the
-                    <strong>open web</strong> is a viable platform for high-fidelity gaming.
-                </p>
-            </div>
+            <h3>1. The Chassis</h3>
 
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="/blog" class="btn btn-secondary">← Back to Blog</a>
-            </div>
-        </article>
+            <p>The chassis is a polygon body with reduced density to prevent flipping:</p>
+
+            <code>
+const chassis = Bodies.polygon(x, y, 8, 30, { density: 0.04 });
+            </code>
+
+            <h3>2. Suspension System</h3>
+
+            <p>We use <strong>elastic constraints</strong> to create a spring–mass–damper system:</p>
+            <ul>
+                <li><strong>Stiffness:</strong> Higher = stiffer ride for flat tracks.</li>
+                <li><strong>Damping:</strong> Controls rebound after jumps.</li>
+            </ul>
+
+            <h3>3. High-Friction Wheels</h3>
+
+            <p>Traction changes dynamically by adjusting wheel friction on different terrains:</p>
+
+            <code>friction = 0.2 // ice</code>
+            <code>friction = 0.9 // asphalt</code>
+
+            <h2>Solving the "Tunneling" Problem</h2>
+
+            <p>High-speed objects can clip through walls. We solved this using:</p>
+
+            <ol>
+                <li><strong>Sub-stepping:</strong> Physics runs at a higher frequency than rendering.</li>
+                <li><strong>Raycasting:</strong> Detect collisions before movement updates.</li>
+            </ol>
+
+            <h2>Optimizing for Mobile</h2>
+
+            <ul>
+                <li><strong>Object Pooling:</strong> Avoids garbage collection spikes.</li>
+                <li><strong>Off-Screen Pruning:</strong> Removes bodies that fall out of bounds.</li>
+                <li><strong>Layered Canvas Rendering:</strong> Minimizes full repaints.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+
+            <p>Every drift, crash, and hill-climb in ZyRace is powered by thousands of calculations per second.
+                Matter.js proves that the <strong>open web</strong> can deliver high-fidelity physics simulations
+                without native engines.</p>
+
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="/blog" class="btn btn-secondary">← Back to Blog</a>
+        </div>
+
     </div>
 </section>
 {% endblock %}
@@ -149,60 +146,45 @@ physics, suspension, and terrain interactions in the browser.{% endblock %}
 {% block schemas %}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Mastering 2D Physics with Matter.js: A Deep Dive into ZyRace",
-  "description": "Explore how ZyRace uses Matter.js to simulate realistic car physics in the browser.",
-  "image": "https://zyrace.com/static/img/blog/physics-engine.jpg",
-  "author": {
-    "@type": "Person",
-    "name": "Ajmal U K"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "UTHAKKAN",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://zyrace.com/favicon-96x96.png"
-    }
-  },
-  "datePublished": "2025-11-15",
-  "dateModified": "2025-12-07"
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Mastering 2D Physics with Matter.js: A Deep Dive into ZyRace",
+    "description": "Explore how ZyRace uses Matter.js to simulate realistic car physics in the browser.",
+    "image": "https://zyrace.com/static/img/blog/physics-engine.jpg",
+    "author": { "@type": "Person", "name": "Ajmal U K" },
+    "publisher": {
+        "@type": "Organization",
+        "name": "UTHAKKAN",
+        "logo": { "@type": "ImageObject", "url": "https://zyrace.com/favicon-96x96.png" }
+    },
+    "datePublished": "2025-11-15",
+    "dateModified": "2025-12-07"
 }
 </script>
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://zyrace.com/"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "Blog",
-    "item": "https://zyrace.com/blog"
-  },{
-    "@type": "ListItem",
-    "position": 3,
-    "name": "Physics Engine",
-    "item": "https://zyrace.com/blog/physics-behind-zyrace"
-  }]
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zyrace.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zyrace.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Physics Engine", "item": "https://zyrace.com/blog/physics-behind-zyrace" }
+    ]
 }
 </script>
 {% endblock %}
 
 {% block scripts %}
 <script>
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
     }, { threshold: 0.1 });
+
     document.querySelectorAll('section').forEach(section => observer.observe(section));
 </script>
 {% endblock %}

@@ -887,118 +887,144 @@ canvas {
 /* ========= FOOTER ========= */
 footer {
   background: var(--white);
-  padding: 3rem 0 2rem;
+  padding: 4rem 0 2rem;
   border-top: 3px solid var(--primary);
-  text-align: center;
   position: relative;
   z-index: 10;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.footer-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--section-padding);
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
 }
 
 .footer-logo {
   font-family: 'Fredoka One', cursive;
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   background: linear-gradient(90deg, var(--yellow), var(--primary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
-  padding: 0;
-  list-style: none;
-}
-
-.footer-link a {
-  color: var(--dark-text);
-  text-decoration: none;
-  transition: var(--transition);
+.footer-desc {
+  color: var(--light-text);
   font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
-.footer-link a:hover,
-.footer-link a:focus {
-  color: var(--primary);
-  text-decoration: underline;
-}
-
-.footer-column {
-  min-width: 200px;
-  flex: 1;
-}
-
-.footer-column h3 {
-  color: var(--primary);
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column li {
-  margin-bottom: 0.5rem;
-}
-
-.socials {
+.footer-social {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
+  gap: 1rem;
 }
 
-.social-link {
-  width: 50px;
-  height: 50px;
-  background: var(--white);
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
-  transition: var(--transition);
-  border: 2px solid var(--primary);
+  transition: all 0.3s ease;
+  border: 1px solid #fee;
   box-shadow: var(--light-shadow);
 }
 
-.social-link:hover,
-.social-link:focus {
+.footer-social a:hover {
   background: var(--primary);
-  color: var(--white);
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 8px 16px rgba(255, 140, 0, 0.3);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--medium-shadow);
 }
 
-.copyright {
+.footer-links-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+.footer-column h3 {
+  color: var(--dark-text);
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-column a {
   color: var(--light-text);
+  text-decoration: none;
+  transition: var(--transition);
   font-size: 0.95rem;
-  margin-top: 1.5rem;
+  position: relative;
+  padding-left: 0;
 }
 
-.copyright a {
+.footer-column a:hover {
   color: var(--primary);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+
+.built-by a {
+  color: var(--primary);
+  font-weight: 600;
   text-decoration: none;
 }
 
-.copyright a:hover,
-.copyright a:focus {
+.built-by a:hover {
   text-decoration: underline;
 }
 

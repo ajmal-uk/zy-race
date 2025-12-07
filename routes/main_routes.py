@@ -1,10 +1,13 @@
-from flask import Blueprint, render_template, make_response
+from flask import Blueprint, render_template, make_response, current_app, request, jsonify
+import requests
 
 main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
 def index():
-    return render_template('blog/index.html')
+    # Get latest 3 blog posts (reverse order to show newest first)
+    blog_posts = current_app.config.get('BLOG_POSTS', [])[::-1][:3]
+    return render_template('pages/home.html', posts=blog_posts)
 
 @main_bp.route('/start')
 def start():
@@ -14,8 +17,22 @@ def start():
 def about():
     return render_template('pages/about.html')
 
-@main_bp.route('/contact')
+@main_bp.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'POST':
+        try:
+            data = request.get_json()
+            
+            # Google Apps Script URL (Updated)
+            script_url = "https://script.google.com/macros/s/AKfycbxac6NfjLV2hf8goEYZVR8y4t0RhIBqWjTblr1KR2nSBHgdorHY62V6xzMNh27efAk/exec"
+            
+            # Forward the data to Google Apps Script
+            response = requests.post(script_url, json=data)
+            
+            return jsonify(response.json())
+        except Exception as e:
+            return jsonify({'success': False, 'error': str(e)}), 500
+            
     return render_template('pages/contact.html')
 
 @main_bp.route('/features')

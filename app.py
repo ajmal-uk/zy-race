@@ -9,21 +9,65 @@ from routes.blog_routes import blog_bp
 from routes.asset_routes import assets_bp
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'dev_key_please_change_in_prod')
+app.secret_key = os.environ.get('SECRET_KEY', 'ajmaluk')
 
 # Blog Configuration
 app.config['BLOG_POSTS'] = [
     {
+        'title': 'Launch Day Success!',
+        'slug': '#',
+        'description': "We are live! ZyRace is now available for everyone to play for free. Check out what's new in version 1.0.",
+        'date': 'Oct 2025',
+        'image': 'launch-day.jpg',
+        'category': 'Update'
+    },
+    {
         'title': 'The Physics Behind ZyRace',
         'slug': 'physics-behind-zyrace',
-        'description': 'Dive deep into how we use Matter.js to simulate realistic car physics.',
-        'date': 'Nov 2025'
+        'description': 'Dive deep into how we use Matter.js to simulate realistic car physics, suspension, and terrain interactions.',
+        'date': 'Nov 2025',
+        'image': 'physics-engine.jpg',
+        'category': 'Engineering'
     },
     {
         'title': 'The Indie Dev Journey',
         'slug': 'indie-dev-journey',
-        'description': 'Ajmal U K shares the story of building ZyRace as a solo developer.',
-        'date': 'Nov 2025'
+        'description': 'Ajmal U K shares the story of building ZyRace as a solo developer in Kerala. The challenges, the wins, and the vision.',
+        'date': 'Nov 2025',
+        'image': 'indie-dev.jpg',
+        'category': 'Story'
+    },
+    {
+        'title': 'Top 5 Strategies for Hill Climb Racing',
+        'slug': 'strategies-hill-climb',
+        'description': 'Master the tracks with these pro tips. Learn when to brake, when to boost, and how to maintain momentum for the best times.',
+        'date': 'Dec 2025',
+        'image': 'strategies-hill-climb.png',
+        'category': 'Guide'
+    },
+    {
+        'title': 'Why Browser Games are Making a Comeback',
+        'slug': 'browser-games-comeback',
+        'description': 'With WebGL and WebAssembly, browser gaming is entering a new golden age. See why ZyRace is leading the pack in innovation.',
+        'date': 'Dec 2025',
+        'image': 'browser-games-comeback.png',
+        'category': 'Tech'
+    },
+    {
+        'title': 'ZyRace Garage: Unlockable Cars Guide',
+        'slug': 'unlockable-cars',
+        'description': 'From the Scout to the Titan. A complete breakdown of every vehicle\'s stats and cost in ZyRace.',
+        'date': 'Dec 2025',
+        'image': 'zyrace-vehicles.png',
+        'category': 'Guide'
+    },
+    {
+        'title': 'Speedrun Guide: Conquer the Tracks',
+        'slug': 'speedrun-guide',
+        'description': 'Want to top the leaderboards? Learn advanced techniques like "Sonic Start" and "Wall Riding" from the pros.',
+        'date': 'Dec 2025',
+        'image': 'strategies-hill-climb.png',
+        'category': 'Advanced'
     }
 ]
 

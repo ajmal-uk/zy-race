@@ -1,0 +1,164 @@
+{% extends "base/base.html" %}
+
+{% block title %}The Physics Behind ZyRace: Matter.js & Car Tuning Mechanics{% endblock %}
+{% block description %}Dive deep into the technical side of ZyRace. Learn how we use Matter.js to simulate realistic car
+physics, suspension, and terrain interactions in the browser.{% endblock %}
+
+{% block extra_css %}
+<style>
+    .blog-post {
+        background: var(--white);
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: var(--light-shadow);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .blog-meta {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    .blog-content h2 {
+        color: var(--primary);
+        margin-top: 2rem;
+    }
+
+    .blog-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .blog-content code {
+        background: #f4f4f4;
+        padding: 4px 8px;
+        border-radius: 6px;
+        display: inline-block;
+        margin: 1rem 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="blog-post">
+        <div class="blog-meta">
+            <span><i class="fas fa-user"></i> ZyRace Team</span>&nbsp; | &nbsp;
+            <span><i class="fas fa-calendar"></i> December 2025</span>&nbsp; | &nbsp;
+            <span><i class="fas fa-tag"></i> Guide</span>
+        </div>
+
+        <div class="blog-content">
+            <p>Hill Climb racing isn't just about pressing the gas pedal—it’s about physics management. In
+                <strong>ZyRace</strong>, the difference between a record time and a "Game Over" screen often comes down
+                to millisecond decisions. Here are the top 5 strategies to master the tracks.</p>
+
+            <h2>1. Mid-Air Rotation Control</h2>
+            <p>When your car is in the air, you are not helpless. Use the <strong>Left</strong> and
+                <strong>Right</strong> arrow keys to rotate your vehicle.</p>
+            <ul>
+                <li><strong>Lean Back:</strong> To prevent nose-diving upon landing.</li>
+                <li><strong>Lean Forward:</strong> To grip steep upward slopes immediately upon contact.</li>
+            </ul>
+
+            <h2>2. Throttle Feathering</h2>
+            <p>Holding down the gas key is a rookie mistake. On loose terrain or steep inclines, full throttle can cause
+                wheel spin (loss of traction) or make the car flip backward. <strong>Feathering</strong> (tapping) the
+                gas maintains traction and keeps the center of mass stable.</p>
+
+            <h2>3. Momentum is Key</h2>
+            <p>Some hills are too steep to climb from a standstill. You need to build momentum. If you are stuck at the
+                bottom of a V-shape valley, reverse up the opposite side first to gather potential energy, then floor it
+                to clear the obstacle.</p>
+
+            <h2>4. Upgrade Suspension Before Engine</h2>
+            <p>It's tempting to max out speed first, but a fast car is useless if it bounces uncontrollably.</p>
+
+            <code>Priority: Suspension > Tires > Engine > 4WD</code>
+
+            <p>A stable car allows you to keep the power down more often, resulting in faster overall times than a
+                powerful car that crashes constantly.</p>
+
+            <h2>5. Watch the Fuel Gauge</h2>
+            <p>Speed runs are fun, but don't forget the fuel containers. Sometimes it is worth slowing down to grab a
+                fuel can on an alternate path than rushing past it and running empty 100 meters later.</p>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="/blog" class="btn btn-secondary">← Back to Blog</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block schemas %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Mastering 2D Physics with Matter.js: A Deep Dive into ZyRace",
+    "description": "Explore how ZyRace uses Matter.js to simulate realistic car physics in the browser.",
+    "image": "https://zyrace.com/static/img/blog/physics-engine.jpg",
+    "author": {
+        "@type": "Person",
+        "name": "Ajmal U K"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "UTHAKKAN",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://zyrace.com/favicon-96x96.png"
+        }
+    },
+    "datePublished": "2025-11-15",
+    "dateModified": "2025-12-07"
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zyrace.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://zyrace.com/blog"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Physics Engine",
+            "item": "https://zyrace.com/blog/physics-behind-zyrace"
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

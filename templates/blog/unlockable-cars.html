@@ -1,0 +1,172 @@
+{% extends "base/base.html" %}
+
+{% block title %}ZyRace Garage: The Ultimate Guide to Unlockable Cars{% endblock %}
+{% block description %}Discover the full lineup of vehicles in ZyRace. From the balanced starter Jeep to the monstrous
+Cyber Truck, learn which car suits your playstyle.{% endblock %}
+
+{% block extra_css %}
+<style>
+    .blog-post {
+        background: var(--white);
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: var(--light-shadow);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .blog-meta {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    .blog-content h2 {
+        color: var(--primary);
+        margin-top: 2rem;
+    }
+
+    .blog-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .car-stat {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid var(--primary);
+    }
+
+    .stat-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    /* Hero Specific */
+    #hero {
+        min-height: 60vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("{{ url_for('static', filename='img/blog/zyrace-vehicles.png') }}");
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <h1 class="logo" style="font-size: clamp(2.5rem, 5vw, 4rem); text-shadow: 0 4px 8px rgba(0,0,0,0.5);">ZyRace
+            <span style="color:var(--yellow);">Garage</span></h1>
+        <p class="tagline" style="color: #f0f0f0; font-size: 1.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Choose
+            your ride wisely.</p>
+    </div>
+</section>
+
+<section class="section-container visible" id="post">
+    <div class="container">
+        <article class="blog-post">
+            <div class="blog-meta">
+                <span><i class="fas fa-user"></i> ZyRace Team</span> &nbsp;|&nbsp;
+                <span><i class="fas fa-calendar"></i> December 2025</span> &nbsp;|&nbsp;
+                <span><i class="fas fa-tag"></i> Game Guide</span>
+            </div>
+
+            <div class="blog-content">
+                <p>In ZyRace, your vehicle isn't just a skin—it's a physics object with unique mass, suspension, and
+                    friction properties. Choosing the right car for the right track is half the battle. Here is the
+                    official guide to the ZyRace garage.</p>
+
+                <h2>1. The Scout (Starter Jeep)</h2>
+                <p>The jack-of-all-trades. The Scout is balanced, reliable, and free. It has decent climbing ability but
+                    struggles on extreme vertical walls.</p>
+                <div class="car-stat">
+                    <div class="stat-row"><span>Speed:</span> <span>⭐⭐⭐</span></div>
+                    <div class="stat-row"><span>Grip:</span> <span>⭐⭐⭐</span></div>
+                    <div class="stat-row"><span>Stability:</span> <span>⭐⭐⭐⭐</span></div>
+                    <div class="stat-row"><span>Cost:</span> <span>Free</span></div>
+                </div>
+
+                <h2>2. The Apex (Sports Car)</h2>
+                <p>Speed is its middle name. The Apex sits low to the ground, giving it great aerodynamics. However, its
+                    low suspension makes it vulnerable to bumpy terrains where the chassis might scrape the ground.</p>
+                <div class="car-stat">
+                    <div class="stat-row"><span>Speed:</span> <span>⭐⭐⭐⭐⭐</span></div>
+                    <div class="stat-row"><span>Grip:</span> <span>⭐⭐</span></div>
+                    <div class="stat-row"><span>Stability:</span> <span>⭐⭐</span></div>
+                    <div class="stat-row"><span>Cost:</span> <span>1000 Coins</span></div>
+                </div>
+
+                <h2>3. The Titan (Monster Truck)</h2>
+                <p>When in doubt, crush it. The Titan features massive wheels and soft suspension. It can drive over
+                    almost any obstacle seamlessly but suffers from a high center of gravity, risking rollovers.</p>
+                <div class="car-stat">
+                    <div class="stat-row"><span>Speed:</span> <span>⭐⭐⭐</span></div>
+                    <div class="stat-row"><span>Grip:</span> <span>⭐⭐⭐⭐⭐</span></div>
+                    <div class="stat-row"><span>Stability:</span> <span>⭐⭐⭐</span></div>
+                    <div class="stat-row"><span>Cost:</span> <span>2500 Coins</span></div>
+                </div>
+
+                <h2>How to Earn Coins Fast</h2>
+                <p>Want that Titan? Here are tips to farm coins:</p>
+                <ul>
+                    <li><strong>Air Time:</strong> You earn bonus coins for every second spent in the air.</li>
+                    <li><strong>Flips:</strong> Safely landing a front-flip or back-flip awards 500 coins instantly.
+                    </li>
+                    <li><strong>Daily multiplier:</strong> Play every day to increase your coin multiplier upto 2x.</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="/blog" class="btn btn-secondary">← Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% block schemas %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ZyRace Garage: The Ultimate Guide to Unlockable Cars",
+  "description": "Discover the full lineup of vehicles in ZyRace.",
+  "image": "https://zyrace.com/static/img/blog/zyrace-vehicles.png",
+  "author": {
+    "@type": "Organization",
+    "name": "ZyRace Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UTHAKKAN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zyrace.com/favicon-96x96.png"
+    }
+  },
+  "datePublished": "2025-12-08"
+}
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

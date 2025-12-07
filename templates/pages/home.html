@@ -1,0 +1,174 @@
+{% extends "base/base.html" %}
+{% block title %}ZyRace – Free Browser Racing Game | Built by Ajmal U K{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Experience the Thrill of ZyRace</h1>
+    <p class="hero-subtitle">A fast, addictive, and beautifully crafted browser racing game—no downloads, no limits.</p>
+    <div class="hero-buttons">
+      <a href="/start" class="btn btn-primary pulse-animation">Play Now <i class="fas fa-play"></i></a>
+      <a href="#features" class="btn btn-secondary">Discover More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="section-container fade-up">
+  <h2 class="section-title">Why Players Love ZyRace</h2>
+  <div class="grid features-grid">
+    <div class="card feature-card">
+      <i class="fas fa-mobile-alt card-icon"></i>
+      <h3 class="card-title">Mobile Ready</h3>
+      <p class="card-desc">Perfectly optimized for both touch and keyboard controls.</p>
+    </div>
+    <div class="card feature-card">
+      <i class="fas fa-cloud card-icon"></i>
+      <h3 class="card-title">Cloud Saves</h3>
+      <p class="card-desc">Your progress stays with you—any device, anywhere.</p>
+    </div>
+    <div class="card feature-card">
+      <i class="fas fa-paint-brush card-icon"></i>
+      <h3 class="card-title">Full Customization</h3>
+      <p class="card-desc">Customize colors, upgrades, tuning, and more.</p>
+    </div>
+    <div class="card feature-card">
+      <i class="fas fa-rocket card-icon"></i>
+      <h3 class="card-title">Fast Loading</h3>
+      <p class="card-desc">No heavy assets—instant gameplay with buttery-smooth performance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="section-container fade-up">
+  <h2 class="section-title">What Players Say</h2>
+  <div class="grid testimonial-grid">
+    <div class="card testimonial-card">
+      <p class="testimonial-text">"The physics feel REAL. Way better than expected for a browser game!"</p>
+      <p class="testimonial-author">– Alex R.</p>
+    </div>
+    <div class="card testimonial-card">
+      <p class="testimonial-text">"Finally, something fun to play on school computers. Totally hooked!"</p>
+      <p class="testimonial-author">– Jamie L.</p>
+    </div>
+    <div class="card testimonial-card">
+      <p class="testimonial-text">"Customization + speed = perfection. Simple, but so addictive."</p>
+      <p class="testimonial-author">– Priya K.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog" class="section-container fade-up">
+  <h2 class="section-title">Latest From the Blog</h2>
+  <div class="grid blog-grid">
+    {% for post in posts %}
+    <div class="card blog-card">
+      <img src="{{ url_for('static', filename='img/blog/' + post.image) }}" class="blog-img" alt="{{ post.title }}">
+      <h3 class="blog-title">{{ post.title }}</h3>
+      <p class="blog-excerpt">{{ post.description | truncate(100) }}</p>
+      <a href="{{ url_for('blog.post', slug=post.slug) }}">Read Article →</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="section-container fade-up">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Is ZyRace completely free?
+      <i class="fas fa-chevron-down faq-icon"></i>
+    </div>
+    <div class="faq-answer">Yes! ZyRace is 100% free with no hidden payments or forced ads.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Do I need to install anything?
+      <i class="fas fa-chevron-down faq-icon"></i>
+    </div>
+    <div class="faq-answer">No installation needed—everything works directly in your browser.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Can I play on school PCs?
+      <i class="fas fa-chevron-down faq-icon"></i>
+    </div>
+    <div class="faq-answer">Yes! ZyRace is lightweight and works on most school networks.</div>
+  </div>
+
+</section>
+
+<!-- Developer Section -->
+<section class="section-container fade-up">
+  <h2 class="section-title">About the Developer</h2>
+  <p class="about-text">
+    ZyRace is developed by <strong>Ajmal U K</strong>, the founder of <strong>UTHAKKAN</strong>.
+    A passionate MCA student, creative thinker, and full-stack developer, Ajmal builds AI tools,
+    games, and productivity experiences aimed at making technology smarter and more enjoyable.
+  </p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/ajmaluk">LinkedIn</a> •
+    <a href="https://github.com/ajmal-uk">GitHub</a> •
+    <a href="https://x.com/ajmal_uk_">Twitter</a> •
+    <a href="https://buymeacoffee.com/ajmal.uk">Support</a>
+  </div>
+</section>
+
+<!-- Company Section -->
+<section class="section-container fade-up">
+  <h2 class="section-title">About UTHAKKAN</h2>
+  <p class="about-text">
+    UTHAKKAN is a modern one-person technology studio focused on AI tools, digital experiences,
+    web applications, automation utilities, and simple games. Built and led by Ajmal U K, the studio
+    emphasizes creativity, clean design, and impactful technology.
+  </p>
+  <div class="social-links">
+    <a href="https://uthakkan.unaux.com">Official Website</a> •
+    <a href="https://www.linkedin.com/company/uthakkan/">LinkedIn Page</a>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Run scripts after DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+
+    // FIXED: FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('.faq-icon');
+
+        answer.classList.toggle('show');
+        icon.style.transform = answer.classList.contains('show')
+          ? 'rotate(180deg)'
+          : 'rotate(0deg)';
+      });
+    });
+
+    // Improved Scroll Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(section => {
+      observer.observe(section);
+    });
+
+  });
+</script>
+{% endblock %}

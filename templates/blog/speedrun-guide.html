@@ -1,0 +1,153 @@
+{% extends "base/base.html" %}
+
+{% block title %}Speedrun Guide: How to Conquer ZyRace Tracks{% endblock %}
+{% block description %}Want to top the leaderboards? Learn the advanced techniques used by the world's best ZyRace
+speedrunners.{% endblock %}
+
+{% block extra_css %}
+<style>
+    .blog-post {
+        background: var(--white);
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: var(--light-shadow);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .blog-meta {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    .blog-content h2 {
+        color: var(--primary);
+        margin-top: 2rem;
+    }
+
+    .blog-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .highlight-box {
+        background: #fff3cd;
+        border: 1px solid #ffeeba;
+        color: #856404;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    /* Hero Specific */
+    #hero {
+        min-height: 60vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("{{ url_for('static', filename='img/blog/strategies-hill-climb.png') }}");
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero visible" id="hero">
+    <div class="container">
+        <h1 class="logo" style="font-size: clamp(2.5rem, 5vw, 4rem); text-shadow: 0 4px 8px rgba(0,0,0,0.5);">Speedrun
+            <span style="color:var(--yellow);">Guide</span></h1>
+        <p class="tagline" style="color: #f0f0f0; font-size: 1.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Seconds
+            matter. Milliseconds count.</p>
+    </div>
+</section>
+
+<section class="section-container visible" id="post">
+    <div class="container">
+        <article class="blog-post">
+            <div class="blog-meta">
+                <span><i class="fas fa-user"></i> ZyRace Team</span> &nbsp;|&nbsp;
+                <span><i class="fas fa-calendar"></i> December 2025</span> &nbsp;|&nbsp;
+                <span><i class="fas fa-tag"></i> Advanced Guide</span>
+            </div>
+
+            <div class="blog-content">
+                <p>Speedrunning is the art of completing a game as fast as possible. In ZyRace, where physics is king,
+                    speedrunning requires a deep understanding of momentum, friction, and even glitches. Here is how to
+                    shave seconds off your time.</p>
+
+                <h2>1. The "Sonic Start"</h2>
+                <p>Don't just hold the gas when the countdown ends. Tap the gas rapidly during the "3... 2... 1..."
+                    count. If timed correctly, you'll start with higher RPM, launching you forward instantly.</p>
+
+                <h2>2. Optimal Air Rotation</h2>
+                <p>Air resistance in ZyRace is minimal, but landing angle is everything.
+                </p>
+                <div class="highlight-box">
+                    <strong>Pro Tip:</strong> Always aim to land with your rear wheels first on flat ground, but land
+                    with all 4 wheels simultaneously on slopes.
+                </div>
+
+                <h2>3. Corner Cutting with Wall Riding</h2>
+                <p>Some levels have vertical walls. Instead of slowing down, accelerate into them. If you have enough
+                    speed, the centrifugal force will keep you stuck to the wall/ceiling, allowing you to bypass entire
+                    sections of the track.</p>
+
+                <h2>4. Death Abuse</h2>
+                <p>Sounds scary, but it's a valid tactic. In some long levels, checkpoints are placed after difficult
+                    obstacles. If you are low on health or fuel, intentionally crashing right after hitting a checkpoint
+                    respawns you with full stats, saving time on finding pickups.</p>
+
+                <h2>5. Frame Rules</h2>
+                <p>ZyRace runs at 60Hz. Input is processed every frame. Tapping a key for 2 frames vs 5 frames makes a
+                    huge difference in mid-air rotation. Practice tapping lightly.</p>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="/blog" class="btn btn-secondary">← Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% block schemas %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Speedrun Guide: How to Conquer ZyRace Tracks",
+  "description": "Learn advanced speedrunning techniques for ZyRace.",
+  "image": "https://zyrace.com/static/img/blog/strategies-hill-climb.png",
+  "author": {
+    "@type": "Organization",
+    "name": "ZyRace Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UTHAKKAN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zyrace.com/favicon-96x96.png"
+    }
+  },
+  "datePublished": "2025-12-09"
+}
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+{% endblock %}

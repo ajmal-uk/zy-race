@@ -190,6 +190,7 @@
 
 <section class="section-container visible" id="downloads">
   <div class="container">
+    <h2 class="section-title" style="margin-bottom: 2rem;">Choose Your Platform</h2>
     <div class="download-grid" style="justify-content: center; display: flex; flex-wrap: wrap;">
 
       <!-- Android Card (Main Focus) -->
@@ -205,7 +206,8 @@
           <li><i class="fas fa-battery-full"></i> Low Battery Consumption</li>
         </ul>
 
-        <a href="{{ url_for('assets.serve_apk') }}" class="btn btn-primary download-btn animated-btn">
+        <a href="{{ url_for('assets.serve_apk') }}" class="btn btn-primary download-btn animated-btn"
+          aria-label="Download ZyRace for Android (15 MB)">
           <span class="btn-content">
             <i class="fas fa-download"></i> DOWNLOAD NOW
             <span class="file-size">(15 MB)</span>
@@ -222,7 +224,8 @@
         <div class="version-info">Coming Soon</div>
         <p style="margin-bottom: 2rem; color: var(--light-text);">We are working hard to bring ZyRace to more platforms.
           Stay tuned!</p>
-        <button class="btn btn-secondary" disabled style="cursor: not-allowed; opacity: 0.6;">
+        <button class="btn btn-secondary" disabled style="cursor: not-allowed; opacity: 0.6;"
+          aria-label="Windows and iOS versions are currently in development">
           IN DEVELOPMENT
         </button>
       </div>
@@ -235,6 +238,54 @@
     </div>
   </div>
 </section>
+
+{% block schemas %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ZyRace",
+  "operatingSystem": "Android",
+  "applicationCategory": "GameApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "fileSize": "15 MB",
+  "softwareVersion": "2.1.0",
+  "author": {
+    "@type": "Person",
+    "name": "Ajmal U K"
+  },
+  "description": "ZyRace is a free physics-based racing game for Android. Play offline without lag.",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "1250"
+  },
+  "downloadUrl": "https://zyrace.com/assets/app.apk"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://zyrace.com/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Download",
+    "item": "https://zyrace.com/download"
+  }]
+}
+</script>
+{% endblock %}
+
 {% endblock %}
 
 {% block scripts %}

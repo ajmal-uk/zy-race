@@ -1,3 +1,19 @@
-.vscode
-__pycache__
-venv
+# General
+.vscode/
+.idea/
+*.pyc
+__pycache__/
+venv/
+env/
+.env
+*.log
+.DS_Store
+
+# Flask
+instance/
+.webassets-cache
+
+# Distribution
+dist/
+build/
+*.egg-info/

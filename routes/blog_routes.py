@@ -6,15 +6,29 @@ blog_bp = Blueprint('blog', __name__)
 
 @blog_bp.route('/blog')
 def blog():
-    return render_template('blog/blog.html')
+    return render_template('blog/blog.html', posts=current_app.config['BLOG_POSTS'])
 
-@blog_bp.route('/blog/physics-behind-zyrace')
-def blog_physics():
-    return render_template('blog/physics-engine.html')
+@blog_bp.route('/blog/<slug>')
+def post(slug):
+    # Map slugs to template files
+    # Only 'physics-behind-zyrace' differs from its filename.
+    # We can default to slug.html if not found in the map.
+    template_map = {
+        'physics-behind-zyrace': 'blog/physics-engine.html',
+        'indie-dev-journey': 'blog/indie-dev-journey.html',
+        'strategies-hill-climb': 'blog/strategies-hill-climb.html',
+        'browser-games-comeback': 'blog/browser-games-comeback.html',
+        'unlockable-cars': 'blog/unlockable-cars.html',
+        'speedrun-guide': 'blog/speedrun-guide.html'
+    }
+    
+    template = template_map.get(slug)
+    if template:
+        return render_template(template)
+    else:
+        # Fallback or 404
+        return render_template('errors/404.html'), 404
 
-@blog_bp.route('/blog/indie-dev-journey')
-def blog_journey():
-    return render_template('blog/indie-dev-journey.html')
 
 @blog_bp.route('/feed.xml')
 def rss_feed():

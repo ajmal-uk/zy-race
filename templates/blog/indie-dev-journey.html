@@ -1,8 +1,10 @@
 {% extends "base/base.html" %}
 
 {% block title %}From Kerala to the World: The Solo Dev Journey Behind ZyRace{% endblock %}
-{% block description %}Ajmal U K shares the story of building ZyRace as a solo developer in Kerala, India. The
-challenges, the wins, and the vision for UTHAKKAN.{% endblock %}
+{% block description %}
+Ajmal U K shares the story of building ZyRace as a solo developer in Kerala, India—the challenges,
+the wins, and the vision for UTHAKKAN.
+{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -38,90 +40,83 @@ challenges, the wins, and the vision for UTHAKKAN.{% endblock %}
         border-left: 5px solid var(--primary);
         padding-left: 1.5rem;
         font-style: italic;
-        color: var(--dark-text);
         margin: 2rem 0;
-        background: rgba(255, 140, 0, 0.05);
-        padding: 1.5rem;
-        border-radius: 0 10px 10px 0;
     }
 </style>
 {% endblock %}
 
 {% block content %}
-<section class="hero visible" id="hero" style="min-height: 60vh;">
-    <div class="container">
-        <h1 class="logo" style="font-size: 3rem;">From 0 to <span style="color:var(--yellow);">1.0</span></h1>
-        <p class="tagline">The story of building a game engine from scratch in Kannur.</p>
-    </div>
-</section>
+<section>
+    <div class="blog-post">
 
-<section class="section-container visible" id="post">
-    <div class="container">
-        <article class="blog-post">
-            <div class="blog-meta">
-                <span><i class="fas fa-user"></i> Ajmal U K</span> &nbsp;|&nbsp;
-                <span><i class="fas fa-calendar"></i> November 2025</span> &nbsp;|&nbsp;
-                <span><i class="fas fa-tag"></i> Founder Story</span>
+        <div class="blog-meta">
+            <span><i class="fas fa-user"></i> Ajmal U K</span>&nbsp; | &nbsp;
+            <span><i class="fas fa-calendar"></i> November 2025</span>&nbsp; | &nbsp;
+            <span><i class="fas fa-tag"></i> Founder Story</span>
+        </div>
+
+        <div class="blog-content">
+            <p>My name is <strong>Ajmal U K</strong>, and I am the founder of
+                <strong>UTHAKKAN</strong>. I come from Kannur, a small coastal town in Kerala, India. I don't have a
+                massive team, millions in VC funding, or a fancy office in Silicon Valley. What I have is a laptop,
+                an internet connection, and an obsession with code.</p>
+
+            <h2>The "Zero Budget" Philosophy</h2>
+
+            <p>In the world of <strong>indie game development</strong>, constraints are your best friend.
+                When I decided to build ZyRace, I set one rule:
+                <strong>It must be free to build and free to play.</strong>
+            </p>
+
+            <p>This philosophy forced me to innovate. Instead of buying expensive assets, I learned to generate
+                textures procedurally. Instead of paying for heavy server hosting, I optimized the netcode to run
+                efficiently on lightweight instances. This journey taught me that
+                <strong>resourcefulness matters more than resources</strong>.</p>
+
+            <div class="quote-box">
+                "You don't need permission to build something great. You just need to start typing."
             </div>
 
-            <div class="blog-content">
-                <p>My name is <strong>Ajmal U K</strong>, and I am the founder of <strong>UTHAKKAN</strong>. I come from
-                    Kannur, a small coastal town in Kerala, India. I don't have a massive team, millions in VC funding,
-                    or a fancy office in Silicon Valley. What I have is a laptop, an internet connection, and an
-                    obsession with code.</p>
+            <h2>The Tech Stack: Why Python & Vanilla JS?</h2>
 
-                <h2>The "Zero Budget" Philosophy</h2>
-                <p>In the world of <strong>indie game development</strong>, constraints are your best friend. When I
-                    decided to build ZyRace, I set one rule: <strong>It must be free to build and free to play.</strong>
-                </p>
-                <p>This philosophy forced me to innovate. Instead of buying expensive assets, I learned to generate
-                    textures procedurally. Instead of paying for heavy server hosting, I optimized the netcode to run
-                    efficiently on lightweight instances. This journey taught me that <strong>resourcefulness matters
-                        more than resources</strong>.</p>
+            <p>Many developers asked why I didn't use Unity or Unreal Engine. The answer is simple:
+                <strong>Control.</strong></p>
 
-                <div class="quote-box">
-                    "You don't need permission to build something great. You just need to start typing."
-                </div>
+            <p>By building the engine from scratch using <strong>Python (Flask)</strong> for the backend and
+                <strong>Vanilla JavaScript</strong> for the frontend, I gained a deep understanding of every byte that
+                goes over the wire. This allows ZyRace to load in under 2 seconds on 3G networks—something bloated game
+                engines struggle to achieve.</p>
 
-                <h2>The Tech Stack: Why Python & Vanilla JS?</h2>
-                <p>Many developers asked why I didn't use Unity or Unreal Engine. The answer is simple:
-                    <strong>Control.</strong>
-                </p>
-                <p>By building the engine from scratch using <strong>Python (Flask)</strong> for the backend and
-                    <strong>Vanilla JavaScript</strong> for the frontend, I gained a deep understanding of every byte
-                    that goes over the wire. This allows ZyRace to load in under 2 seconds on 3G networks—something
-                    bloated game engines struggle to achieve.
-                </p>
+            <h2>Late Nights in Kannur</h2>
 
-                <h2>Late Nights in Kannur</h2>
-                <p>The journey wasn't easy. There were nights when the physics engine would break, sending cars flying
-                    into the stratosphere (a bug we later turned into a "feature"). There were times managing college
-                    studies alongside full-stack development felt impossible.</p>
-                <p>But then, the first user review came in: <em>"This game runs so smoothly on my old phone. Thank
-                        you."</em> That one sentence made every sleepless night worth it.</p>
+            <p>The journey wasn't easy. There were nights when the physics engine would break, sending cars flying into
+                the stratosphere (a bug we later turned into a "feature"). There were times managing college studies
+                alongside full-stack development felt impossible.</p>
 
-                <h2>The Vision of UTHAKKAN</h2>
-                <p><strong>UTHAKKAN</strong> is more than just a company name; it's a statement. It stands for
-                    independent thinking and resilient building. Moving forward, my goal is to expand UTHAKKAN into a
-                    hub for:</p>
-                <ul>
-                    <li><strong>Open Source Tools:</strong> Releasing the utilities I built for ZyRace to the community.
-                    </li>
-                    <li><strong>AI Integration:</strong> Using Large Language Models (LLMs) to create dynamic game
-                        narratives.</li>
-                    <li><strong>Education:</strong> Teaching other aspiring developers in India that they too can build
-                        world-class software from their bedrooms.</li>
-                </ul>
+            <p>But then, the first user review came in: <em>"This game runs so smoothly on my old phone. Thank you."</em>
+                That one sentence made every sleepless night worth it.</p>
 
-                <h2>Join the Adventure</h2>
-                <p>ZyRace is just the start. If you're a developer, a gamer, or a dreamer, I invite you to follow this
-                    journey. Let's build the future of the web, one line of code at a time.</p>
-            </div>
+            <h2>The Vision of UTHAKKAN</h2>
 
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="/blog" class="btn btn-secondary">← Back to Blog</a>
-            </div>
-        </article>
+            <p><strong>UTHAKKAN</strong> is more than just a company name; it's a statement. It stands for independent
+                thinking and resilient building. Moving forward, my goal is to expand UTHAKKAN into a hub for:</p>
+
+            <ul>
+                <li><strong>Open Source Tools:</strong> Releasing the utilities I built for ZyRace to the community.</li>
+                <li><strong>AI Integration:</strong> Using LLMs to create dynamic game narratives.</li>
+                <li><strong>Education:</strong> Helping aspiring developers in India build world-class software from their bedrooms.</li>
+            </ul>
+
+            <h2>Join the Adventure</h2>
+
+            <p>ZyRace is just the start. If you're a developer, a gamer, or a dreamer, I invite you to follow this
+                journey. Let's build the future of the web, one line of code at a time.</p>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="/blog" class="btn btn-secondary">← Back to Blog</a>
+        </div>
+
     </div>
 </section>
 {% endblock %}
@@ -129,60 +124,51 @@ challenges, the wins, and the vision for UTHAKKAN.{% endblock %}
 {% block schemas %}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "From 0 to 1.0: The UTHAKKAN Story",
-  "description": "The story of building a game engine from scratch in Kannur by indie developer Ajmal U K.",
-  "image": "https://zyrace.com/static/img/blog/indie-dev.jpg",
-  "author": {
-    "@type": "Person",
-    "name": "Ajmal U K"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "UTHAKKAN",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://zyrace.com/favicon-96x96.png"
-    }
-  },
-  "datePublished": "2025-11-20",
-  "dateModified": "2025-12-07"
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "From 0 to 1.0: The UTHAKKAN Story",
+    "description": "The story of building a game engine from scratch in Kannur by indie developer Ajmal U K.",
+    "image": "https://zyrace.com/static/img/blog/indie-dev.jpg",
+    "author": {
+        "@type": "Person",
+        "name": "Ajmal U K"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "UTHAKKAN",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://zyrace.com/favicon-96x96.png"
+        }
+    },
+    "datePublished": "2025-11-20",
+    "dateModified": "2025-12-07"
 }
 </script>
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://zyrace.com/"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "Blog",
-    "item": "https://zyrace.com/blog"
-  },{
-    "@type": "ListItem",
-    "position": 3,
-    "name": "Indie Dev Journey",
-    "item": "https://zyrace.com/blog/indie-dev-journey"
-  }]
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zyrace.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zyrace.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Indie Dev Journey", "item": "https://zyrace.com/blog/indie-dev-journey" }
+    ]
 }
 </script>
 {% endblock %}
 
 {% block scripts %}
 <script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('section').forEach(section => observer.observe(section));
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(section => observer.observe(section));
 </script>
 {% endblock %}
