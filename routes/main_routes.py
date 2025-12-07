@@ -57,7 +57,6 @@ def documentation():
 @main_bp.route('/embed')
 def embed():
     response = make_response(render_template('components/embed.html'))
-    # Placeholder for allow_iframe function - implement CORS if needed
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
 
@@ -84,3 +83,45 @@ def faq():
 @main_bp.route('/download')
 def download_page():
     return render_template('pages/download.html')
+
+@main_bp.route('/sitemap.xml')
+def sitemap():
+    from datetime import datetime
+    pages = []
+    static_urls = [
+        ('/', 1.0, 'daily'),
+        ('/start', 0.9, 'weekly'),
+        ('/features', 0.8, 'monthly'),
+        ('/blog', 0.8, 'weekly'),
+        ('/about', 0.6, 'monthly'),
+        ('/contact', 0.6, 'monthly'),
+        ('/pricing', 0.7, 'monthly'),
+        ('/testimonials', 0.6, 'monthly'),
+        ('/use-cases', 0.7, 'monthly'),
+        ('/partners', 0.5, 'monthly'),
+        ('/press', 0.5, 'monthly'),
+        ('/help', 0.5, 'monthly'),
+        ('/troubleshoot', 0.5, 'monthly'),
+        ('/documentation', 0.6, 'monthly'),
+        ('/guide', 0.7, 'monthly'),
+        ('/faq', 0.6, 'monthly'),
+        ('/download', 0.7, 'monthly'),
+    ]
+
+    for url, priority, changefreq in static_urls:
+        pages.append({
+            'loc': f"https://zyrace.com{url}",
+            'lastmod': datetime.now().strftime('%Y-%m-%d'),
+            'changefreq': changefreq,
+            'priority': priority
+        })
+
+    response = make_response(render_template('seo/sitemap.xml', pages=pages))
+    response.headers['Content-Type'] = 'application/xml'
+    return response
+
+@main_bp.route('/robots.txt')
+def robots():
+    response = make_response(render_template('seo/robots.txt'))
+    response.headers['Content-Type'] = 'text/plain'
+    return response

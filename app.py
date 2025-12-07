@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from datetime import datetime
-import pytz
 import os
 
 # Import blueprints
