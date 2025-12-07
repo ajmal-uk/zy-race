@@ -103,51 +103,10 @@ def download_page():
 
 @main_bp.route('/sitemap.xml')
 def sitemap():
-    from datetime import datetime
-    pages = []
-    static_urls = [
-        ('/', 1.0, 'daily'),
-        ('/start', 0.9, 'weekly'),
-        ('/features', 0.8, 'monthly'),
-        ('/blog', 0.8, 'weekly'),
-        ('/about', 0.6, 'monthly'),
-        ('/contact', 0.6, 'monthly'),
-        ('/pricing', 0.7, 'monthly'),
-        ('/testimonials', 0.6, 'monthly'),
-        ('/use-cases', 0.7, 'monthly'),
-        ('/partners', 0.5, 'monthly'),
-        ('/press', 0.5, 'monthly'),
-        ('/help', 0.5, 'monthly'),
-        ('/troubleshoot', 0.5, 'monthly'),
-        ('/documentation', 0.6, 'monthly'),
-        ('/guide', 0.7, 'monthly'),
-        ('/faq', 0.6, 'monthly'),
-        ('/download', 0.7, 'monthly'),
-    ]
-
-    # Add static pages
-    for url, priority, changefreq in static_urls:
-        pages.append({
-            'loc': f"https://zyrace.com{url}",
-            'lastmod': datetime.now().strftime('%Y-%m-%d'),
-            'changefreq': changefreq,
-            'priority': priority
-        })
-
-    # Add blog posts
-    from flask import current_app
-    blog_posts = current_app.config.get('BLOG_POSTS', [])
-    for post in blog_posts:
-        pages.append({
-            'loc': f"https://zyrace.com/blog/{post['slug']}",
-            'lastmod': post.get('date', datetime.now().strftime('%Y-%m-%d')), # Fallback to current date if not set
-            'changefreq': 'monthly',
-            'priority': 0.6
-        })
-
-    response = make_response(render_template('seo/sitemap.xml', pages=pages))
+    response = make_response(render_template('seo/sitemap.xml'))
     response.headers['Content-Type'] = 'application/xml'
     return response
+
 
 @main_bp.route('/robots.txt')
 def robots():

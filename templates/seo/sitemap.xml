@@ -1,11 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for page in pages %}
-    <url>
-        <loc>{{ page.loc }}</loc>
-        <lastmod>{{ page.lastmod }}</lastmod>
-        <changefreq>{{ page.changefreq }}</changefreq>
-        <priority>{{ page.priority }}</priority>
-    </url>
-    {% endfor %}
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/start</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/features</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/blog</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/download</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/about</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/contact</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/blog/speedrun-guide</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/blog/unlockable-cars</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/blog/browser-games-comeback</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/guide</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/help</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/faq</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/troubleshoot</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/press</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/partners</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/privacy</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/terms</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/disclaimer</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/blog/physics-behind-zyrace</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/blog/indie-dev-journey</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://zyrace.pythonanywhere.com/blog/strategies-hill-climb</loc>
+    <lastmod>2024-12-07T10:21:35+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+
 </urlset>
