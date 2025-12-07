@@ -15,6 +15,10 @@ def robots():
 def llms():
     return send_from_directory('assets', 'llms.txt')
 
+@assets_bp.route('/google83f8616f6a5b1974.html')
+def google():
+    return send_from_directory('assets', 'google83f8616f6a5b1974.html')
+
 @assets_bp.route('/ads.txt')
 def ads():
     return send_from_directory('assets', 'ads.txt')
