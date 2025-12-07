@@ -108,12 +108,24 @@ def sitemap():
         ('/download', 0.7, 'monthly'),
     ]
 
+    # Add static pages
     for url, priority, changefreq in static_urls:
         pages.append({
             'loc': f"https://zyrace.com{url}",
             'lastmod': datetime.now().strftime('%Y-%m-%d'),
             'changefreq': changefreq,
             'priority': priority
+        })
+
+    # Add blog posts
+    from flask import current_app
+    blog_posts = current_app.config.get('BLOG_POSTS', [])
+    for post in blog_posts:
+        pages.append({
+            'loc': f"https://zyrace.com/blog/{post['slug']}",
+            'lastmod': post.get('date', datetime.now().strftime('%Y-%m-%d')), # Fallback to current date if not set
+            'changefreq': 'monthly',
+            'priority': 0.6
         })
 
     response = make_response(render_template('seo/sitemap.xml', pages=pages))

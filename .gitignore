@@ -1,5 +1,3 @@
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-directory_structure.json
+.vscode
+__pycache__
 venv
